@@ -1,0 +1,80 @@
+/* Definição de estilo para o corpo da página */
+body {
+    /* Fundo gradiente circular */
+    background: rgb(247, 136, 47);
+    background: radial-gradient(circle, rgba(247, 136, 47, 1) 0%, rgba(247, 195, 49, 1) 96%);
+}
+
+/* Definição de estilo para links */
+a {
+    color: white;
+}
+
+/* Estilo para o cabeçalho */
+header.topo {
+    padding: 10px;
+}
+
+/* Estilo para o logotipo no cabeçalho */
+.topo_logo {
+    width: 100px;
+}
+
+/* Estilo para o conteúdo da janela lateral */
+.aside_content {
+    display: none;
+}
+
+/* Estilo para a seção principal da página */
+.pag_origem {
+    text-align: center;
+    position: relative;
+}
+
+/* Estilo para os botões de ação na primeira página */
+.pag_origem_botao {
+    position: absolute;
+    transition: all .5s ease;
+    font-size: 40px;
+}
+
+/* Estilo para a animação dos botões de ação ao passar o mouse */
+.pag_origem_botao:hover {
+    color: aqua;
+    transition: all .5s ease;
+}
+
+/* Estilo para o botão de texto */
+.pag_origem_botao.txt {
+    right: 50%;
+    top: 67%;
+}
+
+/* Estilo para o botão de avançar */
+.pag_origem_botao.avancar {
+    top: 67%;
+    right: 15%;
+}
+
+/* Estilo para a imagem de adoção */
+.adote {
+    height: 350px;
+}
+
+/* Estilo para o rodapé */
+footer {
+    text-align: center;
+}
+
+/* Estilo para os ícones da linha do tempo */
+.timeline_icone {
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+/* Estilo para o ícone ativo da linha do tempo */
+.timeline_icone.active {
+    opacity: 1;
+}
