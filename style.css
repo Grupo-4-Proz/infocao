@@ -40,8 +40,8 @@ header.topo {
 
 /* Estilo para a animação dos botões de ação ao passar o mouse */
 .pag_origem_botao:hover {
-    color: aqua;
-    transition: all .5s ease;
+    animation: heartBeat; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
 }
 
 /* Estilo para o botão de texto */
