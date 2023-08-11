@@ -65,7 +65,7 @@ footer {
 }
 
 /* Estilo para os pop-ups */
-#container, #popup {
+.coluna_lateral_origem, .coluna_lateral_coleta, .coluna_lateral_adocao, .coluna_lateral_ongs, .coluna_lateral_mural, #popup {
     /* Dimensões e limites para o pop-up */
     width: 200px;
     height: 100px;
