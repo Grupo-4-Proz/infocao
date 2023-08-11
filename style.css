@@ -20,9 +20,24 @@ header.topo {
     width: 100px;
 }
 
+/* Estilo para o botão de menu no cabeçalho */
+.botao_menu_base {
+    margin-left: 1150px;
+    margin-right: 10px;
+    font-size: 20px;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
+}
+
 /* Estilo para o conteúdo da janela lateral */
 .aside_content {
-    display: none
+    /* Exibição e posicionamento do conteúdo */
+    display: block;
+    width: 700px;  
+    height: 144px;   
+    margin-left: 655px;
+    margin-right: 10px;
+    background-color: white;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
 }
 
 /* Estilo para a seção principal da página */
@@ -49,16 +64,25 @@ footer {
     opacity: 1;
 }
 
-#container, #popup{
-    width: 300px;
-    height: 300px;
+/* Estilo para os pop-ups */
+#container, #popup {
+    /* Dimensões e limites para o pop-up */
+    width: 200px;
+    height: 100px;
     overflow: hidden;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
 }
-#pag{
-    width: 600px;
-    height: 1200px;
+
+/* Estilo para a página do pop-up */
+#pag {
+    width: 300px;
+    height: 600px;
 }
-#popup{
+
+/* Estilo para o conteúdo do pop-up */
+#popup {
+    /* Posicionamento e aparência do pop-up */
     margin-top: 300px;
-    background-color: grey
+    background-color: grey;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
 }
