@@ -11,53 +11,62 @@
     <link rel="stylesheet" href="style.css">
     <!-- Link para o arquivo CSS do Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link para o arquivo CSS da biblioteca Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Pré-conexão para as fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Cabeçalho da página -->
     <header class="topo">
         <!-- Imagem do logotipo -->
-        <img src="/src/img/Logo_infocao.png" alt="" class="topo_logo">
+        <img src="/src/img/img_base/logo.png" alt="Logotipo Infocão" class="topo_logo">
         <!-- Ícone de menu -->
-        <a href="" class="topo_menu"></a>
+        <a href="#" class="botao_menu_base"><i class="fa-solid fa-bars"></i></a>
     </header>
     <!-- Conteúdo principal do site -->
-    <main class="corpo_site">
-        <!-- Primeira página -->
-        <section class="pag_origem">
-            <!-- Botões de ação -->
-            <a href="" class="pag_origem_botao txt"><i class="fa-solid fa-circle-question"></i></a>
-            <a href="" class="pag_origem_botao avancar"><i class="fa-solid fa-circle-chevron-right"></i></a>
-            <!-- Imagem de adoção -->
-            <img class="adote" src="/src/img/adote.png" alt="">
-            <!-- Agrupamento de conteúdo da janela lateral -->
-            <div class="aside_content">
-                <!-- Elementos de cabeçalho -->
-                <h3 class="capitulo"></h3>
-                <h2 class="titulo_aside_content"></h2>
-                <h4 class="sub_titulo"></h4>
-                <!-- Parágrafo de texto -->
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. ...</p>
-            </div>
+    <main class="pag_base">
+        <!-- Seção: Origem dos Cães (Juliana) -->
+        <section class="origem_dos_caes">
+            <p>Insira seu texto sobre a origem dos cães</p>
         </section>
-        
+        <!-- Seção: Coleta de Dados (Aline) -->
+        <section class="coleta_dados">
+            <p>Insira seu texto sobre coleta de dados</p>
+        </section>
+        <!-- Seção: Adoção (Claudinei) -->
+        <section class="adocao">
+            <p>Insira seu texto sobre adoção</p>
+        </section>
+        <!-- Seção: ONGs (Ana) -->
+        <section class="ongs">
+            <p>Insira seu texto sobre ONGs</p>
+        </section>
+        <!-- Seção: Mural (Bruno) -->
+        <section class="mural">
+            <p>Insira seu texto sobre o mural</p>
+        </section>
     </main>
     <!-- Rodapé da página -->
     <footer>
+        <!-- Título do rodapé -->
+        <span>Título da página</span>
+        <!-- Agrupamento de ícones de linha do tempo -->
+        <nav class="timeline">
+           <!-- Ícones do Font Awesome representando pontos da barra do site -->
+           <a href="#" class="timeline_icone active"><i class="fa-solid fa-paw"></i></a>
+           <a href="#" class="timeline_icone"><i class="fa-solid fa-paw"></i></a>
+           <a href="#" class="timeline_icone"><i class="fa-solid fa-paw"></i></a>
+           <a href="#" class="timeline_icone"><i class="fa-solid fa-paw"></i></a>
+           <a href="#" class="timeline_icone"><i class="fa-solid fa-paw"></i></a>
+           <a href="#" class="timeline_icone"><i class="fa-solid fa-paw"></i></a>
+        </nav>
         <!-- Parágrafo -->
-        <p>Lorem </p>
+        <p>Lorem ipsum dolor sit amet.</p>
         <!-- Parágrafo com classe para estilização -->
         <p class="data">2023</p>
-        <!-- Agrupamento de ícones de linha do tempo -->
-        <section class="timeline">
-           <!-- Ícones do Font Awesome representando pontos da barra do site -->
-           <a href="" class="timeline_icone active"><i class="fa-solid fa-paw"></i></a>
-           <a href="" class="timeline_icone"><i class="fa-solid fa-paw"></i></a>
-           <a href="" class="timeline_icone"><i class="fa-solid fa-paw"></i></a>
-           <a href="" class="timeline_icone"><i class="fa-solid fa-paw"></i></a>
-           <a href="" class="timeline_icone"><i class="fa-solid fa-paw"></i></a>
-           <a href="" class="timeline_icone"><i class="fa-solid fa-paw"></i></a>
-        </section>
     </footer>
 </body>
 </html>

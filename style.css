@@ -20,45 +20,30 @@ header.topo {
     width: 100px;
 }
 
+/* Estilo para o botão de menu no cabeçalho */
+.botao_menu_base {
+    margin-left: 1150px;
+    margin-right: 10px;
+    font-size: 20px;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
+}
+
 /* Estilo para o conteúdo da janela lateral */
 .aside_content {
-    display: none;
+    /* Exibição e posicionamento do conteúdo */
+    display: block;
+    width: 700px;  
+    height: 144px;   
+    margin-left: 655px;
+    margin-right: 10px;
+    background-color: white;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
 }
 
 /* Estilo para a seção principal da página */
 .pag_origem {
     text-align: center;
     position: relative;
-}
-
-/* Estilo para os botões de ação na primeira página */
-.pag_origem_botao {
-    position: absolute;
-    transition: all .5s ease;
-    font-size: 40px;
-}
-
-/* Estilo para a animação dos botões de ação ao passar o mouse */
-.pag_origem_botao:hover {
-    animation: heartBeat; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 2s; /* don't forget to set a duration! */
-}
-
-/* Estilo para o botão de texto */
-.pag_origem_botao.txt {
-    right: 50%;
-    top: 67%;
-}
-
-/* Estilo para o botão de avançar */
-.pag_origem_botao.avancar {
-    top: 67%;
-    right: 15%;
-}
-
-/* Estilo para a imagem de adoção */
-.adote {
-    height: 350px;
 }
 
 /* Estilo para o rodapé */
@@ -77,4 +62,27 @@ footer {
 /* Estilo para o ícone ativo da linha do tempo */
 .timeline_icone.active {
     opacity: 1;
+}
+
+/* Estilo para os pop-ups */
+.coluna_lateral_origem, .coluna_lateral_coleta, .coluna_lateral_adocao, .coluna_lateral_ongs, .coluna_lateral_mural, #popup {
+    /* Dimensões e limites para o pop-up */
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
+}
+
+/* Estilo para a página do pop-up */
+#pag {
+    width: 300px;
+    height: 600px;
+}
+
+/* Estilo para o conteúdo do pop-up */
+#popup {
+    /* Posicionamento e aparência do pop-up */
+    margin-top: 300px;
+    background-color: grey;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
 }
