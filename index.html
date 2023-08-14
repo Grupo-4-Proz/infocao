@@ -39,7 +39,7 @@
         <!-- Seção: Adoção (Claudinei) -->
         <section class="adocao">
             
-            <h2>Adote um Cão e ganhe um Amigo</h2>
+            <h2>Adote um Cão e ganhe um Amigo.</h2>
             <img src="./src/img/Adoção/Peludo.png" alt="Cachorro fofo">
             <p>
                 A adoção de um cão não apenas enche sua vida com alegria, 
@@ -49,6 +49,69 @@
                  leal para todas as aventuras da vida. 
                  Não perca a oportunidade de mudar duas vidas: a sua e a do seu novo amigo peludo.
             </p>
+    
+        </section>
+        <!-- Seção: Hsitoria do usuário (Claudinei) -->
+        <section class="história usuário">
+            
+            <h2>Conte-nos um pouco da sua Histótia com seu Peludo.</h2>
+            <img src="./src/img/Adoção/Historia Peludo.png" alt="Cachorro fofo">
+            <p>Querido(a) Adotante,
+
+                Com um coração generoso, você deu um lar a um peludo necessitado. 
+                Sua escolha enche nossos corações de gratidão. Obrigado por dar amor, 
+                abrigo e uma nova vida. Vocês são a razão pela qual a esperança brilha mais intensamente.
+                
+                Com carinho, Infocao</p>
+            
+            <h2>Compartilhe a história do seu peludo</h2>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br><br>
+            
+            <label for="estado">Estado:</label>
+<select id="estado" name="estado" required>
+    <option value="" disabled selected>Selecione o estado</option>
+    <option value="AC">Acre</option>
+    <option value="AL">Alagoas</option>
+    <option value="AP">Amapá</option>
+    <option value="AM">Amazonas</option>
+    <option value="BA">Bahia</option>
+    <option value="CE">Ceará</option>
+    <option value="DF">Distrito Federal</option>
+    <option value="ES">Espírito Santo</option>
+    <option value="GO">Goiás</option>
+    <option value="MA">Maranhão</option>
+    <option value="MT">Mato Grosso</option>
+    <option value="MS">Mato Grosso do Sul</option>
+    <option value="MG">Minas Gerais</option>
+    <option value="PA">Pará</option>
+    <option value="PB">Paraíba</option>
+    <option value="PR">Paraná</option>
+    <option value="PE">Pernambuco</option>
+    <option value="PI">Piauí</option>
+    <option value="RJ">Rio de Janeiro</option>
+    <option value="RN">Rio Grande do Norte</option>
+    <option value="RS">Rio Grande do Sul</option>
+    <option value="RO">Rondônia</option>
+    <option value="RR">Roraima</option>
+    <option value="SC">Santa Catarina</option>
+    <option value="SP">São Paulo</option>
+    <option value="SE">Sergipe</option>
+    <option value="TO">Tocantins</option>
+</select><br><br>
+            
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required><br><br>
+            
+            <label for="foto">Foto do seu peludo:</label>
+            <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
+            
+            <label for="historia">Conte sua história (até 200 caracteres):</label>
+            <textarea id="historia" name="historia" maxlength="200" required></textarea><br><br>
+            
+            <button type="submit">Enviar</button>
+        </form>
     
         </section>
         <!-- Seção: ONGs (Ana) -->
