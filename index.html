@@ -167,8 +167,22 @@
                     <p>Quanto você investe mensalmente em itens de conforto para o seu pet, como caminhas, brinquedos e acessórios?</p>
                     <label for="investimento_conforto"></label>
                     <span>R$0,00</span>
-                    <input type="range" name="investimento_conforto" value=""> 
+                    <input type="range" step="any" min="0" max="500"  list="escala_valores"name="investimento_conforto" value=""> 
                     <span> R$500,00</span>
+                    <datalist id="escala_valores">
+                        <option value="0">
+                        <option value="10">
+                        <option value="50">
+                        <option value="100">
+                        <option value="150">
+                        <option value="200">
+                        <option value="250">
+                        <option value="300">
+                        <option value="350">
+                        <option value="400">
+                        <option value="450">
+                        <option value="500">
+                        </datalist>
                     <p>Qual é a média de gastos anuais com cuidados veterinários, como consultas e vacinas, para o seu pet?</p>
                     <label for="gastos_anuais"></label>
                     <p>Você acha importante manter um orçamento dedicado aos cuidados de saúde do seu pet?</p>
