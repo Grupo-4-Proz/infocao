@@ -24,4 +24,4 @@ O diferencial do nosso projeto reside em seu foco abrangente e interativo. Algum
 
 - **Comunidade e Histórias:** A sexta página celebra os donos e seus cães, permitindo que compartilhem fotos e histórias, criando um espaço emocional e positivo.
 
-Ao unir educação, interatividade e recursos práticos
+Ao unir educação, interatividade e recursos práticos, nosso projeto visa criar um impacto positivo tanto nos cães quanto nas vidas daqueles que os acolhem, promovendo uma abordagem mais consciente e amorosa para a relação entre seres humanos e animais de estimação.
