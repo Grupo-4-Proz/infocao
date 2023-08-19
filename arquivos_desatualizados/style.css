@@ -1,0 +1,88 @@
+/* Definição de estilo para o corpo da página */
+body {
+    /* Fundo gradiente circular */
+    background: rgb(247, 136, 47);
+    background: radial-gradient(circle, rgba(247, 136, 47, 1) 0%, rgba(247, 195, 49, 1) 96%);
+}
+
+/* Definição de estilo para links */
+a {
+    color: white;
+}
+
+/* Estilo para o cabeçalho */
+header.topo {
+    padding: 10px;
+}
+
+/* Estilo para o logotipo no cabeçalho */
+.topo_logo {
+    width: 100px;
+}
+
+/* Estilo para o botão de menu no cabeçalho */
+.botao_menu_base {
+    margin-left: 1150px;
+    margin-right: 10px;
+    font-size: 20px;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
+}
+
+/* Estilo para o conteúdo da janela lateral */
+.aside_content {
+    /* Exibição e posicionamento do conteúdo */
+    display: block;
+    width: 700px;  
+    height: 144px;   
+    margin-left: 655px;
+    margin-right: 10px;
+    background-color: white;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
+}
+
+/* Estilo para a seção principal da página */
+.pag_origem {
+    text-align: center;
+    position: relative;
+}
+
+/* Estilo para o rodapé */
+footer {
+    text-align: center;
+}
+
+/* Estilo para os ícones da linha do tempo */
+.timeline_icone {
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+/* Estilo para o ícone ativo da linha do tempo */
+.timeline_icone.active {
+    opacity: 1;
+}
+
+/* Estilo para os pop-ups */
+.coluna_lateral_origem, .coluna_lateral_coleta, .coluna_lateral_adocao, .coluna_lateral_ongs, .coluna_lateral_mural, #popup {
+    /* Dimensões e limites para o pop-up */
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
+}
+
+/* Estilo para a página do pop-up */
+#pag {
+    width: 300px;
+    height: 600px;
+}
+
+/* Estilo para o conteúdo do pop-up */
+#popup {
+    /* Posicionamento e aparência do pop-up */
+    margin-top: 300px;
+    background-color: grey;
+    /* Adicione outras propriedades de estilo aqui, se necessário */
+}
