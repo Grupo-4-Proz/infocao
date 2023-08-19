@@ -23,8 +23,17 @@ body {
     justify-content: space-between;
     align-items: center; /* Centralizar verticalmente os elementos */
   }
-  article{
+  article {
     border: 5px solid palevioletred;
+  }
+  hr {
+    display: flex;
+    width: 20%;
+    height: 1px;
+    border: 0px;
+    border-top: 1px solid;
+    position: fixed;
+    top:150px;
   }
   
   .logo_infocao {
@@ -86,10 +95,22 @@ body {
     padding: 5px;
     border-radius: 20px;
     align-self: flex-start;
+    position: fixed;
+    top:70px;
+    
   }
   .subtitulo_janela_lateral{
     margin: 0px 0px 0px 20px;
     align-self: flex-start;
+    position: fixed;
+    top:115px;
+  }
+  .paragrafo_janela_lateral{
+    margin: 0px 20px 0px 20px;
+    align-self: flex-start;
+    position: fixed;
+    top:180px;
+    text-align: justify;
   }
   .pagina_padrao .janela_lateral.show {
     display: flex;
