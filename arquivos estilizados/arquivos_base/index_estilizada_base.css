@@ -99,3 +99,21 @@ body {
 .timeline_icone.active {
     opacity: 1;
 }
+
+.slide_coleta{
+  border: 5px solid olive;  
+    
+}
+#template_interacao{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows:repeat(24, 11px);
+}
+
+#isometric_room{
+  grid-column-start: 1;
+  grid-column-end:48;
+  grid-row-start: 1;
+  background-color: blueviolet;
+
+}
