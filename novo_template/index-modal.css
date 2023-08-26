@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+body .barra_topo {
+    width: 100vw;
+    height: 80px;
+    background-color: #f9f9ed;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    transition: all .5s ease;
+}
+body .barra_topo:hover {
+    opacity: 1;
+}
+body .img_base {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+body .balao {
+    position: absolute;
+    background-color: #f9f9ed;
+    padding: 1rem 2rem;
+    width: 450px;
+    border-radius: 15px;
+    opacity: 0;               /* Começa transparente */
+    visibility: hidden;      /* Começa invisível, mas ainda ocupa espaço, o que nos permite obter sua altura */
+    transform: translateY(10px); /* Um pequeno movimento para a animação */
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s; /* Transições para suavidade */
+    -webkit-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+}
+body .balao.visible {
+    opacity: 1;          /* Totalmente visível */
+    visibility: visible; /* Torna visível */
+    transform: translateY(0); /* Retorna à posição original */
+}
+body .balao:after{ /*Triangulo*/
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
+    /*Aqui entra a cor da "aba" do balão */
+    border-top: 20px solid #f9f9ed;
+    bottom: -20px; /*localização. Experimente alterar para 'bottom'*/
+    right: 20%;
+}
+body .balao .balao_btn {
+    background-color: #9098ce; /* azul primário */
+    color: #ffffff; /* texto branco */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* transição suave para o hover */
+    float: right;
+    /* Estilização para quando o botão é clicado */
+    outline: none; /* remova o contorno padrão do botão ao clicar */
+}
+
+body .balao .balao_btn:hover {
+    background-color: #d6d8ee; /* um azul um pouco mais escuro para o hover */
+}
+
+body .balao .balao_btn:active {
+    transform: scale(0.95); /* dá uma sensação de pressionamento quando o botão é clicado */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; /* Começa escondido */
+    z-index: 1; /* Sobre a maioria dos outros elementos da página */
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem 3rem;
+    display: none; /* Começa escondido */
+    z-index: 2; /* Sobre o overlay e outros elementos da página */
+    border-radius: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.hover:hover, #recepcao:hover {
+    stroke: rgb(255 255 255 / 50%);
+}
+
+#racao_form {
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.radio-group label {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
