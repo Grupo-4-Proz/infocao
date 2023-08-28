@@ -1,3 +1,6 @@
+*{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+  }
 body {
     margin: 0;
     padding: 0;
@@ -11,7 +14,7 @@ body {
 }
 body .barra_topo {
     width: 100vw;
-    height: 80px;
+    height: 50px;
     background-color: #f9f9ed;
     position: fixed;
     top: 0;
@@ -26,7 +29,7 @@ body .img_base {
     height: 100vh;
     display: block;
 }
-body .balao {
+body .balao_fala {
     position: absolute;
     background-color: #f9f9ed;
     padding: 1rem 2rem;
@@ -40,12 +43,12 @@ body .balao {
     -moz-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
 }
-body .balao.visible {
+body .balao_fala.visible {
     opacity: 1;          /* Totalmente visível */
     visibility: visible; /* Torna visível */
     transform: translateY(0); /* Retorna à posição original */
 }
-body .balao:after{ /*Triangulo*/
+body .balao_fala:after{ /*Triangulo*/
     content: "";
     width: 0;
     height: 0;
@@ -58,9 +61,9 @@ body .balao:after{ /*Triangulo*/
     bottom: -20px; /*localização. Experimente alterar para 'bottom'*/
     right: 20%;
 }
-body .balao .balao_btn {
-    background-color: #9098ce; /* azul primário */
-    color: #ffffff; /* texto branco */
+body .balao_fala .balao_btn {
+    background-color: #7d84b2; /* azul primário */
+    color: #f9f9ed; /* texto branco */
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
@@ -72,14 +75,64 @@ body .balao .balao_btn {
     outline: none; /* remova o contorno padrão do botão ao clicar */
 }
 
-body .balao .balao_btn:hover {
+body .balao_fala .balao_btn:hover {
     background-color: #d6d8ee; /* um azul um pouco mais escuro para o hover */
 }
 
-body .balao .balao_btn:active {
+body .balao_fala .balao_btn:active {
     transform: scale(0.95); /* dá uma sensação de pressionamento quando o botão é clicado */
 }
 
+body .balao_item {
+    position: absolute;
+    background-color: #f9f9ed;
+    padding: 1rem 2rem;
+    width: 450px;
+    border-radius: 15px;
+    opacity: 0;               /* Começa transparente */
+    visibility: hidden;      /* Começa invisível, mas ainda ocupa espaço, o que nos permite obter sua altura */
+    transform: translateY(10px); /* Um pequeno movimento para a animação */
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s; /* Transições para suavidade */
+    -webkit-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+}
+body .balao_item.visible {
+    opacity: 1;          /* Totalmente visível */
+    visibility: visible; /* Torna visível */
+    transform: translateY(0); /* Retorna à posição original */
+}
+body .balao_item:after{ 
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    /*Aqui entra a cor da "aba" do balão */
+    border-top: 20px solid #f9f9ed;
+    bottom: -20px; /*localização. Experimente alterar para 'bottom'*/
+    right: 20%;
+}
+body .balao_item .balao_btn {
+    background-color: #7d84b2 ; /* azul primário */
+    color: #f9f9ed; /* texto branco */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* transição suave para o hover */
+    float: right;
+    /* Estilização para quando o botão é clicado */
+    outline: none; /* remova o contorno padrão do botão ao clicar */
+}
+
+body .balao_item .balao_btn:hover {
+    background-color: #d6d8ee; /* um azul um pouco mais escuro para o hover */
+}
+
+body .balao_item .balao_btn:active {
+    transform: scale(0.95); /* dá uma sensação de pressionamento quando o botão é clicado */
+}
 .overlay {
     position: fixed;
     top: 0;
@@ -96,7 +149,7 @@ body .balao .balao_btn:active {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
+    background: #f9f9ed;
     padding: 2rem 3rem;
     display: none; /* Começa escondido */
     z-index: 2; /* Sobre o overlay e outros elementos da página */
@@ -113,13 +166,63 @@ body .balao .balao_btn:active {
     stroke: rgb(255 255 255 / 50%);
 }
 
-#racao_form {
-    width: 300px;
+#modal_adotante,#modal_nao_adotante, #racao_form {
+    width: 50vw;
+    height: 90vh;
     padding: 20px;
     border-radius: 8px;
+    position: fixed; /* Torna o formulário fixo na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para o centro */
+    overflow-y: auto; /* Adiciona scroll quando necessário */
+    background-color:#f9f9ed; /* Adiciona um fundo branco */
 }
 
-.input-group {
+#balao_adotante{
+    width: 15vw;
+    font-size: 14px;
+}
+
+#balao_origem {
+    width: 15vw;
+    position: absolute;
+    font-size: 14px;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+    -webkit-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+  }
+  
+  #balao_origem::after {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-radius: 100%;
+    background: #f1f1f1;
+    position: absolute;
+    bottom: -7px;
+    left: 30px; /* Alterado para aparecer à esquerda */
+  }
+  
+  #balao_origem::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: #f1f1f1;
+    position: absolute;
+    left: 15px; /* Alterado para aparecer à esquerda */
+    bottom: -21px;
+  }
+  
+  #balao_origem {
+    filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
+  }
+  .input-group {
     margin-bottom: 15px;
 }
 
@@ -132,7 +235,7 @@ label {
 input[type="text"], input[type="number"] {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #f9f9ed;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -141,9 +244,9 @@ input[type="text"], input[type="number"] {
     margin-right: 10px;
 }
 
-button {
-    background-color: #007BFF;
-    color: #fff;
+.modal-content button, button {
+    background-color: #7d84b2;
+    color: #f9f9ed;
     padding: 8px 15px;
     border: none;
     border-radius: 4px;
@@ -151,6 +254,9 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
+.modal-content button:hover, button:hover {
+    background-color: #d9dbf1;
+}
+fieldset{
+    border-color: #dbfa47;
 }

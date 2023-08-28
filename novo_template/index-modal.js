@@ -1,3 +1,21 @@
+const header = document.querySelector('.barra_topo');
+const cornerThreshold = 0.3; // 30% dos cantos
+
+window.addEventListener('mousemove', (event) => {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    if (
+        (mouseX <= screenWidth * cornerThreshold || mouseX >= screenWidth * (1 - cornerThreshold))
+    ) {
+        header.style.top = '0';
+    } else {
+        header.style.top = '-50px';
+    }
+});
+
 // Referência para o balão de recepção e seus controles
 const balao = document.querySelector("#balao_recepcao");
 const btnFechar = document.querySelector(".balao_btn");
@@ -46,7 +64,9 @@ function handleMouseEvents(balaoElement) {
 const balaoElements = {
     "#racao_umida": "#balao_racao",
     "#racao_seca": "#balao_racao",
-    "#sofa": "#balao_adocao"
+    "#sofa": "#balao_adotante",
+    "#cachorro_sozinho":"#balao_origem",
+    "#maca_2":"#balao_nao_adotante",
 };
 
 // Adiciona eventos para cada elemento mapeado e seu respectivo balão
@@ -85,10 +105,17 @@ function manageModal(modalSelector, overlaySelector) {
     };
 }
 
+// Configuração do modal de origem
+const modalOrigem = manageModal("#modal_origem", "#modalOverlay");
+modalOrigem.init("#cachorro_sozinho");
 // Configuração do modal de ração
-const modalRacao = manageModal("#modalWindow", "#modalOverlay");
+const modalRacao = manageModal("#modal_pesq_alimentacao", "#modalOverlay");
 modalRacao.init(".racao");
 
 // Configuração do modal de adoção
-const modalAdocao = manageModal("#modalAdocao", "#modalOverlay");
-modalAdocao.init("#sofa");
+const modalAdotante = manageModal("#modal_adotante", "#modalOverlay");
+modalAdotante.init("#sofa");
+
+// Configuração do modal de não-adotante
+const modalNaoAdotante = manageModal("#modal_nao_adotante", "#modalOverlay");
+modalNaoAdotante.init("#maca_2");

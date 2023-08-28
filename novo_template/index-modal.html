@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
+    <title>Infocão</title>
     <link rel="stylesheet" href="index-modal.css">
 </head>
 <body>
     <header class="barra_topo">
 
     </header>
-    <section id="balao_recepcao" class="balao">
+    <section id="balao_recepcao" class="balao_fala">
         <h1 class="balao_titulo">
             Bem-vindo ao Centro de Cuidados de Animais!
         </h1>
@@ -18,18 +21,27 @@
         <p class="balao_texto">Além disso, a sua colaboração é fundamental! Se puder, participe preenchendo nossos formulários. Assim, você não apenas amplia nosso conhecimento, mas também contribui para aprimorar e expandir a qualidade dos cuidados que oferecemos aos pets. Juntos, podemos fazer a diferença na vida de muitos animais. Aproveite sua visita!</p>
         <span class="balao_btn">Fechar</span>
     </section>
-    <section id="balao_racao" class="balao">
+    <section id="balao_origem" class="balao_fala">
+      <p class="balao_texto">
+        As vezes imagino como será 
+        que começamos a ter lares tão legais?...Você também quer saber? 
+        Então vem comigo!</p>
+  </section>
+    <section id="balao_racao" class="balao_item">
         <h2 class="balao_titulo">
             Clique e responda uma pesquisa rapida sobre seu pet
         </h2>
         <p class="balao_texto">Mergulhe em nossa plataforma interativa e descubra tudo o que temos a oferecer aos nossos amigos peludos. A cada clique, revelamos informações valiosas e dicas para cuidados especiais.</p>
     </section>
-    <section id="balao_adocao" class="balao">
-        <h2 class="balao_titulo">
-            Adocao
-        </h2>
-        <p class="balao_texto">Adocao teste.</p>
+    <section id="balao_adotante" class="balao_fala">
+        <p class="balao_texto">Não existe sensação melhor do que adotar um amigo. Você já adotou algum animal? Me conte sua história!</p>
     </section>
+    <section id="balao_nao_adotante" class="balao_item">
+      <h2 class="balao_titulo">
+          Teste não adotante
+      </h2>
+      <p class="balao_texto">Teste não adotante.</p>
+  </section>
     <?xml version="1.0" encoding="UTF-8"?>
     <svg class="img_base" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet">
   <defs>
@@ -1317,7 +1329,7 @@
           </g>
         </g>
       </g>
-      <g id="cachorro_sozinho">
+      <g id="cachorro_sozinho" class="hover">
         <g>
           <g>
             <path d="m1068.9,869.2c-.5-2.6-5.6-5.2-4.7-9.4,1-4.2,1.6-11.5,1.6-11.5l-14.2-3.5s.2,11.2,1.4,15.6c1.2,4.4,1.3,4.7,3.9,7.4,2,2,5.9,3.4,5.9,3.4,0,0,0,.2-.2.5.3,0,.6.2.7.5.3.6.7,3-.4,4.8-1.1,1.7-.5,2.8,0,3.5.5-.9,1-1.9,1.6-3,1.5-2.8,4.6-6.5,4.3-8.3Z" fill="#622c2a"/>
@@ -6024,58 +6036,168 @@
 <!-- Overlay -->
 <div class="overlay" id="modalOverlay"></div>
 
+<!-- Modal Origem-->
+<div class="modal" id="modal_origem">
+  <div class="modal-content">
+      <span class="close-button" id="modalClose">&times;</span>
+      <img src="./src/img/Historia/Cachorro pesquisando.png" alt="Cachorro pesquisando">
+        <h2 class="modal_titulo">Uma história que começou há cerca de 20 mil anos...</h2>
+        <p>
+            Os cães que conhecemos são descentes dos lobos, o que muita gente discute é como parte deles se aproximou do homem e acabou domesticado... 
+Bom as teorias apontam que alguns lobos andavam atrás dos homens para se aproveitar dos restos de comida. Instintivamente eles perceberam que ao lado das tribos teriam alimento fácil e passaram a dividir o território. Com os lobos por perto, os homens viram que estavam mais protegidos de ataques de outros animais e permitiram a aproximação.
+A partir dai a amizade entre ambos só foi evoluindo e para a  humanidade o cão virou apenas um animal de estimação. Em sua maioria, integrantes da família, mas sem nenhuma função econômica. Não comem mais carne crua e sim ração desenvolvida especialmente para eles. Hoje, as antigas feras são o que chamamos de PET: conceito nascido na Escócia, no século 14 e que significa basicamente animal domado.
+Em grade parte das famílias hoje o cãozinho passou de melhor amigo para as vezes filhinho, ganhando roupas, caminhas e
+brinquedos cada vez mais legais e divertidos. 
+Além de que agora existem petshops e até hotéis, os cachorrinhos estão ganhando mercado e também os coração das pessoas, claro com todo o amor que eles tem para oferecer... 
+        </p>
+        <img src="./src/img/Historia/Cachorro segurando uma placa.png" alt="Cachorro segurando uma placa">
+  </div>
+</div>
 <!-- Modal Racao-->
-<div class="modal" id="modalWindow">
+<div class="modal" id="modal_pesq_alimentacao">
+    <div class="modal-content">
+        <h2 class="modal_titulo">Teste</h2>
+        <form id="racao_form" action=""method="post">
+          <fieldset id="alimentacao">
+              <legend>Tipo de alimentação</legend>
+              <h3>Quais tipos de alimentação você oferece ao seu pet?</h3>
+              <label><input type="checkbox" name="tipos_alimentacao" value="racao_seca">Ração seca</label> <img src="/src/img/coleta_dados/racao_seca.svg" alt="Ração seca">
+              <label><input type="checkbox" name="tipos_alimentacao" value="racao_umida">Ração úmida</label> <img src="/src/img/coleta_dados/racao_umida.svg" alt="Ração úmida">
+              <label><input type="checkbox" name="tipos_alimentacao" value="sobras_alimento">Sobras de alimento</label> <img src="/src/img/coleta_dados/sobra_comida.svg" alt="Sobras de alimento humano">
+              <label><input type="checkbox" name="tipos_alimentacao" value="alimentacao_natural"> Alimentação natural-balanceada</label> <img src="/src/img/coleta_dados/alimentacao_natural.svg" alt="Alimentação balanceada">
+              <h3>Como você escolhe a comida ideal para o seu pet?</h3>
+              <label><input type="checkbox" name="escolha_alimento" value="sem_preferencias">Não considero fatores específicos</label>
+              <label><input type="checkbox" name="escolha_alimento" value="marcas_populares">Levo em consideração marcas populares</label>
+              <label><input type="checkbox" name="escolha_alimento" value="ingredientes_nutrientes">Pesquiso sobre ingredientes e nutrientes</label>
+              <label><input type="checkbox" name="escolha_alimento" value="sugestao_veterinaria"> Consulto um veterinário antes de escolher</label>
+              <label><input type="checkbox" name="escolha_alimento" value="recomendacao_especialistas"> Opto por alimentos recomendados por especialistas</label>
+              <h3>Quanta importância você dá para a origem dos ingredientes na alimentação do seu pet?</h3>
+              <label><input type="checkbox" name="origem_ingredientes" value="pouca_importancia"> Pouca importância</label>
+              <label><input type="checkbox" name="origem_ingredientes" value="alguma_importancia"> Alguma importância</label>
+              <label><input type="checkbox" name="origem_ingredientes" value="importante"> Importante</label>
+              <label><input type="checkbox" name="origem_ingredientes" value="muito_importante"> Muito importante</label>
+              <label><input type="checkbox" name="origem_ingredientes" value="extremamente_importante"> Extremamente importante</label>
+              <h3>Você já buscou informações sobre dietas caseiras ou alimentação natural para o seu pet?</h3>
+              <label><input type="checkbox" name="dietas" value="nunca_pesquisei"> Nunca pesquisei</label>
+              <label><input type="checkbox" name="dietas" value="raramente_pesquisei">Raramente pesquisei</label>
+              <label><input type="checkbox" name="dietas" value="ja_pesquisei"> Já pesquisei algumas vezes</label>
+              <label><input type="checkbox" name="dietas" value="sempre_pesquisei"> Sempre busco informações sobre isso</label>
+              <button type="submit">Enviar</button>
+          </fieldset>
+    </div>
+</div>
+<!-- Modal Racao-->
+<div class="modal" id="modal_adotante">
     <div class="modal-content">
         <span class="close-button" id="modalClose">&times;</span>
-        <h2 class="modal_titulo">Teste</h2>
-        <form id="racao_form">
-            <div class="input-group">
-                <label for="nome">Seu nome</label>
-                <input type="text" id="nome" name="nome" required>
-            </div>
-            
-            <div class="input-group">
-                <label for="nomePet">Nome do Pet</label>
-                <input type="text" id="nomePet" name="nomePet" required>
-            </div>
-            
-            <div class="input-group">
-                <label for="idadePet">Idade do Pet</label>
-                <input type="number" id="idadePet" name="idadePet" required>
-            </div>
-        
-            <div class="input-group">
-                <label>Que tipo de ração ele come?</label>
-                <div class="radio-group">
-                    <input type="radio" id="racaoSeca" name="tipoRacao" value="racaoSeca" required>
-                    <label for="racaoSeca">Ração seca</label>
-                    
-                    <input type="radio" id="racaoUmida" name="tipoRacao" value="racaoUmida" required>
-                    <label for="racaoUmida">Ração úmida</label>
-                    
-                    <input type="radio" id="alimentacaoNatural" name="tipoRacao" value="alimentacaoNatural" required>
-                    <label for="alimentacaoNatural">Alimentação natural</label>
-                </div>
-            </div>
-        
-            <div class="input-group">
-                <label for="gastoMensal">Quanto você gasta em média com seu pet em um mês?</label>
-                <input type="number" id="gastoMensal" name="gastoMensal" required>
-            </div>
-            
+        <h2 class="modal_titulo">Obrigado por escolher a compaixão e por fazer a diferença na vida de um ser tão especial."</h2>
+            <p>Queremos expressar nossa mais profunda gratidão por ter aberto seu coração e seu lar para um peludo tão especial.
+                Sua decisão de adotar um cão não apenas transformou a vida do animal que agora tem um lar amoroso,
+                 mas também tocou nossos corações com esperança e alegria.</p>
+            <img src="./src/img/Adoção/Historia Peludo.png" alt="Cachorro fofo">
+            <br>
+            <p>Querido(a) Adotante,
+
+                Com um coração generoso, você deu um lar a um peludo necessitado. <br> 
+                Sua escolha enche nossos corações de gratidão. Obrigado por dar amor, <br>
+                abrigo e uma nova vida. Vocês são a razão pela qual a esperança brilha mais intensamente. <br>
+                <br>                                
+                Com carinho, Equipe Infocão</p>
+            <h2>Compartilhe a história do seu peludo.</h2>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br><br>
+            <label for="estado">Estado:</label>
+<select id="estado" name="estado" required>
+    <option value="" disabled selected>Selecione o estado</option>
+    <option value="AC">Acre</option>
+    <option value="AL">Alagoas</option>
+    <option value="AP">Amapá</option>
+    <option value="AM">Amazonas</option>
+    <option value="BA">Bahia</option>
+    <option value="CE">Ceará</option>
+    <option value="DF">Distrito Federal</option>
+    <option value="ES">Espírito Santo</option>
+    <option value="GO">Goiás</option>
+    <option value="MA">Maranhão</option>
+    <option value="MT">Mato Grosso</option>
+    <option value="MS">Mato Grosso do Sul</option>
+    <option value="MG">Minas Gerais</option>
+    <option value="PA">Pará</option>
+    <option value="PB">Paraíba</option>
+    <option value="PR">Paraná</option>
+    <option value="PE">Pernambuco</option>
+    <option value="PI">Piauí</option>
+    <option value="RJ">Rio de Janeiro</option>
+    <option value="RN">Rio Grande do Norte</option>
+    <option value="RS">Rio Grande do Sul</option>
+    <option value="RO">Rondônia</option>
+    <option value="RR">Roraima</option>
+    <option value="SC">Santa Catarina</option>
+    <option value="SP">São Paulo</option>
+    <option value="SE">Sergipe</option>
+    <option value="TO">Tocantins</option>
+</select><br><br>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required><br><br>
+            <label for="foto">Foto do seu peludo:</label>
+            <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
+            <label for="historia">Conte sua história (até 200 caracteres):</label> <br>
+            <textarea id="historia" name="historia" maxlength="200" required></textarea><br><br>
             <button type="submit">Enviar</button>
         </form>
     </div>
 </div>
-<!-- Modal Racao-->
-<div class="modal" id="modalAdocao">
-    <div class="modal-content">
-        <span class="close-button" id="modalClose">&times;</span>
-        <h2 class="modal_titulo">Teste</h2>
-    </div>
-</div>
-
+<div class="modal" id="modal_nao_adotante">
+  <div class="modal-content">
+      <span class="close-button" id="modalClose">&times;</span>
+          <h2 class="modal_titulo">Adote um Cão e ganhe um Amigo.</h2>
+          <img src="./src/img/Adoção/Peludo.png" alt="Cachorro fofo">
+          <p>
+              A adoção de um cão não apenas enche sua vida com alegria,mas também dá a um amigo de quatro patas uma segunda chance. 
+              Cada cão tem uma história única e está ansioso para encontrar um lar amoroso. 
+               Ao adotar, você está fazendo a diferença na vida de um animal e ganhando um companheiro 
+               leal para todas as aventuras da vida.
+               Não perca a oportunidade de mudar duas vidas: a sua e a do seu novo amigo peludo. 
+               Certamente! A adoção de cães é uma escolha admirável que traz inúmeros benefícios não apenas para os animais,
+              mas também para as pessoas que decidem abrir seus lares e corações para eles. 
+              Aqui estão algumas razões pelas quais a adoção de um cão é uma decisão incrível: </p>
+              <h1>Benefícios da Adoção de Cães</h1>
+              <ul>
+                  <li>
+                      <strong>Salve uma Vida:</strong> Ao adotar um cão de um abrigo ou organização de resgate, você está
+                      oferecendo a chance de uma vida melhor para um animal que pode ter passado por dificuldades. Sua decisão
+                      literalmente pode salvar uma vida e proporcionar uma segunda chance.
+                  </li>
+                  <li>
+                      <strong>Amor Incondicional:</strong> Cães são conhecidos por sua lealdade e amor incondicional. Eles formam
+                      laços profundos com seus donos e estão sempre prontos para oferecer carinho, companheirismo e alegria.
+                  </li>
+                  <li>
+                      <strong>Variedade de Opções:</strong> Abrigos e resgates têm cães de todas as idades, tamanhos e raças. Você
+                      pode encontrar um cão que se adapte ao seu estilo de vida e preferências, seja um companheiro ativo para
+                      aventuras ao ar livre ou um amigo mais tranquilo para desfrutar de momentos relaxantes.
+                  </li>
+                  <li>
+                      <strong>Custo Benefício:</strong> Muitos cães adotados já vêm vacinados, castrados e microchipados, o que
+                      pode resultar em economias significativas em comparação com a compra de um cão de raça.
+                  </li>
+                  <li>
+                      <strong>Enriquecimento Pessoal:</strong> A adoção de um cão não apenas traz alegria imediata à sua vida, mas
+                      também pode ser uma experiência enriquecedora. Cuidar de um animal requer responsabilidade, compromisso e
+                      empatia, o que pode contribuir para o crescimento pessoal.
+                  </li>
+                  <li>
+                      <strong>Promova Mudanças:</strong> Ao adotar um cão, você apoia a missão de abrigos e resgates, contribuindo
+                      para reduzir o número de animais abandonados e sensibilizando a comunidade sobre a importância da adoção
+                      responsável.
+                  </li>
+                  <li>
+                      <strong>Construa Memórias:</strong> A jornada de criar um cão adotado está cheia de momentos memoráveis. Desde
+                      as primeiras interações até as aventuras compartilhadas, você construirá lembranças duradouras e preciosas.
+                  </li>
+              </ul>     
+            </div>                               
     <script src="index-modal.js"></script>
 </body>
 </html>
