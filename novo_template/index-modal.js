@@ -63,10 +63,8 @@ function handleMouseEvents(balaoElement) {
 // Mapeamento dos elementos e seus respectivos balões
 const balaoElements = {
     "#racao": "#balao_racao",
-    "#espera": "#balao_adotante",
-    "#roupinha":"#balao_origem",
-    "#maca_2":"#balao_nao_adotante",
 };
+console.log(balaoElements);
 
 // Adiciona eventos para cada elemento mapeado e seu respectivo balão
 for (let key in balaoElements) {
