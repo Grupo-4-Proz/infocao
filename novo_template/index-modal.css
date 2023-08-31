@@ -37,7 +37,7 @@ body .balao_fala {
     border-radius: 15px;
     opacity: 0;               /* Começa transparente */
     visibility: hidden;      /* Começa invisível, mas ainda ocupa espaço, o que nos permite obter sua altura */
-    transform: translateY(10px); /* Um pequeno movimento para a animação */
+    transform: translateY(0); /* Um pequeno movimento para a animação */
     transition: opacity 0.3s, transform 0.3s, visibility 0.3s; /* Transições para suavidade */
     -webkit-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
@@ -60,6 +60,7 @@ body .balao_fala:after{ /*Triangulo*/
     border-top: 20px solid #f9f9ed;
     bottom: -20px; /*localização. Experimente alterar para 'bottom'*/
     right: 20%;
+    transform: translateX(-50%);
 }
 body .balao_fala .balao_btn {
     background-color: #7d84b2; /* azul primário */

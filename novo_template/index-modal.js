@@ -62,10 +62,9 @@ function handleMouseEvents(balaoElement) {
 
 // Mapeamento dos elementos e seus respectivos balões
 const balaoElements = {
-    "#racao_umida": "#balao_racao",
-    "#racao_seca": "#balao_racao",
-    "#sofa": "#balao_adotante",
-    "#cachorro_sozinho":"#balao_origem",
+    "#racao": "#balao_racao",
+    "#espera": "#balao_adotante",
+    "#roupinha":"#balao_origem",
     "#maca_2":"#balao_nao_adotante",
 };
 
@@ -107,14 +106,14 @@ function manageModal(modalSelector, overlaySelector) {
 
 // Configuração do modal de origem
 const modalOrigem = manageModal("#modal_origem", "#modalOverlay");
-modalOrigem.init("#cachorro_sozinho");
+modalOrigem.init("#roupinhas");
 // Configuração do modal de ração
 const modalRacao = manageModal("#modal_pesq_alimentacao", "#modalOverlay");
-modalRacao.init(".racao");
+modalRacao.init("#racao");
 
 // Configuração do modal de adoção
 const modalAdotante = manageModal("#modal_adotante", "#modalOverlay");
-modalAdotante.init("#sofa");
+modalAdotante.init("#espera");
 
 // Configuração do modal de não-adotante
 const modalNaoAdotante = manageModal("#modal_nao_adotante", "#modalOverlay");
