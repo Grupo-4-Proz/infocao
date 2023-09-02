@@ -116,3 +116,25 @@ modalAdotante.init("#espera");
 // Configuração do modal de não-adotante
 const modalNaoAdotante = manageModal("#modal_nao_adotante", "#modalOverlay");
 modalNaoAdotante.init("#maca_2");
+
+document.addEventListener("DOMContentLoaded", function() {
+    const idList = [
+        "cachorro_colo", "carinho_chao", "atendente_adocao", "gaiola_3", "gaiola_2", "gaiola_1", "gaiola_vazia", "vet", "groomer", "dog_gym", "menina_cachorro", "recep_infocao", "gaiolas", "casinha", "brincando_bolinha", "quadro_3", "quadro_2", "quadro_1", "recepcao", "roupinhas", "almofada", "pct_racao", "racao", "corgi", "passeador", "espera", /* Adicione todos os IDs aqui */
+    ];
+
+    idList.forEach(id => {
+        const image = document.getElementById(id);
+        if (image) {
+            // Adicionar evento de passar o mouse
+            image.addEventListener("mouseenter", function() {
+                image.style.filter = "grayscale(100%)";
+            });
+
+            // Adicionar evento de retirar o mouse
+            image.addEventListener("mouseleave", function() {
+                
+                image.style.filter = "none";
+            });
+        }
+    });
+});
