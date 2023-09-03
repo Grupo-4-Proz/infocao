@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: sans-serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 body .barra_topo {
     width: 100vw;
@@ -261,4 +261,83 @@ fieldset{
     filter:grayscale(100%);
 }
 
+.conteudo_mobile{
+    display: none;
+}
 
+@media (max-width: 810px){
+    .conteudo_mobile {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        border-radius: 15px;
+        overflow: scroll;
+        margin: 10px;
+       /* recomiendo quitar esto/quit this */
+    }
+    
+    .texto_mobile.ativo {
+        display: block;
+    }
+    .texto_mobile {
+        display: none;
+    }
+
+    .mobile {
+        flex: 1;
+        display: flex;
+        min-height: fit-content;
+        align-items: center;
+        justify-content: center;
+        color: #474747;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+    }
+    
+    .mobile:nth-child(1) {
+        background: #7d84b2;
+    }
+    
+    .mobile:nth-child(2) {
+        background: #8e9dcc;
+    }
+    
+    .mobile:nth-child(3) {
+        background: #d9dbf1;
+    }
+    
+    .mobile:nth-child(4) {
+        background: #f9f9ed;
+    }
+    
+    .mobile:nth-child(5) {
+        background: #dbfa47;
+    }
+    
+    /* .mobile:hover {
+        flex: 2;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    
+    .mobile:hover span {
+        opacity: 1;
+    } */
+
+    .svg_desktop{
+        display: none;
+    }
+
+    .barra_topo{
+        display: none;
+    }
+
+    #baloes_desktop{
+        display: none;
+    }
+
+    #racao_form{
+        display: none;}
+}
