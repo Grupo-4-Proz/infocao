@@ -265,79 +265,134 @@ fieldset{
     display: none;
 }
 
-@media (max-width: 810px){
-    .conteudo_mobile {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        width: 100%;
-        border-radius: 15px;
-        overflow: scroll;
-        margin: 10px;
-       /* recomiendo quitar esto/quit this */
-    }
-    
-    .texto_mobile.ativo {
-        display: block;
-    }
-    .texto_mobile {
-        display: none;
-    }
+    @media (max-width: 810px){
+        body .conteudo_mobile {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            border-radius: 15px;
+            overflow: scroll;
+            margin: 10px;
+            font-size: 1em;
+        }
+        
+        .mobile .texto_mobile.ativo {
+            display: block;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            flex-basis: 30%;
+            flex-grow: 1;
+            gap: 2em;
+            justify-content: space-around;
+            padding: 1em;
+        }
+        .mobile .texto_mobile {
+            display: none;
+        }
 
-    .mobile {
-        flex: 1;
-        display: flex;
-        min-height: fit-content;
-        align-items: center;
-        justify-content: center;
-        color: #474747;
-        font-weight: 600;
-        letter-spacing: 1px;
-        transition: all 0.3s ease-out;
-        cursor: pointer;
-    }
-    
-    .mobile:nth-child(1) {
-        background: #7d84b2;
-    }
-    
-    .mobile:nth-child(2) {
-        background: #8e9dcc;
-    }
-    
-    .mobile:nth-child(3) {
-        background: #d9dbf1;
-    }
-    
-    .mobile:nth-child(4) {
-        background: #f9f9ed;
-    }
-    
-    .mobile:nth-child(5) {
-        background: #dbfa47;
-    }
-    
-    /* .mobile:hover {
-        flex: 2;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    }
-    
-    .mobile:hover span {
-        opacity: 1;
-    } */
+        body .conteudo_mobile .mobile {
+            flex: 1;
+            display: flex;
+            min-height: fit-content;
+            align-items: center;
+            justify-content: center;
+            color: #474747;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease-out;
+            cursor: pointer;
+        
+        }
+        
+        body .conteudo_mobile .mobile:nth-child(1) {
+            background: #7d84b2;
+            flex-direction: column;
+        }
+        
+        body .conteudo_mobile .mobile:nth-child(2) {
+            background: #8e9dcc;
+            flex-direction: column;
+        }
+        
+        body .conteudo_mobile .mobile:nth-child(3) {
+            background: #d9dbf1;
+            flex-direction: column;
+        }
+        
+        body .conteudo_mobile .mobile:nth-child(4) {
+            background: #f9f9ed;
+            flex-direction: column;
+        }
+        
+        body .conteudo_mobile .mobile:nth-child(5) {
+            background: #dbfa47;
+            
+        }
 
-    .svg_desktop{
-        display: none;
-    }
+        .texto_mobile .flip-card {
+            background-color: transparent;
+            min-width: 12rem;
+            height: 150px;
+            perspective: 1000px;
+        }
+        
+        .texto_mobile .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        
+        .texto_mobile  .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .texto_mobile .flip-card-front, .texto_mobile .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        
+        .texto_mobile .flip-card-front {
+            background: rgba( 255, 255, 255, 0.25 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 4px );
+            -webkit-backdrop-filter: blur( 4px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            color: black;
+        }
+        
+        .texto_mobile .flip-card-back {
+            background-color: #d9dbf1;
+            transform: rotateY(180deg);
+        }
+        
 
-    .barra_topo{
-        display: none;
-    }
+        .img_mural_mobile{
+            width: 90%;
+            position: relative;
+            align-self: center;
+        }
 
-    #baloes_desktop{
-        display: none;
-    }
+        .svg_desktop{
+            display: none;
+        }
 
-    #racao_form{
-        display: none;}
-}
+        .barra_topo{
+            display: none;
+        }
+        #baloes_desktop{
+            display: none;
+        }
+
+        #racao_form{
+            display: none;}
+    }
