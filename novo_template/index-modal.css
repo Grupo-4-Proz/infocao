@@ -164,7 +164,7 @@ body .balao_item .balao_btn:active {
     cursor: pointer;
 }
 
-#modal_adotante,#modal_nao_adotante, #racao_form {
+#modal_adotante,#modal_nao_adotante, #racao_form, #modal_ongs{
     width: 50vw;
     height: 90vh;
     padding: 20px;
