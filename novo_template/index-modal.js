@@ -64,6 +64,8 @@ function handleMouseEvents(balaoElement) {
 const balaoElements = {
     "#racao": "#balao_racao",
     "#roupinhas":"#balao_origem",
+    "#gaiola_3":"#balao_ongs",
+    "#recep_infocao":"#balao_divulgue_ongs",
 };
 console.log(balaoElements);
 
