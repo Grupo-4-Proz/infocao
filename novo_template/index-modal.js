@@ -128,7 +128,7 @@ modalDivulgueOngs.init("#recep_infocao");
 
 document.addEventListener("DOMContentLoaded", function() {
     const idList = [
-        "cachorro_colo", "carinho_chao", "atendente_adocao", "gaiola_3", "gaiola_2", "gaiola_1", "gaiola_vazia", "vet", "groomer", "dog_gym", "menina_cachorro", "recep_infocao", "gaiolas", "casinha", "brincando_bolinha", "quadro_3", "quadro_2", "quadro_1", "recepcao", "roupinhas", "almofada", "pct_racao", "racao", "corgi", "passeador", "espera", /* Adicione todos os IDs aqui */
+        "cachorro_colo", "carinho_chao", "atendente_adocao", "gaiola_3", "vet", "groomer", "dog_gym", "menina_cachorro", "recep_infocao", "brincando_bolinha", "recepcao", "roupinhas", "racao", "corgi", "passeador", "espera", /* Adicione todos os IDs aqui */
     ];
 
     idList.forEach(id => {
