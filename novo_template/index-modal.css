@@ -188,6 +188,12 @@ body .balao_item .balao_btn:active {
     max-height: 100%; 
   }
 
+  #historia {
+    width: 635px;
+    height: 70px;
+    resize: none; /* Evita que o usuário redimensione a área de texto */
+    /* Outros estilos opcionais, como cor de fundo, cor da fonte, margens, etc. */
+}
   .nao-adotante {
     display: flex;
     justify-content: center;

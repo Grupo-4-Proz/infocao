@@ -7,6 +7,8 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="index-modal.css">
+      <script src="./adocao.js" defer></script>
+      <script src="./index-modal.js" defer></script>      
       <title>Infocão</title>
   </head>
   <body>
@@ -7741,10 +7743,29 @@
                 <input type="text" id="cidade" name="cidade" required><br><br>
                 <label for="foto">Foto do seu peludo:</label>
                 <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
-                <label for="historia">Conte sua história (até 200 caracteres):</label> <br>
-                <textarea id="historia" name="historia" maxlength="200" required></textarea><br><br>
+                <label for="historia">Conte sua história (até 400 caracteres):</label> <br>
+                <textarea id="historia" name="historia" maxlength="400" required></textarea><br>
+                <span id="contador-caracteres"> 400 caracteres restantes</span><br><br>
                 <button type="submit">Enviar</button>
             </form>
+            <script>
+              // Função para atualizar o contador de caracteres
+              function atualizarContador() {
+                  var textarea = document.getElementById("historia");
+                  var contador = document.getElementById("contador-caracteres");
+                  var caracteresDigitados = textarea.value.length;
+                  var caracteresRestantes = 400 - caracteresDigitados;
+                  contador.textContent = caracteresRestantes + " caracteres restantes";
+              }
+          
+              // Adiciona um ouvinte de evento de entrada ("input") no campo de texto
+              var textarea = document.getElementById("historia");
+              textarea.addEventListener("input", atualizarContador);
+          
+              // Chama a função inicialmente e a cada segundo para garantir que a contagem seja atualizada
+              atualizarContador();
+              setInterval(atualizarContador, 1000); // Atualiza a cada segundo
+          </script>
         </div>
     </div>
     <div class="modal" id="modal_nao_adotante">
