@@ -188,7 +188,7 @@ body .balao_item .balao_btn:active {
     max-height: 100%; 
   }
 
-  #historia {
+  #historiaAdocao {
     width: 635px;
     height: 70px;
     resize: none; /* Evita que o usuário redimensione a área de texto */
