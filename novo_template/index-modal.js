@@ -187,3 +187,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Função para copiar e exibir informações da ONG
+function exibirInformacoesONG() {
+    const ongForm = document.getElementById("ongForm");
+    const nomeONG = ongForm.querySelector("#nomeOng").value;
+    const historiaONG = ongForm.querySelector("#historiaOng").value;
+    const linkONG = ongForm.querySelector("#linkOng").value;
+
+    const ongInfo = {
+        nome: nomeONG,
+        historia: historiaONG,
+        link: linkONG,
+    };
+
+    localStorage.setItem("ongInfo", JSON.stringify(ongInfo));
+    atualizarModalONGs();
+}
+
+// Função para atualizar o modal_ongs com as informações armazenadas
+function atualizarModalONGs() {
+    const ongInfoString = localStorage.getItem("ongInfo");
+    const ongInfo = JSON.parse(ongInfoString);
+
+    if (ongInfo) {
+        const mensagem = `Nome da ONG: ${ongInfo.nome}<br>História da ONG: ${ongInfo.historia}<br>Link da ONG: ${ongInfo.link}`;
+        document.getElementById("ongInfo").innerHTML = mensagem;
+    }
+}
+
+// Adicionar um evento de envio ao formulário no modal_divulgue_ongs
+const ongForm = document.getElementById("ongForm");
+if (ongForm) {
+    ongForm.addEventListener("submit", function (event) {
+        event.preventDefault(); 
+        exibirInformacoesONG(); 
+    });
+}
+
+// Chamar a função para atualizar o modal_ongs quando a página for carregada
+window.addEventListener("load", atualizarModalONGs);
