@@ -180,24 +180,24 @@ body .balao_item .balao_btn:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh; /* Isso centralizará verticalmente a imagem na tela inteira. Você pode ajustar a altura conforme necessário. */
+    height: 50vh; 
   }
   
   img {
-    max-width: 100%; /* Certifica-se de que a imagem não ultrapasse a largura do contêiner. */
-    max-height: 100%; /* Certifica-se de que a imagem não ultrapasse a altura do contêiner. */
+    max-width: 100%;
+    max-height: 100%; 
   }
 
   .nao-adotante {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh; /* Isso centralizará verticalmente a imagem na tela inteira. Você pode ajustar a altura conforme necessário. */
+    height: 50vh; 
   }
   
   img {
-    max-width: 100%; /* Certifica-se de que a imagem não ultrapasse a largura do contêiner. */
-    max-height: 100%; /* Certifica-se de que a imagem não ultrapasse a altura do contêiner. */
+    max-width: 100%; 
+    max-height: 100%;
   }
 
 #balao_adotante{
