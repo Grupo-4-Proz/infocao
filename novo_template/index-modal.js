@@ -148,24 +148,42 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Função para copiar e exibir informações da ONG
-function exibirInformacoesONG() {
-    // Obter os valores do formulário no modal_divulgue_ongs
-    const nomeONG = document.getElementById("nome").value;
-    const historiaONG = document.getElementById("historia").value;
-    const linkONG = document.getElementById("link").value;
-  
-    // Criar uma mensagem com as informações
-    const mensagem = `Nome da ONG: ${nomeONG}<br>História da ONG: ${historiaONG}<br>Link da ONG: ${linkONG}`;
-  
-    // Exibir as informações no modal_ongs
-    document.getElementById("ongInfo").innerHTML = mensagem;
-  }
-  
-  // Adicionar um evento de envio ao formulário no modal_divulgue_ongs
-  const ongForm = document.getElementById("ongForm");
-  ongForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar o envio do formulário tradicional
-    exibirInformacoesONG(); // Chamar a função para exibir as informações
-  });
-  
+document.addEventListener("DOMContentLoaded", function () {
+    const ongForm = document.getElementById("ongForm");
+    const ongInfo = document.getElementById("ongInfo");
+    
+    if (ongForm) {
+        ongForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário padrão
+    
+            // Recupere os valores dos campos do formulário
+            const ongName = document.getElementById("nomeOng").value;
+            const ongStory = document.getElementById("historiaOng").value;
+            const ongLink = document.getElementById("linkOng").value;
+    
+            // Copie os valores para o modal ONGs (substitua os IDs dos elementos conforme necessário)
+            const modalOngsName = document.getElementById("modalOngsNome");
+            const modalOngsStory = document.getElementById("modalOngsHistoria");
+            const modalOngsLink = document.getElementById("modalOngsLink");
+    
+            modalOngsName.textContent = ongName;
+            modalOngsStory.textContent = ongStory;
+            modalOngsLink.href = ongLink;
+    
+            // Crie um card com as informações preenchidas
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+                <div class="card-content">
+                    <h3>${ongName}</h3>
+                    <p>${ongStory}</p>
+                    <a href="${ongLink}" class="helpButton">Ajude aqui</a>
+                </div>
+            `;
+    
+            // Adicione o card ao elemento com o ID "ongInfo"
+            ongInfo.appendChild(card);
+        });
+    }
+});
+
