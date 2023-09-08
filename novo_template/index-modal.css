@@ -176,29 +176,6 @@ body .balao_item .balao_btn:active {
     overflow-y: auto; /* Adiciona scroll quando necessário */
     background-color:#f9f9ed; /* Adiciona um fundo branco */
 }
-.adocao-obrigado {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh; 
-  }
-  
-  img {
-    max-width: 100%;
-    max-height: 100%; 
-  }
-
-  .nao-adotante {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh; 
-  }
-  
-  img {
-    max-width: 100%; 
-    max-height: 100%;
-  }
 
 #balao_adotante{
     width: 15vw;
@@ -280,7 +257,7 @@ fieldset{
     border-color: #dbfa47;
 }
 
-#cachorro_colo, #carinho_chao, #atendente_adocao,#cachorro_colo, #carinho_chao, #atendente_adocao, #gaiola_3, #vet, #groomer, #dog_gym, #menina_cachorro, #recep_infocao, #brincando_bolinha, #recepcao, #roupinhas, #racao, #corgi, #passeador, #espera{
+#cachorro_colo, #carinho_chao, #atendente_adocao,#cachorro_colo, #carinho_chao, #atendente_adocao, #gaiola_3, #gaiola_2, #gaiola_1, #gaiola_vazia, #vet, #groomer, #dog_gym, #menina_cachorro, #recep_infocao, #gaiolas, #casinha, #brincando_bolinha, #quadro_3, #quadro_2, #quadro_1, #recepcao, #roupinhas, #almofada, #pct_racao, #racao, #corgi, #passeador, #espera{
     filter:grayscale(100%);
 }
 
@@ -363,4 +340,17 @@ fieldset{
 
     #racao_form{
         display: none;}
+}
+
+/* Estilos padrão para o card */
+.card {
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Estilos quando o mouse está sobre o card */
+.card.hovered {
+    transform: translateY(-5px);
 }
