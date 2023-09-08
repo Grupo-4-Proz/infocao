@@ -176,6 +176,29 @@ body .balao_item .balao_btn:active {
     overflow-y: auto; /* Adiciona scroll quando necessário */
     background-color:#f9f9ed; /* Adiciona um fundo branco */
 }
+.adocao-obrigado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Isso centralizará verticalmente a imagem na tela inteira. Você pode ajustar a altura conforme necessário. */
+  }
+  
+  img {
+    max-width: 100%; /* Certifica-se de que a imagem não ultrapasse a largura do contêiner. */
+    max-height: 100%; /* Certifica-se de que a imagem não ultrapasse a altura do contêiner. */
+  }
+
+  .nao-adotante {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Isso centralizará verticalmente a imagem na tela inteira. Você pode ajustar a altura conforme necessário. */
+  }
+  
+  img {
+    max-width: 100%; /* Certifica-se de que a imagem não ultrapasse a largura do contêiner. */
+    max-height: 100%; /* Certifica-se de que a imagem não ultrapasse a altura do contêiner. */
+  }
 
 #balao_adotante{
     width: 15vw;
