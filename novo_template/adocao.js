@@ -1,3 +1,5 @@
+
+
 function atualizarContador() {
     var textarea = document.getElementById("historia");
     var contador = document.getElementById("contador-caracteres");
@@ -14,4 +16,3 @@ textarea.addEventListener("input", atualizarContador);
 atualizarContador();
 setInterval(atualizarContador, 1000); // Atualiza a cada segundo
 
-console.log(bosta)

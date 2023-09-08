@@ -163,6 +163,22 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+function atualizarContador() {
+    var textarea = document.getElementById("historiaAdocao");
+    var contador = document.getElementById("contador-caracteres");
+    var caracteresDigitados = textarea.value.length;
+    var caracteresRestantes = 400 - caracteresDigitados;
+    contador.textContent = caracteresRestantes + " caracteres restantes";
+    console.log(historia)
+}
+
+
+var textarea = document.getElementById("historiaAdocao");
+textarea.addEventListener("input", atualizarContador);
+
+
+atualizarContador();
+setInterval(atualizarContador, 1000); 
 
 
 
