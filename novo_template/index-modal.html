@@ -7667,17 +7667,17 @@ Além de que agora existem petshops e até hotéis, os cachorrinhos estão ganha
   <div class="modal-content" id="modalOverlayDivulgue">
       <h2 class="modal_titulo">Faça sua voz ser ouvida, sua causa ganhar visibilidade e seus esforços alcançarem corações.</h2>
       <p> Clique no botão 'Divulgue sua ONG' e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
-          <form id="ongForm" action="" method="post">
-            <label for="nome">Nome da ONG:</label>
-            <input type="text" id="nomeOng" name="nomeOng" required>
-            <label for="historia">História da ONG:</label>
-            <textarea id="historiaOng" name="historiaOng" required></textarea>
-            <label for="link">Link da ONG:</label>
-            <input type="url" id="linkOng" name="linkOng" required>
-            <label for="imagem">Imagem da ONG:</label>
-            <input type="file" id="imagemOng" name="imagemOng">
-            <input type="submit" value="Salvar">
-          </form>
+        <form id="ongForm" action="processar_formulario.php" method="post" enctype="multipart/form-data">
+          <label for="nomeOng">Nome da ONG:</label>
+          <input type="text" id="nomeOng" name="nomeOng" required>
+          <label for="historiaOng">História da ONG:</label>
+          <textarea id="historiaOng" name="historiaOng" required></textarea>
+          <label for="linkOng">Link da ONG:</label>
+          <input type="url" id="linkOng" name="linkOng" required>
+          <label for="imagemOng">Imagem da ONG:</label>
+          <input type="file" id="imagemOng" name="imagemOng" accept="image/*" required>
+          <input type="submit" value="Salvar">
+      </form>
         </div>
 </div>
 

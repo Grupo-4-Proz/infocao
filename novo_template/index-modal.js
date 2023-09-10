@@ -150,8 +150,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const ongForm = document.getElementById("ongForm");
-    const ongInfoOngs = document.getElementById("modalOverlayOngs");
-    const ongInfoDivulgue = document.getElementById("modalOverlayDivulgue");
+    const ongInfoOngs = document.getElementById("ongInfoOngs"); // Adicione a definição do elemento ongInfoOngs
+    const ongInfoDivulgue = document.getElementById("ongInfoDivulgue"); // Adicione a definição do elemento ongInfoDivulgue
 
     if (ongForm) {
         ongForm.addEventListener("submit", function (event) {
@@ -161,6 +161,19 @@ document.addEventListener("DOMContentLoaded", function () {
             const ongName = document.getElementById("nomeOng").value;
             const ongStory = document.getElementById("historiaOng").value;
             const ongLink = document.getElementById("linkOng").value;
+            const ongImage = document.getElementById("imagemOng").files[0];
+
+            // Crie um card com as informações preenchidas
+            const card = document.createElement("div");
+            card.classList.add("ong-card");
+            card.innerHTML = `
+                <img src="" alt="Imagem da ONG" id="imagemOngCard">
+                <div class="ong-card-content">
+                    <h3 id="nomeOngCard">${ongName}</h3>
+                    <p id="historiaOngCard">${ongStory}</p>
+                    <a href="${ongLink}" class="helpButton" id="linkOngCard" target="_blank">Ajude aqui</a>
+                </div>
+            `;
 
             // Copie os valores para os modais (substitua os IDs dos elementos conforme necessário)
             if (ongInfoOngs) {
@@ -179,16 +192,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
             }
 
-            // Crie um card com as informações preenchidas
-            const card = document.createElement("div");
-            card.classList.add("card");
-            card.innerHTML = `
-                <div class="card-content">
-                    <h3>${ongName}</h3>
-                    <p>${ongStory}</p>
-                    <a href="${ongLink}" class="helpButton">Ajude aqui</a>
-                </div>
-            `;
+            if (ongImage) {
+                const imagemOngCard = card.querySelector("#imagemOngCard");
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imagemOngCard.src = e.target.result;
+                };
+                reader.readAsDataURL(ongImage);
+            }
 
             // Adicione o card ao elemento com o ID "ongInfo"
             if (ongInfoOngs) {
