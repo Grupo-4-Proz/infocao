@@ -150,24 +150,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const ongForm = document.getElementById("ongForm");
-    const ongInfoOngs = document.getElementById("ongInfoOngs"); // Adicione a definição do elemento ongInfoOngs
-    const ongInfoDivulgue = document.getElementById("ongInfoDivulgue"); // Adicione a definição do elemento ongInfoDivulgue
+    const ongInfoOngs = document.getElementById("ongInfoOngs");
+    const ongInfoDivulgue = document.getElementById("ongInfoDivulgue");
 
     if (ongForm) {
         ongForm.addEventListener("submit", function (event) {
             event.preventDefault();
 
-            // Recupere os valores dos campos do formulário
             const ongName = document.getElementById("nomeOng").value;
             const ongStory = document.getElementById("historiaOng").value;
             const ongLink = document.getElementById("linkOng").value;
             const ongImage = document.getElementById("imagemOng").files[0];
 
-            // Crie um card com as informações preenchidas
             const card = document.createElement("div");
             card.classList.add("ong-card");
             card.innerHTML = `
-                <img src="" alt="Imagem da ONG" id="imagemOngCard">
+                <img src="${ongImage ? '' : 'caminho_para_uma_imagem_padrao.jpg'}" alt="Imagem da ONG" id="imagemOngCard">
                 <div class="ong-card-content">
                     <h3 id="nomeOngCard">${ongName}</h3>
                     <p id="historiaOngCard">${ongStory}</p>
@@ -175,22 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `;
 
-            // Copie os valores para os modais (substitua os IDs dos elementos conforme necessário)
-            if (ongInfoOngs) {
-                ongInfoOngs.innerHTML = `
-                    <p>Nome da ONG: ${ongName}</p>
-                    <p>História da ONG: ${ongStory}</p>
-                    <p>Link da ONG: <a href="${ongLink}" target="_blank">${ongLink}</a></p>
-                `;
-            }
-
-            if (ongInfoDivulgue) {
-                ongInfoDivulgue.innerHTML = `
-                    <p>Nome da ONG: ${ongName}</p>
-                    <p>História da ONG: ${ongStory}</p>
-                    <p>Link da ONG: <a href="${ongLink}" target="_blank">${ongLink}</a></p>
-                `;
-            }
+            copiarInformacoesParaModal(ongName, ongStory, ongLink);
 
             if (ongImage) {
                 const imagemOngCard = card.querySelector("#imagemOngCard");
@@ -201,55 +184,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 reader.readAsDataURL(ongImage);
             }
 
-            // Adicione o card ao elemento com o ID "ongInfo"
             if (ongInfoOngs) {
                 ongInfoOngs.appendChild(card);
             }
         });
     }
 
-    // Função para copiar e exibir informações da ONG
-    function exibirInformacoesONG() {
-        const ongForm = document.getElementById("ongForm");
-        const nomeONG = ongForm.querySelector("#nomeOng").value;
-        const historiaONG = ongForm.querySelector("#historiaOng").value;
-        const linkONG = ongForm.querySelector("#linkOng").value;
+    function copiarInformacoesParaModal(ongName, ongStory, ongLink) {
+        const mensagemOngs = `Nome da ONG: ${ongName}<br>História da ONG: ${ongStory}<br>Link da ONG: ${ongLink}`;
+        if (ongInfoOngs) {
+            ongInfoOngs.innerHTML = mensagemOngs;
+        }
 
-        const ongInfo = {
-            nome: nomeONG,
-            historia: historiaONG,
-            link: linkONG,
-        };
-
-        localStorage.setItem("ongInfo", JSON.stringify(ongInfo));
-        atualizarModalONGs();
-    }
-
-    // Função para atualizar os modais com as informações armazenadas
-    function atualizarModalONGs() {
-        const ongInfoString = localStorage.getItem("ongInfo");
-        const ongInfo = JSON.parse(ongInfoString);
-
-        if (ongInfo) {
-            const mensagemOngs = `Nome da ONG: ${ongInfo.nome}<br>História da ONG: ${ongInfo.historia}<br>Link da ONG: ${ongInfo.link}`;
-            if (ongInfoOngs) {
-                ongInfoOngs.innerHTML = mensagemOngs;
-            }
-
-            if (ongInfoDivulgue) {
-                ongInfoDivulgue.innerHTML = mensagemOngs;
-            }
+        if (ongInfoDivulgue) {
+            ongInfoDivulgue.innerHTML = mensagemOngs;
         }
     }
 
-    // Adicionar um evento de envio ao formulário no modal_divulgue_ongs
     if (ongForm) {
         ongForm.addEventListener("submit", function (event) {
             event.preventDefault();
-            exibirInformacoesONG();
+            copiarInformacoesParaModal(
+                document.getElementById("nomeOng").value,
+                document.getElementById("historiaOng").value,
+                document.getElementById("linkOng").value
+            );
         });
     }
-
-    // Chamar a função para atualizar os modais quando a página for carregada
-    atualizarModalONGs();
 });
