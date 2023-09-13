@@ -164,7 +164,7 @@ body .balao_item .balao_btn:active {
     cursor: pointer;
 }
 
-#modal_adotante,#modal_nao_adotante, #racao_form, #modal_ongs{
+#modal_origem, #modal_adotante,#modal_nao_adotante, #racao_form, #modal_ongs, #modal_mural{
     width: 50vw;
     height: 90vh;
     padding: 20px;
@@ -176,6 +176,11 @@ body .balao_item .balao_btn:active {
     overflow-y: auto; /* Adiciona scroll quando necessário */
     background-color:#f9f9ed; /* Adiciona um fundo branco */
 }
+
+#modal_origem img{
+    width: 200px;
+}
+
 .adocao-obrigado {
     display: flex;
     justify-content: center;
@@ -188,23 +193,56 @@ body .balao_item .balao_btn:active {
     max-height: 100%; 
   }
 
-  #historiaAdocao {
+#historiaAdocao {
     width: 635px;
     height: 70px;
     resize: none; /* Evita que o usuário redimensione a área de texto */
     /* Outros estilos opcionais, como cor de fundo, cor da fonte, margens, etc. */
 }
-  .nao-adotante {
+.nao-adotante {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 58vh; 
   }
   
-  .nao-adotante img {
+.nao-adotante img {
     max-width: 100%; 
     max-height: 100%;
   }
+
+.foto_mural_depoimento{
+    max-width: 50%;
+    max-height: 60vh;
+    padding: 5% 20% 0 20%;
+    border-radius: 30%; 
+ }
+ 
+.depoimento_mural p{
+    padding: 5%;
+ } 
+
+.depoimento_mural{
+    border-radius: 20px;
+    max-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 4px solid #dbfa47;
+    margin: 10px;
+    justify-content: center;  
+    overflow: scroll;
+ } 
+
+ .nome_pet{
+    padding: 0 20% 0 20%;
+    color:#7d84b2;
+    font-weight: bold;
+    font-size: large;
+ }
+
+ #modal_mural h2{
+    padding: 0 0 0 30%;;
+ }
 
 #balao_adotante{
     width: 15vw;
@@ -247,6 +285,63 @@ body .balao_item .balao_btn:active {
   #balao_origem {
     filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
   }
+
+  #balao_divulgue_ongs{
+    margin-top: 60px;
+    margin-left: 130px;
+    transform: translateY(80vw);
+    transform: translateX(90vh);
+    width: fit-content;
+  }
+
+  #balao_ongs{
+    margin-top: 40px;
+    margin-left: 100px;
+  }
+
+ #balao_adotante{
+    margin-top: 140px;
+    margin-left: 100px;
+ }
+
+ #balao_nao_adotante{
+    margin-top: -30px;
+    margin-left: -70px;
+ }
+ #balao_nao_adotante::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
+    /*Aqui entra a cor da "aba" do balão */
+    border-top: 20px solid #f9f9ed;
+    bottom: -20px; /*localização. Experimente alterar para 'bottom'*/
+    left: 20%;
+   
+ }
+
+ #balao_mural_depoimentos{
+    margin-top: -30px;
+    margin-left: -85px;
+ }
+ #balao_mural_depoimentos::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
+    /*Aqui entra a cor da "aba" do balão */
+    border-top: 20px solid #f9f9ed;
+    bottom: -20px; /*localização. Experimente alterar para 'bottom'*/
+    left: 20%;
+   
+ }
+
   .input-group {
     margin-bottom: 15px;
 }
@@ -303,7 +398,6 @@ fieldset{
         border-radius: 15px;
         overflow: scroll;
         margin: 10px;
-       /* recomiendo quitar esto/quit this */
     }
     
     .texto_mobile.ativo {

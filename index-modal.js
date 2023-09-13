@@ -1,6 +1,3 @@
-const header = document.querySelector('.barra_topo');
-const cornerThreshold = 0.3; // 30% dos cantos
-
 window.addEventListener('mousemove', (event) => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
@@ -20,6 +17,8 @@ window.addEventListener('mousemove', (event) => {
 const balao = document.querySelector("#balao_recepcao");
 const btnFechar = document.querySelector(".balao_btn");
 const elemento = document.querySelector("#recepcao");
+
+
 
 // Função para mostrar o balão de recepção
 function showBalao() {
@@ -50,9 +49,20 @@ function handleMouseEvents(balaoElement) {
         over: function() {
             // Posiciona e mostra o balão ao passar o mouse
             const rect = this.getBoundingClientRect();
+            const balaoHeight = balaoElement.offsetHeight;
+            
+            // Obtém a posição vertical do balão ajustada para não ultrapassar o topo visível da página
+            let topPosition = rect.top - balaoHeight;
+            
+            // Verifica se o balão está acima do topo da página visível
+            if (topPosition < 0) {
+              topPosition = 0; // Ajusta a posição para alinhar com o topo visível da página
+            }
+            
             balaoElement.style.left = rect.left + "px";
-            balaoElement.style.top = (rect.top - balaoElement.offsetHeight) + "px";
+            balaoElement.style.top = topPosition + "px";
             balaoElement.classList.add('visible');
+            
         },
         out: function() {
             // Esconde o balão ao remover o mouse do elemento
@@ -67,6 +77,11 @@ const balaoElements = {
     "#roupinhas":"#balao_origem",
     "#gaiola_3":"#balao_ongs",
     "#recep_infocao":"#balao_divulgue_ongs",
+    "#espera":"#balao_adotante",
+    "#vet":"#balao_nao_adotante",
+    "#cachorro_colo":"#balao_mural_depoimentos"
+
+
 };
 console.log(balaoElements);
 
@@ -127,6 +142,9 @@ modalNaoAdotante.init("#vet");
 const modalDivulgueOngs = manageModal("#modal_divulgue_ongs", "#modalOverlay");
 modalDivulgueOngs.init("#recep_infocao");
 
+const modalMural = manageModal("#modal_mural", "#modalOverlay");
+modalMural.init("#cachorro_colo");
+
 document.addEventListener("DOMContentLoaded", function() {
     const idList = [
         "cachorro_colo", "carinho_chao", "atendente_adocao", "gaiola_3", "vet", "groomer", "dog_gym", "menina_cachorro", "recep_infocao", "brincando_bolinha", "recepcao", "roupinhas", "racao", "corgi", "passeador", "espera", /* Adicione todos os IDs aqui */
@@ -135,13 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
     idList.forEach(id => {
         const image = document.getElementById(id);
         if (image) {
-            // Adicionar evento de passar o mouse
-            image.addEventListener("mouseenter", function() {
-                image.style.filter = "grayscale(100%)";
-            });
-
-            // Adicionar evento de retirar o mouse
-            image.addEventListener("mouseleave", function() {
+            image.addEventListener("click", function() {
                 
                 image.style.filter = "none";
             });
