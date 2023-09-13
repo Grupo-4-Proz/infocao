@@ -34,6 +34,7 @@ function showBalao() {
     balao.classList.add('visible');
 }
 
+// Usar transform translate para os outros baloes? Ou fazer ele "ouvir" onde o mouse está e posicionar no elemento
 // Exibe o balão no carregamento da página
 showBalao();
 
