@@ -183,7 +183,7 @@ body .balao_item .balao_btn:active {
     height: 50vh; 
   }
   
-  img {
+  .adocao-obrigado img {
     max-width: 100%;
     max-height: 100%; 
   }
@@ -201,7 +201,7 @@ body .balao_item .balao_btn:active {
     height: 58vh; 
   }
   
-  img {
+  .nao-adotante img {
     max-width: 100%; 
     max-height: 100%;
   }
@@ -251,7 +251,7 @@ body .balao_item .balao_btn:active {
     margin-bottom: 15px;
 }
 
-label {
+#alimentacao label {
     display: block;
     margin-bottom: 5px;
     color: #333;
