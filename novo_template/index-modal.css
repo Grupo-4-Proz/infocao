@@ -243,6 +243,20 @@ body .balao_item .balao_btn:active {
   }
 
 
+  small {
+    font-size: 80%; /* Ajuste o tamanho da fonte de acordo com suas preferências */
+    color: #999; /* Cor do texto menor */
+    /* Outras propriedades de estilo, como font-weight, font-family, etc. */
+}
+
+.contador-menor {
+    font-size: 80%; /* Ajuste o tamanho da fonte de acordo com suas preferências */
+    color: #999; /* Cor do texto menor */
+    /* Outras propriedades de estilo, como font-weight, font-family, etc. */
+}
+
+
+
 
 
 #balao_adotante{

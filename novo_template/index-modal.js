@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function atualizarContador() {
     var textarea = document.getElementById("historiaAdocao");
-    var contador = document.getElementById("contador-caracteres");
+    var contador = document.getElementById("contador-caracteres-adocao");
     var caracteresDigitados = textarea.value.length;
     var caracteresRestantes = 400 - caracteresDigitados;
     contador.textContent = caracteresRestantes + " caracteres restantes";
