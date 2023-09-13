@@ -63,8 +63,9 @@ function handleMouseEvents(balaoElement) {
 // Mapeamento dos elementos e seus respectivos balões
 const balaoElements = {
     "#racao": "#balao_racao",
-    "#gaiola_3" : "#balao_ongs",
-    "#recep_infocao" : "#balao_divulgue_ongs"
+    "#roupinhas":"#balao_origem",
+    "#gaiola_3":"#balao_ongs",
+    "#recep_infocao":"#balao_divulgue_ongs",
 };
 console.log(balaoElements);
 
@@ -115,20 +116,19 @@ modalRacao.init("#racao");
 const modalAdotante = manageModal("#modal_adotante", "#modalOverlay");
 modalAdotante.init("#espera");
 
-// Configuração do modal de não-adotante
-const modalNaoAdotante = manageModal("#modal_nao_adotante", "#modalOverlay");
-modalNaoAdotante.init("#maca_2");
-
-// Configuração do modal ONGs
 const modalOngs = manageModal("#modal_ongs", "#modalOverlay");
 modalOngs.init("#gaiola_3");
+
+// Configuração do modal de não-adotante
+const modalNaoAdotante = manageModal("#modal_nao_adotante", "#modalOverlay");
+modalNaoAdotante.init("#vet");
 
 const modalDivulgueOngs = manageModal("#modal_divulgue_ongs", "#modalOverlay");
 modalDivulgueOngs.init("#recep_infocao");
 
 document.addEventListener("DOMContentLoaded", function() {
     const idList = [
-        "cachorro_colo", "carinho_chao", "atendente_adocao", "gaiola_3", "gaiola_2", "gaiola_1", "gaiola_vazia", "vet", "groomer", "dog_gym", "menina_cachorro", "recep_infocao", "gaiolas", "casinha", "brincando_bolinha", "quadro_3", "quadro_2", "quadro_1", "recepcao", "roupinhas", "almofada", "pct_racao", "racao", "corgi", "passeador", "espera", /* Adicione todos os IDs aqui */
+        "cachorro_colo", "carinho_chao", "atendente_adocao", "gaiola_3", "vet", "groomer", "dog_gym", "menina_cachorro", "recep_infocao", "brincando_bolinha", "recepcao", "roupinhas", "racao", "corgi", "passeador", "espera", /* Adicione todos os IDs aqui */
     ];
 
     idList.forEach(id => {
@@ -162,5 +162,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-    
+
+function atualizarContador() {
+    var textarea = document.getElementById("historiaAdocao");
+    var contador = document.getElementById("contador-caracteres");
+    var caracteresDigitados = textarea.value.length;
+    var caracteresRestantes = 400 - caracteresDigitados;
+    contador.textContent = caracteresRestantes + " caracteres restantes";
+    console.log(historia)
+}
+
+
+var textarea = document.getElementById("historiaAdocao");
+textarea.addEventListener("input", atualizarContador);
+
+
+atualizarContador();
+setInterval(atualizarContador, 1000); 
+
+
+
+
+
 
