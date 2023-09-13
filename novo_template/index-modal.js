@@ -229,7 +229,6 @@ historiaTextarea.addEventListener('input', () => {
 
 //////Exibir Miniatura Formulário ONGS/////
 
-
 const imagemInput = document.getElementById('imagem');
 const miniaturaImagem = document.getElementById('miniatura-imagem');
 
