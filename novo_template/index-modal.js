@@ -64,8 +64,9 @@ function handleMouseEvents(balaoElement) {
 // Mapeamento dos elementos e seus respectivos balões
 const balaoElements = {
     "#racao": "#balao_racao",
-    "#gaiola_3" : "#balao_ongs",
-    "#recep_infocao" : "#balao_divulgue_ongs"
+    "#roupinhas":"#balao_origem",
+    "#gaiola_3":"#balao_ongs",
+    "#recep_infocao":"#balao_divulgue_ongs",
 };
 console.log(balaoElements);
 
@@ -116,20 +117,19 @@ modalRacao.init("#racao");
 const modalAdotante = manageModal("#modal_adotante", "#modalOverlay");
 modalAdotante.init("#espera");
 
-// Configuração do modal de não-adotante
-const modalNaoAdotante = manageModal("#modal_nao_adotante", "#modalOverlay");
-modalNaoAdotante.init("#maca_2");
-
-// Configuração do modal ONGs
 const modalOngs = manageModal("#modal_ongs", "#modalOverlay");
 modalOngs.init("#gaiola_3");
+
+// Configuração do modal de não-adotante
+const modalNaoAdotante = manageModal("#modal_nao_adotante", "#modalOverlay");
+modalNaoAdotante.init("#vet");
 
 const modalDivulgueOngs = manageModal("#modal_divulgue_ongs", "#modalOverlay");
 modalDivulgueOngs.init("#recep_infocao");
 
 document.addEventListener("DOMContentLoaded", function() {
     const idList = [
-        "cachorro_colo", "carinho_chao", "atendente_adocao", "gaiola_3", "gaiola_2", "gaiola_1", "gaiola_vazia", "vet", "groomer", "dog_gym", "menina_cachorro", "recep_infocao", "gaiolas", "casinha", "brincando_bolinha", "quadro_3", "quadro_2", "quadro_1", "recepcao", "roupinhas", "almofada", "pct_racao", "racao", "corgi", "passeador", "espera", /* Adicione todos os IDs aqui */
+        "cachorro_colo", "carinho_chao", "atendente_adocao", "gaiola_3", "vet", "groomer", "dog_gym", "menina_cachorro", "recep_infocao", "brincando_bolinha", "recepcao", "roupinhas", "racao", "corgi", "passeador", "espera", /* Adicione todos os IDs aqui */
     ];
 
     idList.forEach(id => {
@@ -150,96 +150,39 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const ongForm = document.getElementById("ongForm");
-    const ongInfoOngs = document.getElementById("modalOverlayOngs");
-    const ongInfoDivulgue = document.getElementById("modalOverlayDivulgue");
+    const mobileElements = document.querySelectorAll('.mobile');
+    mobileElements.forEach(element => {
+        element.addEventListener('click', () => {
+            const textoMobile = element.querySelector('.texto_mobile');
+            textoMobile.classList.toggle('ativo');
 
-    if (ongForm) {
-        ongForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            // Recupere os valores dos campos do formulário
-            const ongName = document.getElementById("nomeOng").value;
-            const ongStory = document.getElementById("historiaOng").value;
-            const ongLink = document.getElementById("linkOng").value;
-
-            // Copie os valores para os modais (substitua os IDs dos elementos conforme necessário)
-            if (ongInfoOngs) {
-                ongInfoOngs.innerHTML = `
-                    <p>Nome da ONG: ${ongName}</p>
-                    <p>História da ONG: ${ongStory}</p>
-                    <p>Link da ONG: <a href="${ongLink}" target="_blank">${ongLink}</a></p>
-                `;
-            }
-
-            if (ongInfoDivulgue) {
-                ongInfoDivulgue.innerHTML = `
-                    <p>Nome da ONG: ${ongName}</p>
-                    <p>História da ONG: ${ongStory}</p>
-                    <p>Link da ONG: <a href="${ongLink}" target="_blank">${ongLink}</a></p>
-                `;
-            }
-
-            // Crie um card com as informações preenchidas
-            const card = document.createElement("div");
-            card.classList.add("card");
-            card.innerHTML = `
-                <div class="card-content">
-                    <h3>${ongName}</h3>
-                    <p>${ongStory}</p>
-                    <a href="${ongLink}" class="helpButton">Ajude aqui</a>
-                </div>
-            `;
-
-            // Adicione o card ao elemento com o ID "ongInfo"
-            if (ongInfoOngs) {
-                ongInfoOngs.appendChild(card);
-            }
+            // Adicione um console.log para depuração
+            console.log('Elemento clicado:', element);
+            console.log('Classe .ativo:', textoMobile.classList.contains('ativo'));
         });
-    }
-
-    // Função para copiar e exibir informações da ONG
-    function exibirInformacoesONG() {
-        const ongForm = document.getElementById("ongForm");
-        const nomeONG = ongForm.querySelector("#nomeOng").value;
-        const historiaONG = ongForm.querySelector("#historiaOng").value;
-        const linkONG = ongForm.querySelector("#linkOng").value;
-
-        const ongInfo = {
-            nome: nomeONG,
-            historia: historiaONG,
-            link: linkONG,
-        };
-
-        localStorage.setItem("ongInfo", JSON.stringify(ongInfo));
-        atualizarModalONGs();
-    }
-
-    // Função para atualizar os modais com as informações armazenadas
-    function atualizarModalONGs() {
-        const ongInfoString = localStorage.getItem("ongInfo");
-        const ongInfo = JSON.parse(ongInfoString);
-
-        if (ongInfo) {
-            const mensagemOngs = `Nome da ONG: ${ongInfo.nome}<br>História da ONG: ${ongInfo.historia}<br>Link da ONG: ${ongInfo.link}`;
-            if (ongInfoOngs) {
-                ongInfoOngs.innerHTML = mensagemOngs;
-            }
-
-            if (ongInfoDivulgue) {
-                ongInfoDivulgue.innerHTML = mensagemOngs;
-            }
-        }
-    }
-
-    // Adicionar um evento de envio ao formulário no modal_divulgue_ongs
-    if (ongForm) {
-        ongForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-            exibirInformacoesONG();
-        });
-    }
-
-    // Chamar a função para atualizar os modais quando a página for carregada
-    atualizarModalONGs();
+    });
 });
+
+
+function atualizarContador() {
+    var textarea = document.getElementById("historiaAdocao");
+    var contador = document.getElementById("contador-caracteres");
+    var caracteresDigitados = textarea.value.length;
+    var caracteresRestantes = 400 - caracteresDigitados;
+    contador.textContent = caracteresRestantes + " caracteres restantes";
+    console.log(historia)
+}
+
+
+var textarea = document.getElementById("historiaAdocao");
+textarea.addEventListener("input", atualizarContador);
+
+
+atualizarContador();
+setInterval(atualizarContador, 1000); 
+
+
+
+
+
+
