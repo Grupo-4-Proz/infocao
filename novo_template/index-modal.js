@@ -149,41 +149,18 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const ongForm = document.getElementById("ongForm");
-    const ongInfo = document.getElementById("ongInfo");
-    
-    if (ongForm) {
-        ongForm.addEventListener("submit", function(event) {
-            event.preventDefault(); // Impede o envio do formulário padrão
-    
-            // Recupere os valores dos campos do formulário
-            const ongName = document.getElementById("nomeOng").value;
-            const ongStory = document.getElementById("historiaOng").value;
-            const ongLink = document.getElementById("linkOng").value;
-    
-            // Copie os valores para o modal ONGs (substitua os IDs dos elementos conforme necessário)
-            const modalOngsName = document.getElementById("modalOngsNome");
-            const modalOngsStory = document.getElementById("modalOngsHistoria");
-            const modalOngsLink = document.getElementById("modalOngsLink");
-    
-            modalOngsName.textContent = ongName;
-            modalOngsStory.textContent = ongStory;
-            modalOngsLink.href = ongLink;
-    
-            // Crie um card com as informações preenchidas
-            const card = document.createElement("div");
-            card.classList.add("card");
-            card.innerHTML = `
-                <div class="card-content">
-                    <h3>${ongName}</h3>
-                    <p>${ongStory}</p>
-                    <a href="${ongLink}" class="helpButton">Ajude aqui</a>
-                </div>
-            `;
-    
-            // Adicione o card ao elemento com o ID "ongInfo"
-            ongInfo.appendChild(card);
+    const mobileElements = document.querySelectorAll('.mobile');
+    mobileElements.forEach(element => {
+        element.addEventListener('click', () => {
+            const textoMobile = element.querySelector('.texto_mobile');
+            textoMobile.classList.toggle('ativo');
+
+            // Adicione um console.log para depuração
+            console.log('Elemento clicado:', element);
+            console.log('Classe .ativo:', textoMobile.classList.contains('ativo'));
         });
-    }
+    });
 });
+
+    
 

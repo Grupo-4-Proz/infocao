@@ -176,6 +176,29 @@ body .balao_item .balao_btn:active {
     overflow-y: auto; /* Adiciona scroll quando necessário */
     background-color:#f9f9ed; /* Adiciona um fundo branco */
 }
+.adocao-obrigado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+  }
+  
+  img {
+    max-width: 100%;
+    max-height: 100%; 
+  }
+
+  .nao-adotante {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+  }
+  
+  img {
+    max-width: 100%; 
+    max-height: 100%;
+  }
 
 #balao_adotante{
     width: 15vw;
