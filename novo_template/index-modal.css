@@ -164,7 +164,7 @@ body .balao_item .balao_btn:active {
     cursor: pointer;
 }
 
-#modal_adotante,#modal_nao_adotante, #racao_form, #modal_ongs, #modal_divulgue_ongs{
+#modal_adotante,#modal_nao_adotante, #racao_form, #modal_ongs{
     width: 50vw;
     height: 90vh;
     padding: 20px;
@@ -188,11 +188,17 @@ body .balao_item .balao_btn:active {
     max-height: 100%; 
   }
 
+  #historiaAdocao {
+    width: 635px;
+    height: 70px;
+    resize: none; /* Evita que o usuário redimensione a área de texto */
+    /* Outros estilos opcionais, como cor de fundo, cor da fonte, margens, etc. */
+}
   .nao-adotante {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh; 
+    height: 58vh; 
   }
   
   img {
@@ -280,7 +286,7 @@ fieldset{
     border-color: #dbfa47;
 }
 
-#cachorro_colo, #carinho_chao, #atendente_adocao,#cachorro_colo, #carinho_chao, #atendente_adocao, #gaiola_3, #gaiola_2, #gaiola_1, #gaiola_vazia, #vet, #groomer, #dog_gym, #menina_cachorro, #recep_infocao, #gaiolas, #casinha, #brincando_bolinha, #quadro_3, #quadro_2, #quadro_1, #recepcao, #roupinhas, #almofada, #pct_racao, #racao, #corgi, #passeador, #espera{
+#cachorro_colo, #carinho_chao, #atendente_adocao,#cachorro_colo, #carinho_chao, #atendente_adocao, #gaiola_3, #vet, #groomer, #dog_gym, #menina_cachorro, #recep_infocao, #brincando_bolinha, #recepcao, #roupinhas, #racao, #corgi, #passeador, #espera{
     filter:grayscale(100%);
 }
 
@@ -363,17 +369,4 @@ fieldset{
 
     #racao_form{
         display: none;}
-}
-
-/* Estilos padrão para o card */
-.card {
-    width: 300px;
-    background-color: #fff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-/* Estilos quando o mouse está sobre o card */
-.card.hovered {
-    transform: translateY(-5px);
 }
