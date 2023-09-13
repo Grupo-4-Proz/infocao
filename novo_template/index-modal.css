@@ -176,6 +176,9 @@ body .balao_item .balao_btn:active {
     overflow-y: auto; /* Adiciona scroll quando necessário */
     background-color:#f9f9ed; /* Adiciona um fundo branco */
 }
+
+
+
 .adocao-obrigado {
     display: flex;
     justify-content: center;
@@ -205,6 +208,42 @@ body .balao_item .balao_btn:active {
     max-width: 100%; 
     max-height: 100%;
   }
+  
+  
+
+
+  #ongForm label {
+    display: block; /* Coloca os rótulos em uma nova linha */
+    margin-bottom: 5px; /* Espaçamento inferior entre os rótulos e os campos */
+  }
+
+  /* Estilo para o container do campo "História da ONG" */
+  .historia-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #historia-Ong {
+    width: 635px; /* Largura do campo de texto */
+    height: 70px; /* Altura do campo de texto */
+    resize: none; /* Desativa o redimensionamento */
+  }
+
+  /* Estilo para o contador de caracteres */
+  #contador-caracteres {
+    margin-top: 5px; /* Espaçamento superior entre o campo de texto e o contador */
+    color: #555; /* Cor do contador de caracteres */
+  }
+
+/* Estilo para a miniatura da imagem */
+#miniatura-imagem {
+    max-width: 100px; /* Largura máxima da miniatura */
+    max-height: 100px; /* Altura máxima da miniatura */
+    margin-top: 10px; /* Espaçamento superior entre a miniatura e o botão "Enviar" */
+  }
+
+
+
 
 #balao_adotante{
     width: 15vw;

@@ -164,6 +164,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+/////Contador caracteres Formulário Adotante Conte Sua Historia//////
+
 function atualizarContador() {
     var textarea = document.getElementById("historiaAdocao");
     var contador = document.getElementById("contador-caracteres");
@@ -184,5 +188,64 @@ setInterval(atualizarContador, 1000);
 
 
 
+//////Exibir Miniatura Formulário Adotante Conte Sua Historia/////
 
+function exibirMiniatura() {
+    const inputFoto = document.getElementById('foto');
+    const miniatura = document.getElementById('miniatura');
+
+    if (inputFoto.files && inputFoto.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            miniatura.src = e.target.result;
+            miniatura.style.display = 'block';
+        };
+
+        reader.readAsDataURL(inputFoto.files[0]);
+    } else {
+        miniatura.src = '';
+        miniatura.style.display = 'none';
+    }
+}
+
+
+
+
+///////Contador de Caracteres Formulário ONGS////
+
+const historiaTextarea = document.getElementById('historia-Ong');
+const contadorCaracteres = document.getElementById('contador-caracteres');
+
+historiaTextarea.addEventListener('input', () => {
+    const caracteresDigitados = historiaTextarea.value.length;
+    const caracteresRestantes = 400 - caracteresDigitados;
+
+    contadorCaracteres.textContent = caracteresRestantes + ' caracteres restantes';
+});
+
+
+
+
+//////Exibir Miniatura Formulário ONGS/////
+
+
+const imagemInput = document.getElementById('imagem');
+const miniaturaImagem = document.getElementById('miniatura-imagem');
+
+imagemInput.addEventListener('change', () => {
+    if (imagemInput.files && imagemInput.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            miniaturaImagem.src = e.target.result;
+            miniaturaImagem.style.display = 'block';
+        };
+
+        reader.readAsDataURL(imagemInput.files[0]);
+    } else {
+        miniaturaImagem.src = '';
+        miniaturaImagem.style.display = 'none';
+    }
+});
 
