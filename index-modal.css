@@ -177,12 +177,6 @@ body .balao_item .balao_btn:active {
     background-color:#f9f9ed; /* Adiciona um fundo branco */
 }
 
-<<<<<<< HEAD:novo_template/index-modal.css
-=======
-#modal_origem img{
-    width: 200px;
-}
->>>>>>> 6424c16ad6f4ff9d0cec1bf0a6df3e77f8fe032b:index-modal.css
 
 .adocao-obrigado {
     display: flex;
