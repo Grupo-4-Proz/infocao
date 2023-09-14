@@ -132,14 +132,14 @@ modalRacao.init("#racao");
 const modalAdotante = manageModal("#modal_adotante", "#modalOverlay");
 modalAdotante.init("#espera");
 
-const modalOngs = manageModal("#modalOngs", "#modalOverlay");
+const modalOngs = manageModal("#modal_ongs", "#modalOverlay");
 modalOngs.init("#gaiola_3");
 
 // Configuração do modal de não-adotante
 const modalNaoAdotante = manageModal("#modal_nao_adotante", "#modalOverlay");
 modalNaoAdotante.init("#vet");
 
-const modalDivulgueOngs = manageModal("#modalDivulgueOngs", "#modalOverlay");
+const modalDivulgueOngs = manageModal("#modal_divulgue_ongs", "#modalOverlay");
 modalDivulgueOngs.init("#recep_infocao");
 
 const modalMural = manageModal("#modal_mural", "#modalOverlay");
@@ -175,6 +175,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+
+
 /////Contador caracteres Formulário Adotante Conte Sua Historia e ONGS//////
 
 function atualizarContador() {
@@ -194,6 +197,9 @@ function atualizarContador() {
 }
     atualizarContador();
     setInterval(atualizarContador, 1000);
+
+
+
 
 //////Exibir Miniatura Formulário Adotante Conte Sua Historia/////
 
@@ -269,49 +275,3 @@ const miniaturaImagem = document.getElementById('miniatura-imagem');
 imagemInput.addEventListener('change', () => {
     exibirMiniatura(imagemInput, miniaturaImagem);
 });
-
-// Função para enviar o formulário e criar um cartão de ONG
-function submitForm() {
-    const nomeOng = document.getElementById("nomeOng").value;
-    const historiaOng = document.getElementById("historiaOng").value;
-    const imagemOng = document.getElementById("imagemOng").value;
-    const urlOng = document.getElementById("urlOng").value;
-
-    if (nomeOng === "" || historiaOng === "" || imagemOng === "" || urlOng === "") {
-        alert("Por favor, preencha todos os campos do formulário.");
-        return;
-    }
-
-    const cardDiv = document.createElement("div");
-    cardDiv.className = "ong-card";
-
-    const cardImage = document.createElement("img");
-    cardImage.src = imagemOng;
-    cardImage.alt = nomeOng;
-
-    const cardTitle = document.createElement("h3");
-    cardTitle.innerText = nomeOng;
-
-    const cardHistory = document.createElement("p");
-    cardHistory.innerText = historiaOng;
-
-    const cardButton = document.createElement("a");
-    cardButton.href = urlOng;
-    cardButton.className = "help-button";
-    cardButton.innerText = "Ajude aqui";
-
-    cardDiv.appendChild(cardImage);
-    cardDiv.appendChild(cardTitle);
-    cardDiv.appendChild(cardHistory);
-    cardDiv.appendChild(cardButton);
-
-    document.getElementById("ongCards").appendChild(cardDiv);
-
-    closeModal("modalDivulgueOngs");
-
-    // Limpa os campos do formulário
-    document.getElementById("nomeOng").value = "";
-    document.getElementById("historiaOng").value = "";
-    document.getElementById("imagemOng").value = "";
-    document.getElementById("urlOng").value = "";
-}
