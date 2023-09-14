@@ -203,46 +203,45 @@ function atualizarContador() {
 
 //////Exibir Miniatura Formulário Adotante Conte Sua Historia/////
 
-function exibirMiniatura() {
-    const inputFoto = document.getElementById('foto');
-    const miniatura = document.getElementById('miniatura');
+// function exibirMiniatura() {
+//     const inputFoto = document.getElementById('foto');
+//     const miniatura = document.getElementById('miniatura');
 
-    if (inputFoto.files && inputFoto.files[0]) {
-        const reader = new FileReader();
+//     if (inputFoto.files && inputFoto.files[0]) {
+//         const reader = new FileReader();
 
-        reader.onload = function(e) {
-            miniatura.src = e.target.result;
-            miniatura.style.display = 'block';
-        };
+//         reader.onload = function(e) {
+//             miniatura.src = e.target.result;
+//             miniatura.style.display = 'block';
+//         };
 
-        reader.readAsDataURL(inputFoto.files[0]);
-    } else {
-        miniatura.src = '';
-        miniatura.style.display = 'none';
-    }
-}
-
+//         reader.readAsDataURL(inputFoto.files[0]);
+//     } else {
+//         miniatura.src = '';
+//         miniatura.style.display = 'none';
+//     }
+// }
 
 
 //////Exibir Miniatura Formulário ONGS/////
 
-const imagemInput = document.getElementById('imagem');
-const miniaturaImagem = document.getElementById('miniatura-imagem');
+// const imagemInput = document.getElementById('imagem');
+// const miniaturaImagem = document.getElementById('miniatura-imagem');
 
-imagemInput.addEventListener('change', () => {
-    if (imagemInput.files && imagemInput.files[0]) {
-        const reader = new FileReader();
+// imagemInput.addEventListener('change', () => {
+//     if (imagemInput.files && imagemInput.files[0]) {
+//         const reader = new FileReader();
 
-        reader.onload = function(e) {
-            miniaturaImagem.src = e.target.result;
-            miniaturaImagem.style.display = 'block';
-        };
+//         reader.onload = function(e) {
+//             miniaturaImagem.src = e.target.result;
+//             miniaturaImagem.style.display = 'block';
+//         };
 
-        reader.readAsDataURL(imagemInput.files[0]);
-    } else {
-        miniaturaImagem.src = '';
-        miniaturaImagem.style.display = 'none';
-    }
-});
+//         reader.readAsDataURL(imagemInput.files[0]);
+//     } else {
+//         miniaturaImagem.src = '';
+//         miniaturaImagem.style.display = 'none';
+//     }
+// });
 
 
