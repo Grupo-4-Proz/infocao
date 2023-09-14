@@ -178,24 +178,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-/////Contador caracteres Formulário Adotante Conte Sua Historia//////
+/////Contador caracteres Formulário Adotante Conte Sua Historia e ONGS//////
 
-// function atualizarContador() {
-//     var textarea = document.getElementById("historiaAdocao");
-//     var contador = document.getElementById("contador-caracteres-adocao");
-//     var caracteresDigitados = textarea.value.length;
-//     var caracteresRestantes = 400 - caracteresDigitados;
-//     contador.textContent = caracteresRestantes + " caracteres restantes";
-//     console.log(historia)
-// }
+function atualizarContador() {
+    const maxCaracteres = 400;
+    const textarea = document.getElementById('historia-Ong');
+    const contador = document.getElementById('contador-caracteres');
+    const caracteresRestantes = maxCaracteres - textarea.value.length;
 
+    contador.textContent = caracteresRestantes + ' caracteres restantes';
 
-// var textarea = document.getElementById("historiaAdocao");
-// textarea.addEventListener("input", atualizarContador);
+    const historiaAdocao = document.getElementById('historiaAdocao');
+    const contadorAdocao = document.getElementById('contador-caracteres-adocao');
+    const caracteresDigitadosAdocao = historiaAdocao.value.length;
+    const caracteresRestantesAdocao = 400 - caracteresDigitadosAdocao;
 
-
-// atualizarContador();
-// setInterval(atualizarContador, 1000); 
+    contadorAdocao.textContent = caracteresRestantesAdocao + ' caracteres restantes';
+}
+    atualizarContador();
+    setInterval(atualizarContador, 1000);
 
 
 
@@ -223,28 +224,6 @@ function exibirMiniatura() {
 
 
 
-
-///////Contador de Caracteres Formulário ONGS////
-
-
-    // function atualizarContador() {
-    //     const maxCaracteres = 400;
-    //     const textarea = document.getElementById('historia-Ong');
-    //     const contador = document.getElementById('contador-caracteres');
-    //     const caracteresRestantes = maxCaracteres - textarea.value.length;
-        
-    //     contador.textContent = caracteresRestantes + ' caracteres restantes';
-    // }
-
-    // function resetCampos() {
-    //     const textarea = document.getElementById('historia-Ong');
-    //     textarea.value = ''; // Limpa o conteúdo do textarea
-    //     atualizarContador(); // Atualiza o contador de caracteres
-    //     setInterval(atualizarContador, 1000); 
-    // }
-
-
-
 //////Exibir Miniatura Formulário ONGS/////
 
 const imagemInput = document.getElementById('imagem');
@@ -266,20 +245,4 @@ imagemInput.addEventListener('change', () => {
     }
 });
 
-function atualizarContador() {
-    const maxCaracteres = 400;
-    const textarea = document.getElementById('historia-Ong');
-    const contador = document.getElementById('contador-caracteres');
-    const caracteresRestantes = maxCaracteres - textarea.value.length;
 
-    contador.textContent = caracteresRestantes + ' caracteres restantes';
-
-    const historiaAdocao = document.getElementById('historiaAdocao');
-    const contadorAdocao = document.getElementById('contador-caracteres-adocao');
-    const caracteresDigitadosAdocao = historiaAdocao.value.length;
-    const caracteresRestantesAdocao = 400 - caracteresDigitadosAdocao;
-
-    contadorAdocao.textContent = caracteresRestantesAdocao + ' caracteres restantes';
-}
-    atualizarContador();
-    setInterval(atualizarContador, 1000);
