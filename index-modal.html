@@ -7674,7 +7674,7 @@
          
           <form id="ongForm" action="" method="post">
             <label for="nome">Nome da ONG:</label>
-            <input type="text" id="nome" name="nome" required placeholder="Digite o nome da ONG"><br><br>        
+            <input type="text" id="nomeOng" name="nome" required placeholder="Digite o nome da ONG"><br><br>        
             <div class="historia-container">
                 <label for="historia">História da ONG: <small>(Até 400 Caracteres)</small></label>
                 <textarea id="historia-Ong" name="historia" required maxlength="400"></textarea>
@@ -7745,10 +7745,10 @@
         <option value="SE">Sergipe</option>
         <option value="TO">Tocantins</option>
     </select><br><br>
-                <label for="cidade">Cidade:</label>
+                <label for="cidade" id="cidade">Cidade:</label>
                 <input type="text" id="cidade" name="cidade" required placeholder="Digite sua cidade"><br><br
                 <label for="foto">Foto do seu peludo:</label>
-                <input type="file" id="foto" name="foto" accept="image/*" required onchange="exibirMiniatura()"><br><br>
+                <input type="file" id="foto" name="foto"><br><br>
                 <img id="miniatura" src="" alt="Miniatura da foto" style="max-width: 100px; max-height: 200px; display: none;">
                 <label for="historia">Conte sua história: <small>(até 400 caracteres)</small></label> <br>
                 <textarea id="historiaAdocao" name="historia" maxlength="400" required></textarea><br>

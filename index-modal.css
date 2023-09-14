@@ -191,11 +191,19 @@ body .balao_item .balao_btn:active {
   }
 
 #historiaAdocao {
-    width: 635px;
+    width: 450px;
     height: 70px;
     resize: none; /* Evita que o usuário redimensione a área de texto */
     /* Outros estilos opcionais, como cor de fundo, cor da fonte, margens, etc. */
 }
+
+#nome,
+#cidade {
+    width: 400px;
+    resize: none;
+}
+
+
 .nao-adotante {
     display: flex;
     justify-content: center;
@@ -224,9 +232,15 @@ body .balao_item .balao_btn:active {
   }
 
   #historia-Ong {
-    width: 635px; /* Largura do campo de texto */
+    width: 450px; /* Largura do campo de texto */
     height: 70px; /* Altura do campo de texto */
     resize: none; /* Desativa o redimensionamento */
+  }
+
+  #nomeOng {
+    width: 350px;
+    resize: none;
+
   }
 
   /* Estilo para o contador de caracteres */
