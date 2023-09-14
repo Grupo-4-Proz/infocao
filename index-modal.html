@@ -6,7 +6,8 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="index-modal.css">          
+      <link rel="stylesheet" href="index-modal.css">
+         
       <title>Infocão</title>
   </head>
   <body>
@@ -15,12 +16,14 @@
           <h3 class="balao_titulo">
               Bem-vindo ao Infocão!
           </h3>
-            <p class="balao_texto">Explore uma experiência interativa única em nosso site! Nossos <strong>ícones </strong>cinza são <strong>convites</strong> convites para descobrir o mundo dos cães: 
+            <p class="balao_texto">Explore uma experiência interativa única em nosso site! Nossos <strong>ícones </strong>cinza são <strong>convites</strong> para descobrir o mundo dos cães: 
               <ul>
-                <li>origens dos cães</li>
-              <li> histórias emocionantes de adoção</li>
-              <li> recursos para encontrar seu novo amigo </li>
-            </ul>  uma pesquisa para fortalecer nossa comunidade. Clique agora e junte-se à comunidade apaixonada por cães!🐾🐶</p>
+                <li> Origens dos cães</li>
+                <li> Histórias emocionantes de adoção</li>
+                <li> Recursos para encontrar seu novo amigo </li>
+                <li> Divulgar ou ajudar uma ou mais ONGs </li>
+                <li> Uma pesquisa para fortalecer nossa comunidade.</li>
+            </ul>Clique agora e junte-se à comunidade apaixonada por cães!🐾🐶</p>
             <span class="balao_btn">Fechar</span>
       </section>
       <section id="balao_origem" class="balao_fala">
@@ -7654,38 +7657,40 @@
                   <label><input type="checkbox" name="dietas" value="ja_pesquisei"> Já pesquisei algumas vezes</label>
                   <label><input type="checkbox" name="dietas" value="sempre_pesquisei"> Sempre busco informações sobre isso</label>
                   <button type="submit">Enviar</button>
-              </fieldset>
+                </fieldset>
+              </div>
+            </div>
+            <!-- Modal "Divulgue Ongs" -->
+        <div id="modalDivulgueOngs" class="modal">
+            <div class="modal-content">
+                <h2 class="modal_titulo">Faça sua voz ser ouvida, sua causa ganhar visibilidade e seus esforços alcançarem corações.</h2>
+                <p>Preencha este formulário e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
+                <form id="ongForm" onsubmit="submitForm(); return false;">
+                    <label for="nomeOng">Nome da ONG:</label>
+                    <input type="text" id="nomeOng" required><br><br>
+                    <label for="historiaOng">História da ONG:</label>
+                    <textarea id="historiaOng" required></textarea><br><br>
+                    <label for="imagemOng">Imagem da ONG:</label>
+                    <input type="file" id="imagemOng" accept="image/*" required><br><br>
+                    <label for="urlOng">URL da ONG:</label>
+                    <input type="url" id="urlOng" required><br><br>
+                    <button type="submit" id="enviarForm">Enviar</button>
+                </form>
+            </div>
         </div>
-    </div>
-    <div class="modal" id="modal_ongs">
-      <div class="modal-content">
-        <h2 class="modal_titulo">Transforme vidas, adote amor e doe esperança: juntos pela causa animal, construindo um mundo de carinho e compaixão.</h2>
-      <p>Somos a ponte para o amor e a compaixão: um site dedicado a inspirar a adoção e a doação para as ONGs de animais. Para fazer a diferença, clique nos links de cada ONG e junte-se a nós nessa jornada de cuidado e solidariedade.</p>
 
-      <p id="ongInfo"></p>
-      </div>
+      <!-- Modal "Ongs" -->
+  <div id="modalOngs" class="modal">
+   <div class="modal-content">
+       <h2 class="modal_titulo">Transforme vidas, adote amor e doe esperança: juntos pela causa animal, construindo um mundo de carinho e compaixão.</h2>
+        <p>Somos a ponte para o amor e a compaixão: um site dedicado a inspirar a adoção e a doação para as ONGs de animais. Para fazer a diferença, clique nos links de cada ONG e junte-se a nós nessa jornada de cuidado e solidariedade.</p>
+       <div id="ongCards"></div>
     </div>
+  </div>
 
-    <div class="modal" id="modal_divulgue_ongs">
-      <div class="card">
-        <div class="modal-content">
-          <h2 class="modal_titulo">Faça sua voz ser ouvida, sua causa ganhar visibilidade e seus esforços alcançarem corações.</h2>
-          <p> Clique no botão 'Divulgue sua ONG' e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
-         
-          <form id="ongForm" action="" method="post">
-            <label for="nome">Nome da ONG:</label>
-            <input type="text" id="nome" name="nome" required>
-            <label for="historia">História da ONG:</label>
-            <textarea id="historia" name="historia" required></textarea>
-            <label for="link">Link da ONG:</label>
-            <input type="url" id="link" name="link" required>
-            <label for="imagem">Imagem da ONG:</label>
-            <input type="file" id="imagem" name="imagem">
-            <input type="submit" value="Enviar">
-          </form>
-        </div>
-      </div>
-    </div>
+    
+
+
 
     <div class="modal" id="modal_adotante">
         <div class="modal-content">
