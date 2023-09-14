@@ -164,7 +164,7 @@ body .balao_item .balao_btn:active {
     cursor: pointer;
 }
 
-#modal_origem, #modal_adotante,#modal_nao_adotante, #racao_form, #modalDivulgueOngs, #modalOngs, #modal_mural{
+#modal_origem, #modal_adotante,#modal_nao_adotante, #racao_form, #modal_ongs, #modal_mural{
     width: 50vw;
     height: 90vh;
     padding: 20px;
@@ -525,52 +525,4 @@ fieldset{
 
     #racao_form{
         display: none;}
-}
-
-/* Estilos do botão "Ajude aqui" */
-.help-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #7d84b2;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.help-button:hover {
-    background-color: #8e9dcc;
-}
-
-.ong-card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-}
-
-.ong-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.ong-card p {
-    margin: 10px 0;
-}
-
-.ong-card .help-button {
-    background-color: #7d84b2;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.ong-card .help-button:hover {
-    background-color: #8e9dcc;
 }
