@@ -180,22 +180,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /////Contador caracteres Formulário Adotante Conte Sua Historia//////
 
-function atualizarContador() {
-    var textarea = document.getElementById("historiaAdocao");
-    var contador = document.getElementById("contador-caracteres-adocao");
-    var caracteresDigitados = textarea.value.length;
-    var caracteresRestantes = 400 - caracteresDigitados;
-    contador.textContent = caracteresRestantes + " caracteres restantes";
-    console.log(historia)
-}
+// function atualizarContador() {
+//     var textarea = document.getElementById("historiaAdocao");
+//     var contador = document.getElementById("contador-caracteres-adocao");
+//     var caracteresDigitados = textarea.value.length;
+//     var caracteresRestantes = 400 - caracteresDigitados;
+//     contador.textContent = caracteresRestantes + " caracteres restantes";
+//     console.log(historia)
+// }
 
 
-var textarea = document.getElementById("historiaAdocao");
-textarea.addEventListener("input", atualizarContador);
+// var textarea = document.getElementById("historiaAdocao");
+// textarea.addEventListener("input", atualizarContador);
 
 
-atualizarContador();
-setInterval(atualizarContador, 1000); 
+// atualizarContador();
+// setInterval(atualizarContador, 1000); 
 
 
 
@@ -226,16 +226,22 @@ function exibirMiniatura() {
 
 ///////Contador de Caracteres Formulário ONGS////
 
-const historiaTextarea = document.getElementById('historia-Ong');
-const contadorCaracteres = document.getElementById('contador-caracteres');
 
-historiaTextarea.addEventListener('input', () => {
-    const caracteresDigitados = historiaTextarea.value.length;
-    const caracteresRestantes = 400 - caracteresDigitados;
+    // function atualizarContador() {
+    //     const maxCaracteres = 400;
+    //     const textarea = document.getElementById('historia-Ong');
+    //     const contador = document.getElementById('contador-caracteres');
+    //     const caracteresRestantes = maxCaracteres - textarea.value.length;
+        
+    //     contador.textContent = caracteresRestantes + ' caracteres restantes';
+    // }
 
-    contadorCaracteres.textContent = caracteresRestantes + ' caracteres restantes';
-});
-
+    // function resetCampos() {
+    //     const textarea = document.getElementById('historia-Ong');
+    //     textarea.value = ''; // Limpa o conteúdo do textarea
+    //     atualizarContador(); // Atualiza o contador de caracteres
+    //     setInterval(atualizarContador, 1000); 
+    // }
 
 
 
@@ -260,3 +266,20 @@ imagemInput.addEventListener('change', () => {
     }
 });
 
+function atualizarContador() {
+    const maxCaracteres = 400;
+    const textarea = document.getElementById('historia-Ong');
+    const contador = document.getElementById('contador-caracteres');
+    const caracteresRestantes = maxCaracteres - textarea.value.length;
+
+    contador.textContent = caracteresRestantes + ' caracteres restantes';
+
+    const historiaAdocao = document.getElementById('historiaAdocao');
+    const contadorAdocao = document.getElementById('contador-caracteres-adocao');
+    const caracteresDigitadosAdocao = historiaAdocao.value.length;
+    const caracteresRestantesAdocao = 400 - caracteresDigitadosAdocao;
+
+    contadorAdocao.textContent = caracteresRestantesAdocao + ' caracteres restantes';
+}
+    atualizarContador();
+    setInterval(atualizarContador, 1000);
