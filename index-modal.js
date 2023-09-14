@@ -132,14 +132,14 @@ modalRacao.init("#racao");
 const modalAdotante = manageModal("#modal_adotante", "#modalOverlay");
 modalAdotante.init("#espera");
 
-const modalOngs = manageModal("#modal_ongs", "#modalOverlay");
+const modalOngs = manageModal("#modalOngs", "#modalOverlay");
 modalOngs.init("#gaiola_3");
 
 // Configuração do modal de não-adotante
 const modalNaoAdotante = manageModal("#modal_nao_adotante", "#modalOverlay");
 modalNaoAdotante.init("#vet");
 
-const modalDivulgueOngs = manageModal("#modal_divulgue_ongs", "#modalOverlay");
+const modalDivulgueOngs = manageModal("#modalDivulgueOngs", "#modalOverlay");
 modalDivulgueOngs.init("#recep_infocao");
 
 const modalMural = manageModal("#modal_mural", "#modalOverlay");
