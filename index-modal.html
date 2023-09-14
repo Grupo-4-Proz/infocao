@@ -6,8 +6,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="index-modal.css">
-         
+      <link rel="stylesheet" href="index-modal.css">          
       <title>Infocão</title>
   </head>
   <body>
@@ -18,12 +17,10 @@
           </h3>
             <p class="balao_texto">Explore uma experiência interativa única em nosso site! Nossos <strong>ícones </strong>cinza são <strong>convites</strong> para descobrir o mundo dos cães: 
               <ul>
-                <li> Origens dos cães</li>
-                <li> Histórias emocionantes de adoção</li>
-                <li> Recursos para encontrar seu novo amigo </li>
-                <li> Divulgar ou ajudar uma ou mais ONGs </li>
-                <li> Uma pesquisa para fortalecer nossa comunidade.</li>
-            </ul>Clique agora e junte-se à comunidade apaixonada por cães!🐾🐶</p>
+                <li>origens dos cães</li>
+              <li> histórias emocionantes de adoção</li>
+              <li> recursos para encontrar seu novo amigo </li>
+            </ul>  uma pesquisa para fortalecer nossa comunidade. Clique agora e junte-se à comunidade apaixonada por cães!🐾🐶</p>
             <span class="balao_btn">Fechar</span>
       </section>
       <section id="balao_origem" class="balao_fala">
@@ -7686,8 +7683,42 @@
         <p>Somos a ponte para o amor e a compaixão: um site dedicado a inspirar a adoção e a doação para as ONGs de animais. Para fazer a diferença, clique nos links de cada ONG e junte-se a nós nessa jornada de cuidado e solidariedade.</p>
        <div id="ongCards"></div>
     </div>
-  </div>
+    <div class="modal" id="modal_ongs">
+      <div class="modal-content">
+        <h2 class="modal_titulo">Transforme vidas, adote amor e doe esperança: juntos pela causa animal, construindo um mundo de carinho e compaixão.</h2>
+      <p>Somos a ponte para o amor e a compaixão: um site dedicado a inspirar a adoção e a doação para as ONGs de animais. Para fazer a diferença, clique nos links de cada ONG e junte-se a nós nessa jornada de cuidado e solidariedade.</p>
 
+      <p id="ongInfo"></p>
+      </div>
+    </div>
+
+    <div class="modal" id="modal_divulgue_ongs">
+      <div class="card">
+        <div class="modal-content">
+          <h2 class="modal_titulo">Faça sua voz ser ouvida, sua causa ganhar visibilidade e seus esforços alcançarem corações.</h2>
+          <p> Clique no botão 'Divulgue sua ONG' e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
+         
+          <form id="ongForm" action="" method="post">
+            <label for="nome">Nome da ONG:</label>
+            <input type="text" id="nomeOng" name="nome" required placeholder="Digite o nome da ONG"><br><br>        
+            <div class="historia-container">
+                <label for="historia">História da ONG: <small>(Até 400 Caracteres)</small></label>
+                <textarea id="historia-Ong" name="historia" required maxlength="400"></textarea>
+                <span id="contador-caracteres" class="contador-menor">400 caracteres restantes</span>
+            </div><br>        
+            <label for="link">Link da ONG:</label>
+            <input type="url" id="link" name="link" required placeholder="Link da ONG"><br>
+            <br>        
+            <label for="imagem">Imagem da ONG:</label>
+            <input type="file" id="imagem" name="imagem"><br> 
+            <img id="miniatura-imagem" src="" alt="Miniatura da imagem" style="display: none;">       
+            <br>
+            <button type="submit" id="enviarBtn">Enviar</button> 
+            <button type="reset">Limpar Campos</button>
+        </form>
+        </div>
+      </div>
+    </div>
     <div class="modal" id="modal_adotante">
         <div class="modal-content">
 
@@ -7740,10 +7771,10 @@
         <option value="SE">Sergipe</option>
         <option value="TO">Tocantins</option>
     </select><br><br>
-                <label for="cidade">Cidade:</label>
+                <label for="cidade" id="cidade">Cidade:</label>
                 <input type="text" id="cidade" name="cidade" required placeholder="Digite sua cidade"><br><br
-                <label> for="foto">Foto do seu peludo:</label>
-                <input type="file" id="foto" name="foto" accept="image/*" required onchange="exibirMiniatura()"><br><br>
+                <label for="foto">Foto do seu peludo:</label>
+                <input type="file" id="foto" name="foto"><br><br>
                 <img id="miniatura" src="" alt="Miniatura da foto" style="max-width: 100px; max-height: 200px; display: none;">
                 <label for="historia">Conte sua história: <small>(até 400 caracteres)</small></label> <br>
                 <textarea id="historiaAdocao" name="historia" maxlength="400" required></textarea><br>

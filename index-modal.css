@@ -164,7 +164,7 @@ body .balao_item .balao_btn:active {
     cursor: pointer;
 }
 
-#modal_origem, #modal_adotante,#modal_nao_adotante, #racao_form, #modalDivulgueOngs, #modalOngs, #modal_mural{
+#modal_origem, #modal_adotante,#modal_nao_adotante, #racao_form, #modalOngs, #modal_mural, #modalDivulgueOngs{
     width: 50vw;
     height: 90vh;
     padding: 20px;
@@ -191,11 +191,19 @@ body .balao_item .balao_btn:active {
   }
 
 #historiaAdocao {
-    width: 635px;
+    width: 450px;
     height: 70px;
     resize: none; /* Evita que o usuário redimensione a área de texto */
     /* Outros estilos opcionais, como cor de fundo, cor da fonte, margens, etc. */
 }
+
+#nome,
+#cidade {
+    width: 400px;
+    resize: none;
+}
+
+
 .nao-adotante {
     display: flex;
     justify-content: center;
@@ -553,5 +561,3 @@ fieldset{
 #nomeOng, #historiaOng, #imagemOng, #urlOng {
     width: 500px;
 }
-
-

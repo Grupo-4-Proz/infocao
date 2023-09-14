@@ -132,14 +132,14 @@ modalRacao.init("#racao");
 const modalAdotante = manageModal("#modal_adotante", "#modalOverlay");
 modalAdotante.init("#espera");
 
-const modalOngs = manageModal("#modalOngs", "#modalOverlay");
+const modalOngs = manageModal("#modal_ongs", "#modalOverlay");
 modalOngs.init("#gaiola_3");
 
 // Configuração do modal de não-adotante
 const modalNaoAdotante = manageModal("#modal_nao_adotante", "#modalOverlay");
 modalNaoAdotante.init("#vet");
 
-const modalDivulgueOngs = manageModal("#modalDivulgueOngs", "#modalOverlay");
+const modalDivulgueOngs = manageModal("#modal_divulgue_ongs", "#modalOverlay");
 modalDivulgueOngs.init("#recep_infocao");
 
 const modalMural = manageModal("#modal_mural", "#modalOverlay");
@@ -175,48 +175,97 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Função para enviar o formulário e criar um cartão de ONG
-function submitForm() {
-    const nomeOng = document.getElementById("nomeOng").value;
-    const historiaOng = document.getElementById("historiaOng").value;
-    const imagemOng = document.getElementById("imagemOng").value;
-    const urlOng = document.getElementById("urlOng").value;
+/////Contador caracteres Formulário Adotante Conte Sua Historia e ONGS//////
 
-    if (nomeOng === "" || historiaOng === "" || imagemOng === "" || urlOng === "") {
-        alert("Por favor, preencha todos os campos do formulário.");
-        return;
-    }
+function atualizarContador() {
+    const maxCaracteres = 400;
+    const textarea = document.getElementById('historia-Ong');
+    const contador = document.getElementById('contador-caracteres');
+    const caracteresRestantes = maxCaracteres - textarea.value.length;
 
-    const cardDiv = document.createElement("div");
-    cardDiv.className = "ong-card";
+    contador.textContent = caracteresRestantes + ' caracteres restantes';
 
-    const cardImage = document.createElement("img");
-    cardImage.src = imagemOng;
-    cardImage.alt = nomeOng;
+    const historiaAdocao = document.getElementById('historiaAdocao');
+    const contadorAdocao = document.getElementById('contador-caracteres-adocao');
+    const caracteresDigitadosAdocao = historiaAdocao.value.length;
+    const caracteresRestantesAdocao = 400 - caracteresDigitadosAdocao;
 
-    const cardTitle = document.createElement("h3");
-    cardTitle.innerText = nomeOng;
-
-    const cardHistory = document.createElement("p");
-    cardHistory.innerText = historiaOng;
-
-    const cardButton = document.createElement("a");
-    cardButton.href = urlOng;
-    cardButton.className = "help-button";
-    cardButton.innerText = "Ajude aqui";
-
-    cardDiv.appendChild(cardImage);
-    cardDiv.appendChild(cardTitle);
-    cardDiv.appendChild(cardHistory);
-    cardDiv.appendChild(cardButton);
-
-    document.getElementById("ongCards").appendChild(cardDiv);
-
-    closeModal("modalDivulgueOngs");
-
-    // Limpa os campos do formulário
-    document.getElementById("nomeOng").value = "";
-    document.getElementById("historiaOng").value = "";
-    document.getElementById("imagemOng").value = "";
-    document.getElementById("urlOng").value = "";
+    contadorAdocao.textContent = caracteresRestantesAdocao + ' caracteres restantes';
 }
+    atualizarContador();
+    setInterval(atualizarContador, 1000);
+
+//////Exibir Miniatura Formulário Adotante Conte Sua Historia/////
+
+// function exibirMiniatura() {
+//     const inputFoto = document.getElementById('foto');
+//     const miniatura = document.getElementById('miniatura');
+
+//     if (inputFoto.files && inputFoto.files[0]) {
+//         const reader = new FileReader();
+
+//         reader.onload = function(e) {
+//             miniatura.src = e.target.result;
+//             miniatura.style.display = 'block';
+//         };
+
+//         reader.readAsDataURL(inputFoto.files[0]);
+//     } else {
+//         miniatura.src = '';
+//         miniatura.style.display = 'none';
+//     }
+// }
+
+
+//////Exibir Miniatura Formulário ONGS/////
+
+// const imagemInput = document.getElementById('imagem');
+// const miniaturaImagem = document.getElementById('miniatura-imagem');
+
+// imagemInput.addEventListener('change', () => {
+//     if (imagemInput.files && imagemInput.files[0]) {
+//         const reader = new FileReader();
+
+//         reader.onload = function(e) {
+//             miniaturaImagem.src = e.target.result;
+//             miniaturaImagem.style.display = 'block';
+//         };
+
+//         reader.readAsDataURL(imagemInput.files[0]);
+//     } else {
+//         miniaturaImagem.src = '';
+//         miniaturaImagem.style.display = 'none';
+//     }
+// });
+
+//////Exibir Miniatura Formulário Adotante Conte Sua Historia e ONGS/////
+
+function exibirMiniatura(inputElement, miniaturaElement) {
+    if (inputElement.files && inputElement.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            miniaturaElement.src = e.target.result;
+            miniaturaElement.style.display = 'block';
+        };
+
+        reader.readAsDataURL(inputElement.files[0]);
+    } else {
+        miniaturaElement.src = '';
+        miniaturaElement.style.display = 'none';
+    }
+}
+
+const inputFoto = document.getElementById('foto');
+const miniatura = document.getElementById('miniatura');
+
+inputFoto.addEventListener('change', () => {
+    exibirMiniatura(inputFoto, miniatura);
+});
+
+const imagemInput = document.getElementById('imagem');
+const miniaturaImagem = document.getElementById('miniatura-imagem');
+
+imagemInput.addEventListener('change', () => {
+    exibirMiniatura(imagemInput, miniaturaImagem);
+});
