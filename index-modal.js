@@ -269,3 +269,49 @@ const miniaturaImagem = document.getElementById('miniatura-imagem');
 imagemInput.addEventListener('change', () => {
     exibirMiniatura(imagemInput, miniaturaImagem);
 });
+
+// Função para enviar o formulário e criar um cartão de ONG
+function submitForm() {
+    const nomeOng = document.getElementById("nomeOng").value;
+    const historiaOng = document.getElementById("historiaOng").value;
+    const imagemOng = document.getElementById("imagemOng").value;
+    const urlOng = document.getElementById("urlOng").value;
+
+    if (nomeOng === "" || historiaOng === "" || imagemOng === "" || urlOng === "") {
+        alert("Por favor, preencha todos os campos do formulário.");
+        return;
+    }
+
+    const cardDiv = document.createElement("div");
+    cardDiv.className = "ong-card";
+
+    const cardImage = document.createElement("img");
+    cardImage.src = imagemOng;
+    cardImage.alt = nomeOng;
+
+    const cardTitle = document.createElement("h3");
+    cardTitle.innerText = nomeOng;
+
+    const cardHistory = document.createElement("p");
+    cardHistory.innerText = historiaOng;
+
+    const cardButton = document.createElement("a");
+    cardButton.href = urlOng;
+    cardButton.className = "help-button";
+    cardButton.innerText = "Ajude aqui";
+
+    cardDiv.appendChild(cardImage);
+    cardDiv.appendChild(cardTitle);
+    cardDiv.appendChild(cardHistory);
+    cardDiv.appendChild(cardButton);
+
+    document.getElementById("ongCards").appendChild(cardDiv);
+
+    closeModal("modalDivulgueOngs");
+
+    // Limpa os campos do formulário
+    document.getElementById("nomeOng").value = "";
+    document.getElementById("historiaOng").value = "";
+    document.getElementById("imagemOng").value = "";
+    document.getElementById("urlOng").value = "";
+}
