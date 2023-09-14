@@ -15,7 +15,7 @@
           <h3 class="balao_titulo">
               Bem-vindo ao Infocão!
           </h3>
-            <p class="balao_texto">Explore uma experiência interativa única em nosso site! Nossos <strong>ícones </strong>cinza são <strong>convites</strong> convites para descobrir o mundo dos cães: 
+            <p class="balao_texto">Explore uma experiência interativa única em nosso site! Nossos <strong>ícones </strong>cinza são <strong>convites</strong> para descobrir o mundo dos cães: 
               <ul>
                 <li>origens dos cães</li>
               <li> histórias emocionantes de adoção</li>
@@ -7654,8 +7654,34 @@
                   <label><input type="checkbox" name="dietas" value="ja_pesquisei"> Já pesquisei algumas vezes</label>
                   <label><input type="checkbox" name="dietas" value="sempre_pesquisei"> Sempre busco informações sobre isso</label>
                   <button type="submit">Enviar</button>
-              </fieldset>
-        </div>
+                </fieldset>
+              </div>
+            </div>
+ <!-- Modal "Divulgue Ongs" -->
+    <div id="modalDivulgueOngs" class="modal">
+        <div class="modal-content">
+              <h2 class="modal_titulo">Faça sua voz ser ouvida, sua causa ganhar visibilidade e seus esforços alcançarem corações.</h2>
+              <p>Preencha este formulário e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
+            <form id="ongForm" onsubmit="submitForm(); return false;">
+                <label for="nomeOng"><strong>Nome da ONG:</strong></label>
+                <input type="text" id="nomeOng" required><br><br>
+                <label for="historiaOng"><strong>História da ONG:</strong></label>
+                <textarea id="historiaOng" required></textarea><br><br>
+                <label for="imagemOng"><strong>Imagem da ONG:</strong></label>
+                <input type="file" id="imagemOng" accept="image/*" required><br><br>
+                <label for="urlOng"><strong>URL da ONG:</strong></label>
+                <input type="url" id="urlOng" required><br><br>
+                <button type="submit" id="enviarForm">Enviar</button>
+                </form>
+            </div>
+    </div>
+
+      <!-- Modal "Ongs" -->
+  <div id="modalOngs" class="modal">
+   <div class="modal-content">
+       <h2 class="modal_titulo">Transforme vidas, adote amor e doe esperança: juntos pela causa animal, construindo um mundo de carinho e compaixão.</h2>
+        <p>Somos a ponte para o amor e a compaixão: um site dedicado a inspirar a adoção e a doação para as ONGs de animais. Para fazer a diferença, clique nos links de cada ONG e junte-se a nós nessa jornada de cuidado e solidariedade.</p>
+       <div id="ongCards"></div>
     </div>
     <div class="modal" id="modal_ongs">
       <div class="modal-content">
