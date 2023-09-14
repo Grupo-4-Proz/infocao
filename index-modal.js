@@ -244,4 +244,34 @@ function atualizarContador() {
 //     }
 // });
 
+//////Exibir Miniatura Formulário Adotante Conte Sua Historia e ONGS/////
 
+function exibirMiniatura(inputElement, miniaturaElement) {
+    if (inputElement.files && inputElement.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            miniaturaElement.src = e.target.result;
+            miniaturaElement.style.display = 'block';
+        };
+
+        reader.readAsDataURL(inputElement.files[0]);
+    } else {
+        miniaturaElement.src = '';
+        miniaturaElement.style.display = 'none';
+    }
+}
+
+const inputFoto = document.getElementById('foto');
+const miniatura = document.getElementById('miniatura');
+
+inputFoto.addEventListener('change', () => {
+    exibirMiniatura(inputFoto, miniatura);
+});
+
+const imagemInput = document.getElementById('imagem');
+const miniaturaImagem = document.getElementById('miniatura-imagem');
+
+imagemInput.addEventListener('change', () => {
+    exibirMiniatura(imagemInput, miniaturaImagem);
+});
