@@ -558,6 +558,16 @@ fieldset{
     text-shadow: 2px 2px 3px rgba(255, 249, 249, 0.772); /* Adiciona uma sombra sutil */
 }
 
+#modalDivulgueOngs .modal-content h2 {
+    text-align: center;
+    font-size: 28px;
+}
+
+#modalDivulgueOngs .modal-content p {
+    font-size: 16px;
+    font-weight: bold; /* Texto em negrito */
+}
+
 #nomeOng, #historiaOng, #imagemOng, #urlOng {
     width: 500px;
 }
