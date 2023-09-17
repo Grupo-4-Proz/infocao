@@ -339,7 +339,7 @@ body .balao_item .balao_btn:active {
     height: 8px;
     border-radius: 100%;
     background: #f1f1f1;
-    position: absolute;
+    position: center;
     left: 15px; /* Alterado para aparecer à esquerda */
     bottom: -21px;
   }
