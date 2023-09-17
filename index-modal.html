@@ -7664,42 +7664,35 @@
               </fieldset>
         </div>
     </div>
-    <div class="modal" id="modal_ongs">
+     <!-- Modal "Divulgue Ongs" -->
+     <div id="modalDivulgueOngs" class="modal">
       <div class="modal-content">
-        <h2 class="modal_titulo">Transforme vidas, adote amor e doe esperança: juntos pela causa animal, construindo um mundo de carinho e compaixão.</h2>
-      <p>Somos a ponte para o amor e a compaixão: um site dedicado a inspirar a adoção e a doação para as ONGs de animais. Para fazer a diferença, clique nos links de cada ONG e junte-se a nós nessa jornada de cuidado e solidariedade.</p>
-
-      <p id="ongInfo"></p>
-      </div>
-    </div>
-
-    <div class="modal" id="modal_divulgue_ongs">
-      <div class="card">
-        <div class="modal-content">
           <h2 class="modal_titulo">Faça sua voz ser ouvida, sua causa ganhar visibilidade e seus esforços alcançarem corações.</h2>
-          <p> Clique no botão 'Divulgue sua ONG' e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
-         
-          <form id="ongForm" action="" method="post">
-            <label for="nome">Nome da ONG:</label>
-            <input type="text" id="nomeOng" name="nome" required placeholder="Digite o nome da ONG"><br><br>        
-            <div class="historia-container">
-                <label for="historia">História da ONG: <small>(Até 400 Caracteres)</small></label>
-                <textarea id="historia-Ong" name="historia" required maxlength="400"></textarea>
-                <span id="contador-caracteres" class="contador-menor">400 caracteres restantes</span>
-            </div><br>        
-            <label for="link">Link da ONG:</label>
-            <input type="url" id="link" name="link" required placeholder="Link da ONG"><br>
-            <br>        
-            <label for="imagem">Imagem da ONG:</label>
-            <input type="file" id="imagem" name="imagem"><br> 
-            <img id="miniatura-imagem" src="" alt="Miniatura da imagem" style="display: none;">       
-            <br>
-            <button type="submit" id="enviarBtn">Enviar</button> 
-            <button type="reset">Limpar Campos</button>
-        </form>
-        </div>
+          <p>Preencha este formulário e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
+          <form id="ongForm" onsubmit="submitForm(); return false;">
+              <label for="nomeOng">Nome da ONG:</label>
+              <input type="text" id="nomeOng" required><br><br>
+              <label for="historiaOng">História da ONG:</label>
+              <textarea id="historiaOng" required></textarea><br><br>
+              <label for="imagemOng">Imagem da ONG:</label>
+              <input type="file" id="imagemOng" accept="image/*" required><br><br>
+              <label for="urlOng">URL da ONG:</label>
+              <input type="url" id="urlOng" required><br><br>
+              <button type="submit" id="enviarForm">Enviar</button>
+              <button type="reset">Limpar Campos</button>
+          </form>
       </div>
-    </div>
+  </div>
+
+<!-- Modal "Ongs" -->
+<div id="modalOngs" class="modal">
+<div class="modal-content">
+ <h2 class="modal_titulo">Transforme vidas, adote amor e doe esperança: juntos pela causa animal, construindo um mundo de carinho e compaixão.</h2>
+  <p>Somos a ponte para o amor e a compaixão: um site dedicado a inspirar a adoção e a doação para as ONGs de animais. Para fazer a diferença, clique nos links de cada ONG e junte-se a nós nessa jornada de cuidado e solidariedade.</p>
+ <div id="ongCards"></div>
+</div>
+</div>
+
     <div class="modal" id="modal_adotante">
         <div class="modal-content">
 
