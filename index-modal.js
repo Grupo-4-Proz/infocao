@@ -288,6 +288,10 @@ function submitForm() {
         return;
     }
 
+    btnSubmit.addEventListener("submit",(e) => {
+        e.preventDefault()
+    })
+
     const cardDiv = document.createElement("div");
     cardDiv.className = "ong-card";
 
