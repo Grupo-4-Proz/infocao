@@ -175,30 +175,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-
-/////Contador caracteres Formulário Adotante Conte Sua Historia e ONGS//////
-
+// Função para atualizar o contador de caracteres em tempo real
 function atualizarContador() {
-    const maxCaracteres = 400;
-    const textarea = document.getElementById('historia-Ong');
-    const contador = document.getElementById('contador-caracteres');
-    const caracteresRestantes = maxCaracteres - textarea.value.length;
+    const textareaOng = document.getElementById("historiaOng");
+    const contadorOng = document.getElementById("contador-caracteres");
+    const maxCaracteresOng = 200;
 
-    contador.textContent = caracteresRestantes + ' caracteres restantes';
+    const caracteresDigitadosOng = textareaOng.value.length;
+    const caracteresRestantesOng = maxCaracteresOng - caracteresDigitadosOng;
 
-    const historiaAdocao = document.getElementById('historiaAdocao');
-    const contadorAdocao = document.getElementById('contador-caracteres-adocao');
-    const caracteresDigitadosAdocao = historiaAdocao.value.length;
-    const caracteresRestantesAdocao = 400 - caracteresDigitadosAdocao;
+    contadorOng.textContent = caracteresRestantesOng + " caracteres restantes";
 
-    contadorAdocao.textContent = caracteresRestantesAdocao + ' caracteres restantes';
+    const textareaAdocao = document.getElementById("historiaAdocao"); // Novo textarea
+    const contadorAdocao = document.getElementById("contador-caracteres-adocao"); // Novo contador
+    const maxCaracteresAdocao = 400; // Novo limite de caracteres
+
+    const caracteresDigitadosAdocao = textareaAdocao.value.length;
+    const caracteresRestantesAdocao = maxCaracteresAdocao - caracteresDigitadosAdocao;
+
+    contadorAdocao.textContent = caracteresRestantesAdocao + " caracteres restantes";
+
+    // Caso você queira, você pode adicionar estilo ao contador aqui com base no número de caracteres restantes.
 }
-    atualizarContador();
-    setInterval(atualizarContador, 1000);
 
+// Chame a função para atualizar os contadores ao carregar a página
+atualizarContador();
 
+// Adicione um ouvinte de evento de entrada aos campos de texto
+document.getElementById("historiaOng").addEventListener("input", atualizarContador);
+document.getElementById("historiaAdocao").addEventListener("input", atualizarContador);
 
 
 //////Exibir Miniatura Formulário Adotante Conte Sua Historia/////
@@ -277,27 +282,27 @@ imagemInput.addEventListener('change', () => {
 });
 
 // Função para enviar o formulário e criar um cartão de ONG
-function submitForm() {
+function submitForm(event) {
+    event.preventDefault(); // Impede a recarga da página
+
     const nomeOng = document.getElementById("nomeOng").value;
     const historiaOng = document.getElementById("historiaOng").value;
-    const imagemOng = document.getElementById("imagemOng").value;
+    const imagemOng = document.getElementById("imagemOng").files[0]; // Altere para pegar o arquivo de imagem
     const urlOng = document.getElementById("urlOng").value;
 
-    if (nomeOng === "" || historiaOng === "" || imagemOng === "" || urlOng === "") {
+    if (nomeOng === "" || historiaOng === "" || !imagemOng || urlOng === "") {
         alert("Por favor, preencha todos os campos do formulário.");
         return;
     }
-
-    btnSubmit.addEventListener("submit",(e) => {
-        e.preventDefault()
-    })
 
     const cardDiv = document.createElement("div");
     cardDiv.className = "ong-card";
 
     const cardImage = document.createElement("img");
-    cardImage.src = imagemOng;
+    cardImage.src = URL.createObjectURL(imagemOng); // Use URL.createObjectURL para exibir a imagem
     cardImage.alt = nomeOng;
+    cardImage.style.width = "100%";
+    cardImage.style.height = "100%";
 
     const cardTitle = document.createElement("h3");
     cardTitle.innerText = nomeOng;
@@ -317,11 +322,38 @@ function submitForm() {
 
     document.getElementById("ongCards").appendChild(cardDiv);
 
-    closeModal("modalDivulgueOngs");
-
     // Limpa os campos do formulário
     document.getElementById("nomeOng").value = "";
     document.getElementById("historiaOng").value = "";
     document.getElementById("imagemOng").value = "";
     document.getElementById("urlOng").value = "";
 }
+
+// Adicione um ouvinte de evento de entrada ao campo de texto
+document.getElementById("historiaOng").addEventListener("input", atualizarContador);
+
+// Adicione um ouvinte de evento ao campo de upload de imagem
+document.getElementById("imagemOng").addEventListener("change", function () {
+    const fileInput = this;
+    const cardImage = document.getElementById("cardImage"); // Adicione um ID à tag de imagem onde você deseja exibir a imagem
+
+    // Verifique se um arquivo foi selecionado
+    if (fileInput.files.length > 0) {
+        const selectedFile = fileInput.files[0];
+
+        // Verifique se o arquivo é uma imagem
+        if (selectedFile.type.match(/^image\//)) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                // Define o atributo src da tag de imagem com a imagem carregada
+                cardImage.src = e.target.result;
+            };
+
+            // Leia o conteúdo da imagem
+            reader.readAsDataURL(selectedFile);
+        } else {
+            alert("Por favor, selecione um arquivo de imagem.");
+        }
+    }
+});

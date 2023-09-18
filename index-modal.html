@@ -7656,13 +7656,14 @@
       <div class="modal-content">
           <h2 class="modal_titulo">Faça sua voz ser ouvida, sua causa ganhar visibilidade e seus esforços alcançarem corações.</h2>
           <p>Preencha este formulário e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
-          <form id="ongForm" onsubmit="submitForm(); return false;">
+          <form id="ongForm" onsubmit="submitForm(event);">
               <label for="nomeOng">Nome da ONG:</label>
               <input type="text" id="nomeOng" required><br><br>
               <label for="historiaOng">História da ONG:</label>
-              <textarea id="historiaOng" required></textarea><br><br>
+              <textarea id="historiaOng" maxlength="200" required></textarea>
+              <div id="caracteresRestantes">200 caracteres restantes</div>
               <label for="imagemOng">Imagem da ONG:</label>
-              <input type="file" id="imagemOng" accept="image/*" required><br><br>
+              <input type="file" id="imagemOng" accept="image/*" required>
               <label for="urlOng">URL da ONG:</label>
               <input type="url" id="urlOng" required><br><br>
               <button type="submit" id="enviarForm">Enviar</button>
@@ -7731,16 +7732,15 @@
         <option value="SP">São Paulo</option>
         <option value="SE">Sergipe</option>
         <option value="TO">Tocantins</option>
-    </select><br><br>
-                <label for="cidade" id="cidade">Cidade:</label>
-                <input type="text" id="cidade" name="cidade" required placeholder="Digite sua cidade"><br><br
+                </select><br><br>
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required placeholder="Digite sua cidade"><br><br>
                 <label for="foto">Foto do seu peludo:</label>
                 <input type="file" id="foto" name="foto"><br><br>
                 <img id="miniatura" src="" alt="Miniatura da foto" style="max-width: 100px; max-height: 200px; display: none;">
-                <label for="historia">Conte sua história: <small>(até 400 caracteres)</small></label> <br>
+                <label for="historiaAdocao">Conte sua história: <small>(até 400 caracteres)</small></label> <br>
                 <textarea id="historiaAdocao" name="historia" maxlength="400" required></textarea><br>
-                <span id="contador-caracteres-adocao" class="contador-menor">400 caracteres restantes</span><br>
-                <br>
+                <span id="contador-caracteres-adocao" class="contador-menor">400 caracteres restantes</span><br><br>
                 <button type="submit">Enviar</button>
                 <button type="reset">Limpar Campos</button>
             </form>
