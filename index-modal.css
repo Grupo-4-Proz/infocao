@@ -543,37 +543,72 @@ fieldset{
     background-color: #8e9dcc;
 }
 
+/* Estilos do card */
 .ong-card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
     width: 150px;
     height: 150px;
+    background-color: #8e9dcc;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
 }
 
 .ong-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-.ong-card p {
+/* Estilos para ocultar as informações da ONG por padrão */
+.ong-card .ong-info {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Quando o mouse estiver sobre o card, mostre as informações */
+.ong-card:hover .ong-info {
+    display: flex;
+}
+
+.ong-card .ong-info h3 {
+    color: #fff;
     margin: 10px 0;
 }
 
-.ong-card .help-button {
+.ong-card .ong-info p {
+    color: #fff;
+    margin: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-height: 70px;
+    overflow-y: scroll;
+}
+
+.ong-card .ong-info .help-button {
+    display: block;
     background-color: #7d84b2;
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
     text-decoration: none;
-    display: inline-block;
     margin-top: 10px;
 }
 
-.ong-card .help-button:hover {
+.ong-card .ong-info .help-button:hover {
     background-color: #8e9dcc;
 }
 
