@@ -175,81 +175,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Função para atualizar o contador de caracteres em tempo real
-function atualizarContador() {
-    const textareaOng = document.getElementById("historiaOng");
-    const contadorOng = document.getElementById("contador-caracteres");
-    const maxCaracteresOng = 200;
-
-    const caracteresDigitadosOng = textareaOng.value.length;
-    const caracteresRestantesOng = maxCaracteresOng - caracteresDigitadosOng;
-
-    contadorOng.textContent = caracteresRestantesOng + " caracteres restantes";
-
-    const textareaAdocao = document.getElementById("historiaAdocao"); // Novo textarea
-    const contadorAdocao = document.getElementById("contador-caracteres-adocao"); // Novo contador
-    const maxCaracteresAdocao = 400; // Novo limite de caracteres
-
-    const caracteresDigitadosAdocao = textareaAdocao.value.length;
-    const caracteresRestantesAdocao = maxCaracteresAdocao - caracteresDigitadosAdocao;
-
-    contadorAdocao.textContent = caracteresRestantesAdocao + " caracteres restantes";
-
-    // Caso você queira, você pode adicionar estilo ao contador aqui com base no número de caracteres restantes.
-}
-
-// Chame a função para atualizar os contadores ao carregar a página
-atualizarContador();
-
-// Adicione um ouvinte de evento de entrada aos campos de texto
-document.getElementById("historiaOng").addEventListener("input", atualizarContador);
-document.getElementById("historiaAdocao").addEventListener("input", atualizarContador);
+//// JS CLAUDINEI INICIO
 
 
-//////Exibir Miniatura Formulário Adotante Conte Sua Historia/////
+// Função para atualizar o contador de caracteres em tempo real adotante conte sua historia
 
-// function exibirMiniatura() {
-//     const inputFoto = document.getElementById('foto');
-//     const miniatura = document.getElementById('miniatura');
+const textarea = document.getElementById('historiaAdocao');
+        const contadorCaracteres = document.getElementById('contador-caracteres-adocao');
+        const limparCamposBtn = document.getElementById('limpar-campos');
 
-//     if (inputFoto.files && inputFoto.files[0]) {
-//         const reader = new FileReader();
+        textarea.addEventListener('input', function () {
+            const caracteresDigitados = textarea.value.length;
+            const caracteresRestantes = 400 - caracteresDigitados;
 
-//         reader.onload = function(e) {
-//             miniatura.src = e.target.result;
-//             miniatura.style.display = 'block';
-//         };
+            contadorCaracteres.textContent = caracteresRestantes + ' caracteres restantes';
+        });
 
-//         reader.readAsDataURL(inputFoto.files[0]);
-//     } else {
-//         miniatura.src = '';
-//         miniatura.style.display = 'none';
-//     }
-// }
+        limparCamposBtn.addEventListener('click', function () {
+            // Quando o botão de Limpar Campos é clicado, redefina o contador para 400 caracteres.
+            contadorCaracteres.textContent = '400 caracteres restantes';
+
+            // Oculte a miniatura da imagem.
+            miniatura.style.display = 'none';
+        });
 
 
-//////Exibir Miniatura Formulário ONGS/////
-
-// const imagemInput = document.getElementById('imagem');
-// const miniaturaImagem = document.getElementById('miniatura-imagem');
-
-// imagemInput.addEventListener('change', () => {
-//     if (imagemInput.files && imagemInput.files[0]) {
-//         const reader = new FileReader();
-
-//         reader.onload = function(e) {
-//             miniaturaImagem.src = e.target.result;
-//             miniaturaImagem.style.display = 'block';
-//         };
-
-//         reader.readAsDataURL(imagemInput.files[0]);
-//     } else {
-//         miniaturaImagem.src = '';
-//         miniaturaImagem.style.display = 'none';
-//     }
-// });
-
-//////Exibir Miniatura Formulário Adotante Conte Sua Historia e ONGS/////
+//Exibir Miniatura Formulário Adotante Conte Sua Historia
 
 function exibirMiniatura(inputElement, miniaturaElement) {
     if (inputElement.files && inputElement.files[0]) {
@@ -274,12 +225,8 @@ inputFoto.addEventListener('change', () => {
     exibirMiniatura(inputFoto, miniatura);
 });
 
-const imagemInput = document.getElementById('imagem');
-const miniaturaImagem = document.getElementById('miniatura-imagem');
+//// JS CLAUDINEI FIM
 
-imagemInput.addEventListener('change', () => {
-    exibirMiniatura(imagemInput, miniaturaImagem);
-});
 
 // Função para enviar o formulário e criar um cartão de ONG
 function submitForm(event) {
