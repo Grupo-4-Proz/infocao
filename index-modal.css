@@ -1,0 +1,640 @@
+*{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+  }
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+body .barra_topo {
+    width: 100vw;
+    height: 50px;
+    background-color: #f9f9ed;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    transition: all .5s ease;
+}
+body .barra_topo:hover {
+    opacity: 1;
+}
+body .img_base {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+body .balao_fala {
+    position: absolute;
+    background-color: #f9f9ed;
+    padding: 1rem 2rem;
+    width: 450px;
+    border-radius: 15px;
+    opacity: 0;               /* Começa transparente */
+    visibility: hidden;      /* Começa invisível, mas ainda ocupa espaço, o que nos permite obter sua altura */
+    transform: translateY(0); /* Um pequeno movimento para a animação */
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s; /* Transições para suavidade */
+    -webkit-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+}
+body .balao_fala.visible {
+    opacity: 1;          /* Totalmente visível */
+    visibility: visible; /* Torna visível */
+    transform: translateY(0); /* Retorna à posição original */
+}
+body .balao_fala:after{ /*Triangulo*/
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
+    /*Aqui entra a cor da "aba" do balão */
+    border-top: 20px solid #f9f9ed;
+    bottom: -20px; /*localização. Experimente alterar para 'bottom'*/
+    right: 20%;
+    transform: translateX(-50%);
+}
+body .balao_fala .balao_btn {
+    background-color: #7d84b2; /* azul primário */
+    color: #f9f9ed; /* texto branco */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* transição suave para o hover */
+    float: right;
+    /* Estilização para quando o botão é clicado */
+    outline: none; /* remova o contorno padrão do botão ao clicar */
+}
+
+body .balao_fala .balao_btn:hover {
+    background-color: #d6d8ee; /* um azul um pouco mais escuro para o hover */
+}
+
+body .balao_fala .balao_btn:active {
+    transform: scale(0.95); /* dá uma sensação de pressionamento quando o botão é clicado */
+}
+
+body .balao_item {
+    position: absolute;
+    background-color: #f9f9ed;
+    padding: 1rem 2rem;
+    width: 450px;
+    border-radius: 15px;
+    opacity: 0;               /* Começa transparente */
+    visibility: hidden;      /* Começa invisível, mas ainda ocupa espaço, o que nos permite obter sua altura */
+    transform: translateY(10px); /* Um pequeno movimento para a animação */
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s; /* Transições para suavidade */
+    -webkit-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+}
+body .balao_item.visible {
+    opacity: 1;          /* Totalmente visível */
+    visibility: visible; /* Torna visível */
+    transform: translateY(0); /* Retorna à posição original */
+}
+body .balao_item:after{ 
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    /*Aqui entra a cor da "aba" do balão */
+    border-top: 20px solid #f9f9ed;
+    bottom: -20px; /*localização. Experimente alterar para 'bottom'*/
+    right: 20%;
+}
+body .balao_item .balao_btn {
+    background-color: #7d84b2 ; /* azul primário */
+    color: #f9f9ed; /* texto branco */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* transição suave para o hover */
+    float: right;
+    /* Estilização para quando o botão é clicado */
+    outline: none; /* remova o contorno padrão do botão ao clicar */
+}
+
+body .balao_item .balao_btn:hover {
+    background-color: #d6d8ee; /* um azul um pouco mais escuro para o hover */
+}
+
+body .balao_item .balao_btn:active {
+    transform: scale(0.95); /* dá uma sensação de pressionamento quando o botão é clicado */
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; /* Começa escondido */
+    z-index: 1; /* Sobre a maioria dos outros elementos da página */
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f9f9ed;
+    padding: 2rem 3rem;
+    display: none; /* Começa escondido */
+    z-index: 2; /* Sobre o overlay e outros elementos da página */
+    border-radius: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#modal_origem, #modal_adotante,#modal_nao_adotante, #racao_form, #modal_ongs, #modal_mural{
+    width: 50vw;
+    height: 90vh;
+    padding: 20px;
+    border-radius: 8px;
+    position: fixed; /* Torna o formulário fixo na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para o centro */
+    overflow-y: auto; /* Adiciona scroll quando necessário */
+    background-color:#f9f9ed; /* Adiciona um fundo branco */
+}
+
+
+.adocao-obrigado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+  }
+  
+  .adocao-obrigado img {
+    max-width: 100%;
+    max-height: 100%; 
+  }
+
+#historiaAdocao {
+    width: 450px;
+    height: 70px;
+    resize: none; /* Evita que o usuário redimensione a área de texto */
+    /* Outros estilos opcionais, como cor de fundo, cor da fonte, margens, etc. */
+}
+
+#nome,
+#cidade {
+    width: 400px;
+    resize: none;
+}
+
+
+.nao-adotante {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 58vh; 
+  }
+  
+.nao-adotante img {
+    max-width: 100%; 
+    max-height: 100%;
+  }
+  
+  
+
+
+
+  #ongForm label {
+    display: block; /* Coloca os rótulos em uma nova linha */
+    margin-bottom: 5px; /* Espaçamento inferior entre os rótulos e os campos */
+  }
+
+  /* Estilo para o container do campo "História da ONG" */
+  .historia-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #historia-Ong {
+    width: 450px; /* Largura do campo de texto */
+    height: 70px; /* Altura do campo de texto */
+    resize: none; /* Desativa o redimensionamento */
+  }
+
+  #nomeOng {
+    width: 350px;
+    resize: none;
+
+  }
+
+  /* Estilo para o contador de caracteres */
+  #contador-caracteres {
+    margin-top: 5px; /* Espaçamento superior entre o campo de texto e o contador */
+    color: #555; /* Cor do contador de caracteres */
+  }
+
+/* Estilo para a miniatura da imagem */
+#miniatura-imagem {
+    max-width: 100px; /* Largura máxima da miniatura */
+    max-height: 100px; /* Altura máxima da miniatura */
+    margin-top: 10px; /* Espaçamento superior entre a miniatura e o botão "Enviar" */
+  }
+
+
+  small {
+    font-size: 80%; /* Ajuste o tamanho da fonte de acordo com suas preferências */
+    color: #999; /* Cor do texto menor */
+    /* Outras propriedades de estilo, como font-weight, font-family, etc. */
+}
+
+.contador-menor {
+    font-size: 80%; /* Ajuste o tamanho da fonte de acordo com suas preferências */
+    color: #999; /* Cor do texto menor */
+    /* Outras propriedades de estilo, como font-weight, font-family, etc. */
+}
+
+
+
+
+
+.foto_mural_depoimento{
+    max-width: 50%;
+    max-height: 60vh;
+    padding: 5% 20% 0 20%;
+    border-radius: 30%; 
+ }
+ 
+.depoimento_mural p{
+    padding: 5%;
+ } 
+
+.depoimento_mural{
+    border-radius: 20px;
+    max-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 4px solid #dbfa47;
+    margin: 10px;
+    justify-content: center;  
+    overflow: scroll;
+ } 
+
+ .nome_pet{
+    padding: 0 20% 0 20%;
+    color:#7d84b2;
+    font-weight: bold;
+    font-size: large;
+ }
+
+ #modal_mural h2{
+    padding: 0 0 0 30%;;
+ }
+
+#balao_adotante{
+    width: 15vw;
+    font-size: 14px;
+}
+
+#balao_origem {
+    width: 15vw;
+    position: absolute;
+    font-size: 14px;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+    -webkit-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 62px -30px rgba(0,0,0,0.75);
+  }
+  #balao_origem::after {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-radius: 100%;
+    background: #f1f1f1;
+    position: absolute;
+    bottom: -7px;
+    left: 30px; /* Alterado para aparecer à esquerda */
+  }
+  #balao_origem::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: #f1f1f1;
+    position: center;
+    left: 15px; /* Alterado para aparecer à esquerda */
+    bottom: -21px;
+  }
+  
+  #balao_origem {
+    filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
+  }
+
+  #balao_divulgue_ongs{
+    margin-top: 60px;
+    margin-left: 130px;
+    transform: translateY(80vw);
+    transform: translateX(90vh);
+    width: fit-content;
+  }
+
+  #balao_ongs{
+    margin-top: 40px;
+    margin-left: 100px;
+  }
+
+ #balao_adotante{
+    margin-top: 140px;
+    margin-left: 100px;
+ }
+
+ #balao_nao_adotante{
+    margin-top: -30px;
+    margin-left: -70px;
+ }
+ #balao_nao_adotante::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
+    /*Aqui entra a cor da "aba" do balão */
+    border-top: 20px solid #f9f9ed;
+    bottom: -20px; /*localização. Experimente alterar para 'bottom'*/
+    left: 20%;
+   
+ }
+
+ #balao_mural_depoimentos{
+    margin-top: -30px;
+    margin-left: -85px;
+ }
+ #balao_mural_depoimentos::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
+    /*Aqui entra a cor da "aba" do balão */
+    border-top: 20px solid #f9f9ed;
+    bottom: -20px; /*localização. Experimente alterar para 'bottom'*/
+    left: 20%;
+   
+ }
+
+  .input-group {
+    margin-bottom: 15px;
+}
+
+#alimentacao label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #f9f9ed;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.radio-group label {
+    margin-right: 10px;
+}
+
+.modal-content button, button {
+    background-color: #7d84b2;
+    color: #f9f9ed;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover, button:hover {
+    background-color: #d9dbf1;
+}
+fieldset{
+    border-color: #dbfa47;
+}
+
+#cachorro_colo, #carinho_chao, #atendente_adocao,#cachorro_colo, #carinho_chao, #atendente_adocao, #gaiola_3, #vet, #groomer, #dog_gym, #menina_cachorro, #recep_infocao, #brincando_bolinha, #recepcao, #roupinhas, #racao, #corgi, #passeador, #espera{
+    filter:grayscale(100%);
+}
+
+.conteudo_mobile{
+    display: none;
+}
+
+@media (max-width: 810px){
+    .conteudo_mobile {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        border-radius: 15px;
+        overflow: scroll;
+        margin: 10px;
+    }
+    
+    .texto_mobile.ativo {
+        display: block;
+    }
+    .texto_mobile {
+        display: none;
+    }
+
+    .mobile {
+        flex: 1;
+        display: flex;
+        min-height: fit-content;
+        align-items: center;
+        justify-content: center;
+        color: #474747;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+    }
+    
+    .mobile:nth-child(1) {
+        background: #7d84b2;
+    }
+    
+    .mobile:nth-child(2) {
+        background: #8e9dcc;
+    }
+    
+    .mobile:nth-child(3) {
+        background: #d9dbf1;
+    }
+    
+    .mobile:nth-child(4) {
+        background: #f9f9ed;
+    }
+    
+    .mobile:nth-child(5) {
+        background: #dbfa47;
+    }
+    
+    /* .mobile:hover {
+        flex: 2;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    
+    .mobile:hover span {
+        opacity: 1;
+    } */
+
+    .svg_desktop{
+        display: none;
+    }
+
+    .barra_topo{
+        display: none;
+    }
+
+    #baloes_desktop{
+        display: none;
+    }
+
+    #racao_form{
+        display: none;}
+}
+
+/* Estilos do botão "Ajude aqui" */
+.help-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7d84b2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.help-button:hover {
+    background-color: #8e9dcc;
+}
+
+/* Estilos do card */
+.ong-card {
+    width: 150px;
+    height: 150px;
+    background-color: #8e9dcc;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.ong-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Estilos para ocultar as informações da ONG por padrão */
+.ong-card .ong-info {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Quando o mouse estiver sobre o card, mostre as informações */
+.ong-card:hover .ong-info {
+    display: flex;
+}
+
+.ong-card .ong-info h3 {
+    color: #fff;
+    margin: 10px 0;
+}
+
+.ong-card .ong-info p {
+    color: #fff;
+    margin: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-height: 70px;
+    overflow-y: scroll;
+}
+
+.ong-card .ong-info .help-button {
+    display: block;
+    background-color: #7d84b2;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.ong-card .ong-info .help-button:hover {
+    background-color: #8e9dcc;
+}
+
+/* modalDivulgueOngs */
+#modalDivulgueOngs .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    text-align: space-around;
+    background-image:url(/src/img/ONGs/patas_coloridas.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-shadow: 2px 2px 3px rgba(255, 249, 249, 0.772); /* Adiciona uma sombra sutil */
+}
+
+#modalDivulgueOngs .modal-content h2 {
+    text-align: center;
+    font-size: 28px;
+}
+
+#modalDivulgueOngs .modal-content p {
+    font-size: 16px;
+    font-weight: bold; /* Texto em negrito */
+}
+
+#nomeOng, #historiaOng, #imagemOng, #urlOng {
+    width: 500px;
+}
