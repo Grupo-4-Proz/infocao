@@ -181,30 +181,33 @@ function atualizarContador() {
     const contadorOng = document.getElementById("contador-caracteres");
     const maxCaracteresOng = 200;
 
-    const caracteresDigitadosOng = textareaOng.value.length;
-    const caracteresRestantesOng = maxCaracteresOng - caracteresDigitadosOng;
+    if (contadorOng) {
+        const caracteresDigitadosOng = textareaOng.value.length;
+        const caracteresRestantesOng = maxCaracteresOng - caracteresDigitadosOng;
 
-    contadorOng.textContent = caracteresRestantesOng + " caracteres restantes";
+        contadorOng.textContent = caracteresRestantesOng + " caracteres restantes";
+    }
 
     const textareaAdocao = document.getElementById("historiaAdocao"); // Novo textarea
     const contadorAdocao = document.getElementById("contador-caracteres-adocao"); // Novo contador
     const maxCaracteresAdocao = 400; // Novo limite de caracteres
 
-    const caracteresDigitadosAdocao = textareaAdocao.value.length;
-    const caracteresRestantesAdocao = maxCaracteresAdocao - caracteresDigitadosAdocao;
+    if (contadorAdocao) {
+        const caracteresDigitadosAdocao = textareaAdocao.value.length;
+        const caracteresRestantesAdocao = maxCaracteresAdocao - caracteresDigitadosAdocao;
 
-    contadorAdocao.textContent = caracteresRestantesAdocao + " caracteres restantes";
+        contadorAdocao.textContent = caracteresRestantesAdocao + " caracteres restantes";
+    }
 
     // Caso você queira, você pode adicionar estilo ao contador aqui com base no número de caracteres restantes.
 }
 
 // Chame a função para atualizar os contadores ao carregar a página
-atualizarContador();
+document.addEventListener("DOMContentLoaded", atualizarContador);
 
 // Adicione um ouvinte de evento de entrada aos campos de texto
 document.getElementById("historiaOng").addEventListener("input", atualizarContador);
-document.getElementById("historiaAdocao").addEventListener("input", atualizarContador);
-
+document.getElementById("historiaAdocao").addEventListener("input", atualizarContador)
 
 //////Exibir Miniatura Formulário Adotante Conte Sua Historia/////
 
