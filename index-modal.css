@@ -181,41 +181,41 @@ body .balao_item .balao_btn:active {
 /* CSS CLAUDINEI INICIO */
 
 .adocao-obrigado { 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh; 
+    display: flex; /* Define o modelo de exibição como flexível */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 50vh; /* Define a altura como 50% da altura da janela de visualização */
   }
   
   .adocao-obrigado img {
-    max-width: 100%;
-    max-height: 100%; 
+    max-width: 100%; /* Define a largura máxima da imagem como 100% do contêiner pai */
+    max-height: 100%; /* Define a altura máxima da imagem como 100% do contêiner pai */
   }
 
 #historiaAdocao {
-    width: 450px;
-    height: 70px;
+    width: 450px; /* Define a largura do elemento como 450 pixels */
+    height: 70px; /* Define a altura do elemento como 70 pixels */
     resize: none; /* Evita que o usuário redimensione a área de texto */
     /* Outros estilos opcionais, como cor de fundo, cor da fonte, margens, etc. */
 }
 
 #nome,
 #cidade {
-    width: 400px;
-    resize: none;
+    width: 400px; /* Define a largura dos elementos como 400 pixels */
+    resize: none; /* Desativa a capacidade de redimensionamento do elemento */
 }
 
 
 .nao-adotante {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 58vh; 
+    display: flex; /* Define o modelo de exibição como flexível */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 58vh; /* Define a altura como 58% da altura da janela de visualização */
   }
   
 .nao-adotante img {
-    max-width: 100%; 
-    max-height: 100%;
+    max-width: 100%; /* Define a largura máxima da imagem como 100% do contêiner pai */
+    max-height: 100%; /* Define a altura máxima da imagem como 100% do contêiner pai */
   }
   
   /* Estilo para a miniatura da imagem */
