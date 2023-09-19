@@ -471,7 +471,6 @@ fieldset{
 
     .mobile {
         flex: 1;
-        display: flex;
         min-height: fit-content;
         align-items: center;
         justify-content: center;
@@ -480,37 +479,40 @@ fieldset{
         letter-spacing: 1px;
         transition: all 0.3s ease-out;
         cursor: pointer;
+        padding: 20px;
     }
     
     .mobile:nth-child(1) {
         background: #7d84b2;
+        display: flex;
+        flex-direction: column;
     }
     
     .mobile:nth-child(2) {
         background: #8e9dcc;
+        display: flex;
+        flex-direction: column;
     }
     
     .mobile:nth-child(3) {
         background: #d9dbf1;
+        display: flex;
+        flex-direction: column;
     }
     
     .mobile:nth-child(4) {
         background: #f9f9ed;
+        display: flex;
+        flex-direction: column;
     }
     
     .mobile:nth-child(5) {
         background: #dbfa47;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     
-    /* .mobile:hover {
-        flex: 2;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    }
-    
-    .mobile:hover span {
-        opacity: 1;
-    } */
-
     .svg_desktop{
         display: none;
     }
@@ -518,6 +520,12 @@ fieldset{
     .barra_topo{
         display: none;
     }
+
+    #mobile_racao_form label {
+            display: block; 
+            margin-bottom: 10px; 
+    }
+    
 
     #baloes_desktop{
         display: none;
