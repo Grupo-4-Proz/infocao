@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Função para atualizar o contador de caracteres em tempo real
 function atualizarContador() {
     const textareaOng = document.getElementById("historiaOng");
-    const contadorOng = document.getElementById("contador-caracteres");
+    const contadorOng = document.getElementById("caracteresRestantes");
     const maxCaracteresOng = 200;
 
     if (contadorOng) {
