@@ -178,7 +178,9 @@ body .balao_item .balao_btn:active {
 }
 
 
-.adocao-obrigado {
+/* CSS CLAUDINEI INICIO */
+
+.adocao-obrigado { 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,7 +218,27 @@ body .balao_item .balao_btn:active {
     max-height: 100%;
   }
   
-  
+  /* Estilo para a miniatura da imagem */
+#miniatura-imagem {
+    max-width: 100px; /* Largura máxima da miniatura */
+    max-height: 100px; /* Altura máxima da miniatura */
+    margin-top: 10px; /* Espaçamento superior entre a miniatura e o botão "Enviar" */
+  }
+
+
+  small {
+    font-size: 80%; /* Ajuste o tamanho da fonte de acordo com suas preferências */
+    color: #999; /* Cor do texto menor */
+    /* Outras propriedades de estilo, como font-weight, font-family, etc. */
+}
+
+.contador-menor {
+    font-size: 80%; /* Ajuste o tamanho da fonte de acordo com suas preferências */
+    color: #999; /* Cor do texto menor */
+    /* Outras propriedades de estilo, como font-weight, font-family, etc. */
+}
+
+/* CSS CLAUDINEI FIM */
 
 
 
@@ -249,25 +271,7 @@ body .balao_item .balao_btn:active {
     color: #555; /* Cor do contador de caracteres */
   }
 
-/* Estilo para a miniatura da imagem */
-#miniatura-imagem {
-    max-width: 100px; /* Largura máxima da miniatura */
-    max-height: 100px; /* Altura máxima da miniatura */
-    margin-top: 10px; /* Espaçamento superior entre a miniatura e o botão "Enviar" */
-  }
 
-
-  small {
-    font-size: 80%; /* Ajuste o tamanho da fonte de acordo com suas preferências */
-    color: #999; /* Cor do texto menor */
-    /* Outras propriedades de estilo, como font-weight, font-family, etc. */
-}
-
-.contador-menor {
-    font-size: 80%; /* Ajuste o tamanho da fonte de acordo com suas preferências */
-    color: #999; /* Cor do texto menor */
-    /* Outras propriedades de estilo, como font-weight, font-family, etc. */
-}
 
 
 
