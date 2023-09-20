@@ -7699,7 +7699,7 @@
                     <br>                                
                     Com carinho, Equipe Infocão</p>
                 <h2>Compartilhe a sua história com seu peludo.</h2>
-            <form action="#" method="post" enctype="multipart/form-data">
+            <form action="#" method="post" enctype="multipart/form-data" onsubmit="return validarFormulario();">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required placeholder="Digite seu nome"><br><br>
                 <label for="estado">Estado:</label>
@@ -7736,7 +7736,7 @@
                 <label for="cidade">Cidade:</label>
                 <input type="text" id="cidade" name="cidade" required placeholder="Digite sua cidade"><br><br>
                 <label for="foto">Foto do seu peludo:</label>
-                <input type="file" id="foto" name="foto"><br><br>
+                <input type="file" id="foto" name="foto" accept="image/*" required onchange="validarImagem()"><br><br>
                 <img id="miniatura" src="" alt="Miniatura da foto" style="max-width: 100px; max-height: 200px; display: none;">
                 <label for="historiaAdocao">Conte sua história: <small>(até 400 caracteres)</small></label> <br>
                 <textarea id="historiaAdocao" name="historia" maxlength="400" required></textarea><br>

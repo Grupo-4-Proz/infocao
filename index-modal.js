@@ -208,11 +208,12 @@ document.addEventListener("DOMContentLoaded", atualizarContador);
 // Adicione um ouvinte de evento de entrada aos campos de texto
 document.getElementById("historiaOng").addEventListener("input", atualizarContador);
 document.getElementById("historiaAdocao").addEventListener("input", atualizarContador)
+
+
 //// JS CLAUDINEI INICIO
 
 
 // Função para atualizar o contador de caracteres em tempo real adotante conte sua historia
-
 const textarea = document.getElementById('historiaAdocao');
         const contadorCaracteres = document.getElementById('contador-caracteres-adocao');
         const limparCamposBtn = document.getElementById('limpar-campos');
@@ -233,30 +234,41 @@ const textarea = document.getElementById('historiaAdocao');
         });
 
 
-//Exibir Miniatura Formulário Adotante Conte Sua Historia
+// Função para validar a extensão do arquivo e carregar miniatura adotante
+function validarImagem() {
+    var fotoInput = document.getElementById("foto");
+    var miniatura = document.getElementById("miniatura");
 
-function exibirMiniatura(inputElement, miniaturaElement) {
-    if (inputElement.files && inputElement.files[0]) {
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-            miniaturaElement.src = e.target.result;
-            miniaturaElement.style.display = 'block';
-        };
-
-        reader.readAsDataURL(inputElement.files[0]);
-    } else {
-        miniaturaElement.src = '';
-        miniaturaElement.style.display = 'none';
+    var file = fotoInput.files[0];
+    if (file) {
+        var fileName = file.name.toLowerCase();
+        if (fileName.endsWith(".jpg")) {
+            // A extensão do arquivo é .jpg, então mostramos a miniatura
+            miniatura.style.display = "block";
+            miniatura.src = URL.createObjectURL(file);
+        } else {
+            alert("Por favor, selecione um arquivo de imagem com extensão .jpg");
+            fotoInput.value = ""; // Limpa a seleção de arquivo
+            miniatura.style.display = "none"; // Oculta a miniatura
+        }
     }
 }
 
-const inputFoto = document.getElementById('foto');
-const miniatura = document.getElementById('miniatura');
+// Função para validar o formulário
+function validarFormulario() {
+    const nome = document.getElementById("nome").value;
+    const estado = document.getElementById("estado").value;
+    const cidade = document.getElementById("cidade").value;
+    const foto = document.getElementById("foto").files[0];
+    const historia = document.getElementById("historiaAdocao").value;
 
-inputFoto.addEventListener('change', () => {
-    exibirMiniatura(inputFoto, miniatura);
-});
+    if (nome === "" || estado === "" || cidade === "" || !foto || historia === "") {
+        alert("Por favor, preencha todos os campos do formulário e carregue uma imagem.");
+        return false;
+    }
+
+    return true;
+}
 
 //// JS CLAUDINEI FIM
 
