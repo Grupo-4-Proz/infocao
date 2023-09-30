@@ -192,14 +192,28 @@ function atualizarContador() {
 // Adicione um ouvinte de evento de entrada aos campos de texto
 document.getElementById("historiaOng").addEventListener("input", atualizarContador);
 
+// Função para limpar todos os campos do formulário
+function limparFormulario() {
+    const textareaOng = document.getElementById("historiaOng");
+    const nomeOng = document.getElementById("nomeOng");
+    const imagemOng = document.getElementById("imagemOng");
+    const urlOng = document.getElementById("urlOng");
+
+    // Limpar os valores dos campos
+    textareaOng.value = "";
+    nomeOng.value = "";
+    imagemOng.value = "";
+    urlOng.value = "";
+
+    // Atualizar o contador após limpar
+    atualizarContador();
+}
+
 // Adicione um ouvinte de evento ao botão "Limpar Formulário"
 document.getElementById("reset").addEventListener("click", function() {
-    const textareaOng = document.getElementById("historiaOng");
-    
-    textareaOng.value = "";
-
-    atualizarContador();
+    limparFormulario();
 });
+
 
 //// JS CLAUDINEI INICIO
 
@@ -311,6 +325,7 @@ function submitForm(event) {
     document.getElementById("imagemOng").value = "";
     document.getElementById("urlOng").value = "";
 }
+
 
 // Adicione um ouvinte de evento ao campo de upload de imagem
 document.getElementById("imagemOng").addEventListener("change", function () {

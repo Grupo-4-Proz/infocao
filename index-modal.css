@@ -584,45 +584,90 @@ fieldset{
 #modalDivulgueOngs .modal-content {
     display: flex;
     flex-direction: column;
-    align-items:flex-start;
-    text-align: space-around;
-    background-image:url(/src/img/ONGs/patas_coloridas.png);
-    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/src/img/ONGs/patas_coloridas_G_T.png);
+    background-size: cover; /* Ajusta a imagem para cobrir todo o espaço */
     background-repeat: no-repeat;
     background-attachment: fixed;
-    text-shadow: 2px 2px 3px rgba(255, 249, 249, 0.772); /* Adiciona uma sombra sutil */
-    padding: 10px 0;
+    background-position: center; /* Centraliza a imagem */
+    text-shadow: 2px 2px 3px rgba(255, 249, 249, 0.772);
+    padding: 10px;
+    width: 50vw;
+    height: 90vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    background-color: #f9f9ed;
+}
+
+#formularioContainer {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 500px; /* Define a largura máxima do conteúdo do formulário */
+    resize: none;
+}
+
+#ongForm label, input, textarea {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#caracteresRestantes {
+    margin-bottom: 10px;
+    margin-top: -10px;
+    font-size: 14px;
+    color: #333333b5;
+
 }
 
 #nomeOng, #historiaOng, #imagemOng, #urlOng {
-    width: 500px;
+    width: 100%; /* Ocupa toda a largura do container */
     resize: none;
+}
+
+#nomeOng, #historiaOng, #urlOng{
+    border:2px solid #333333a4;
+    outline: none;
+    border-radius: 5px;
+}
+
+#historiaOng{
+    width: 500px; /* Largura de 500px */
+    height: 70px;
+}
+#nomeOng, #urlOng {
+    width: 500px;
+    height: 30px;
 }
 
 #modalDivulgueOngs .modal-content h2 {
     text-align: center;
-    font-size: 28px;
+    font-size: 30px;
+    margin-top: -20px; 
 }
 
 #modalDivulgueOngs .modal-content p {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold; /* Texto em negrito */
+    text-align: center;
+    margin-top: 20px; /* Margem superior de 20px */
+    margin-bottom: 50px;
 }
 
-/* Estilize os botões "Submit" e "Reset" */
-#enviarForm, #reset{
+#enviarForm, #reset {
     display: inline-block; /* Coloca os botões em linha */
     margin-right: 10px; /* Adicione margem à direita para criar espaço entre os botões */
-    padding: 5px 20px; /* Adicione preenchimento interno aos botões */
-    background-color: #7d84b2d7; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto do botão */
+    padding: 5px 15px; /* Adicione preenchimento interno aos botões */
+    background-color: #7d84b2;
+    color: #f9f9ed;
     border: none; /* Remova a borda do botão */
     border-radius: 5px; /* Adicione cantos arredondados */
     cursor: pointer; /* Mude o cursor para indicar que é um botão clicável */
-    font-size: 16px; /* Tamanho da fonte */
+    font-size: 15px; /* Tamanho da fonte */
 }
 
-/* Estilize os botões quando o mouse passar por cima */
 #enviarForm:hover, #reset:hover {
-    background-color: #dbfa47; /* Cor de fundo do botão quando o mouse passa por cima */
+    background-color: #dcfa47c1; /* Cor de fundo do botão quando o mouse passa por cima */
 }
