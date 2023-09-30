@@ -164,7 +164,7 @@ body .balao_item .balao_btn:active {
     cursor: pointer;
 }
 
-#modal_origem, #modal_adotante,#modal_nao_adotante, #racao_form, #modal_ongs, #modal_mural{
+#modal_origem, #modal_adotante,#modal_nao_adotante, #racao_form, #modalOngs, #modal_mural, #modalDivulgueOngs{
     width: 50vw;
     height: 90vh;
     padding: 20px;
@@ -239,43 +239,6 @@ body .balao_item .balao_btn:active {
 }
 
 /* CSS CLAUDINEI FIM */
-
-
-
-  #ongForm label {
-    display: block; /* Coloca os rótulos em uma nova linha */
-    margin-bottom: 5px; /* Espaçamento inferior entre os rótulos e os campos */
-  }
-
-  /* Estilo para o container do campo "História da ONG" */
-  .historia-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #historia-Ong {
-    width: 450px; /* Largura do campo de texto */
-    height: 70px; /* Altura do campo de texto */
-    resize: none; /* Desativa o redimensionamento */
-  }
-
-  #nomeOng {
-    width: 350px;
-    resize: none;
-
-  }
-
-  /* Estilo para o contador de caracteres */
-  #contador-caracteres {
-    margin-top: 5px; /* Espaçamento superior entre o campo de texto e o contador */
-    color: #555; /* Cor do contador de caracteres */
-  }
-
-
-
-
-
-
 
 .foto_mural_depoimento{
     max-width: 50%;
@@ -530,8 +493,9 @@ fieldset{
     #racao_form{
         display: none;}
 }
+/* Início de estilização Modal Ongs e Divulgue Ongs*/
 
-/* Estilos do botão "Ajude aqui" */
+/* Estilos do botão "Ajude aqui" Card */
 .help-button {
     display: inline-block;
     padding: 10px 20px;
@@ -627,6 +591,12 @@ fieldset{
     background-repeat: no-repeat;
     background-attachment: fixed;
     text-shadow: 2px 2px 3px rgba(255, 249, 249, 0.772); /* Adiciona uma sombra sutil */
+    padding: 10px 0;
+}
+
+#nomeOng, #historiaOng, #imagemOng, #urlOng {
+    width: 500px;
+    resize: none;
 }
 
 #modalDivulgueOngs .modal-content h2 {
@@ -639,6 +609,20 @@ fieldset{
     font-weight: bold; /* Texto em negrito */
 }
 
-#nomeOng, #historiaOng, #imagemOng, #urlOng {
-    width: 500px;
+/* Estilize os botões "Submit" e "Reset" */
+#enviarForm, #reset{
+    display: inline-block; /* Coloca os botões em linha */
+    margin-right: 10px; /* Adicione margem à direita para criar espaço entre os botões */
+    padding: 5px 20px; /* Adicione preenchimento interno aos botões */
+    background-color: #7d84b2d7; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none; /* Remova a borda do botão */
+    border-radius: 5px; /* Adicione cantos arredondados */
+    cursor: pointer; /* Mude o cursor para indicar que é um botão clicável */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+/* Estilize os botões quando o mouse passar por cima */
+#enviarForm:hover, #reset:hover {
+    background-color: #dbfa47; /* Cor de fundo do botão quando o mouse passa por cima */
 }
