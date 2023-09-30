@@ -586,7 +586,7 @@ fieldset{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(/src/img/ONGs/patas_coloridas_G_T.png);
+    background-image: url(Public/img/ONGs/patas_coloridas_G_T.png);
     background-size: cover; /* Ajusta a imagem para cobrir todo o espaço */
     background-repeat: no-repeat;
     background-attachment: fixed;
