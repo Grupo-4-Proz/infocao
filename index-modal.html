@@ -7592,7 +7592,7 @@
 <div class="overlay" id="modalOverlay"></div>
 
 <section class="modal_desktop">
-
+<!-- Modal "Origem" -->
   <div class="modal" id="modal_origem">
     <div class="modal-content">
       <div>
@@ -7679,7 +7679,6 @@
   </div>
 </div>
 
-
 <!-- Modal "Ongs" -->
 <div id="modalOngs" class="modal">
 <div class="modal-content">
@@ -7691,6 +7690,7 @@
 </div>
 </div>
 
+<!-- Modal "Adotante" -->
     <div class="modal" id="modal_adotante">
         <div class="modal-content">
 
@@ -7757,6 +7757,7 @@
             
         </div>
     </div>
+<!-- Modal "Não adotante" -->
     <div class="modal" id="modal_nao_adotante">
               
               <div class="nao-adotante">
@@ -7807,7 +7808,9 @@
                       </li>
                   </ul>     
     </div>     
-    
+
+<!-- Modal "Mural" -->
+
     <div class="modal" id="modal_mural">
       <h2>Depoimentos de Adoção</h2>
         <div class="modal_mural_depoimentos">
@@ -7887,23 +7890,33 @@
     </article>
     </div>
 
-    <div class="mobile expandido" id="mobile_ongs">
-          <span>Divulgue sua ong</span>
+    <div class="mobile expandido" id="mobile_divulgue_ongs">
+          <span>Divulgue sua ong e faça sua doação</span>
           <article class="texto_mobile">
-            <h1>Transforme vidas, adote amor e doe esperança: juntos pela causa animal, construindo um mundo de carinho e compaixão</h1>
-            <p>Somos a ponte para o amor e a compaixão: um site dedicado a inspirar a adoção e a doação para as ONGs de animais. Para fazer a diferença, clique nos links de cada ONG e junte-se a nós nessa jornada de cuidado e solidariedade.</p>
-            <p>Faça sua voz ser ouvida, sua causa ganhar visibilidade e seus esforços alcançarem corações. Clique no botão 'Divulgue sua ONG' e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
-                <form id="mobile_ongForm">
-                    <label for="nome">Nome da ONG:</label>
-                    <input type="text" id="nome" name="nome" required>
-                    <label for="historia">História da ONG:</label>
-                    <textarea id="historia" name="historia" required></textarea>
-                    <label for="link">Link da ONG:</label>
-                    <input type="url" id="link" name="link" required>
-                    <label for="imagem">Imagem da ONG:</label>
-                    <input type="file" id="imagem" name="imagem">
-                    <input type="submit" value="Enviar">
-                </form>
+            <div class="texto_ongs">
+              <h2>Faça sua voz ser ouvida, sua causa ganhar visibilidade e seus esforços alcançarem corações.</h2>
+              <p>Preencha este formulário e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
+            </div>
+            <div id="formularioOngMobile">
+              <form id="mobile_ongForm">
+                <label for="nome">Nome da ONG:</label>
+                <input type="text" id="nomeOmobile" name="nome" required>
+                <label for="historia">História da ONG:</label>
+                <textarea id="historiaOmobile" name="historia" required></textarea>
+                <label for="link">Link da ONG:</label>
+                <input type="url" id="linkOmobile" name="link" required>
+                <label for="imagem">Imagem da ONG:</label>
+                <input type="file" id="imagemOmobile" name="imagem">
+                <input type="submit" id="enviarOmobile" value="Enviar">
+            </form>
+            </div>
+                <div id="mobile_ongs">
+                  <div class="texto_ongs">
+                    <h2 class="modal_titulo">Transforme vidas, adote amor e doe esperança: juntos pela causa animal, construindo um mundo de carinho e compaixão.</h2>
+                    <p>Somos a ponte para o amor e a compaixão: um site dedicado a inspirar a adoção e a doação para as ONGs de animais. Para fazer a diferença, clique nos links de cada ONG e junte-se a nós nessa jornada de cuidado e solidariedade.</p>
+                  </div>
+                </div>
+
             </article>
     </div>           
 

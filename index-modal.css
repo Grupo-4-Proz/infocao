@@ -671,3 +671,82 @@ fieldset{
 #enviarForm:hover, #reset:hover {
     background-color: #dcfa47c1; /* Cor de fundo do botão quando o mouse passa por cima */
 }
+
+/* MOBILE modalDivulgueOngs */
+
+#mobile_ongs, #mobile_divulgue_ongs  {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 10px;
+}
+
+#formularioOngMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: 0 10px;
+    border:2px solid #7d84b2;
+    border-radius: 5px;
+}
+
+texto_ongs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    padding: 0 10px;
+    border:2px solid #333333a4;
+    border-radius: 5px;
+}
+
+#nomeOmobile, #historiaOmobile, #imagemOmobile, #linkOmobile {
+    width: 100%; 
+}
+
+#nomeOmobile, #historiaOmobile, #linkOmobile{
+    border:2px solid #7d84b2;
+    border-radius: 5px;
+}
+
+#imagemOmobile {
+    width:40%;
+}
+
+#historiaOmobile{
+    width: 300px;
+    height: 70px;
+}
+#nomeOmobile {
+    width: 300px;
+    height: 25px;
+}
+
+#linkOmobile {
+    width: 300px;
+    height: 20px;
+}
+
+#formularioOngMobile label , input, textarea {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#enviarOmobile {
+    display: inline-block; 
+    margin-right: 10px; 
+    padding: 5px 15px;
+    background-color: #7d84b2;
+    color: #f9f9ed;
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#enviarOmobile:hover {
+    background-color: #dcfa47c1;
+}

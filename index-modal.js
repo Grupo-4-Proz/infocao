@@ -352,3 +352,36 @@ document.getElementById("imagemOng").addEventListener("change", function () {
         }
     }
 });
+
+// MOBILE ONGS 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('mobile_ongForm');
+    const ongCardsContainer = document.getElementById('ongCards');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nome = form.querySelector('#nome').value;
+        const historia = form.querySelector('#historia').value;
+        const link = form.querySelector('#link').value;
+
+        // Crie um elemento card de ONG
+        const ongCard = document.createElement('div');
+        ongCard.classList.add('ong-card');
+
+        // Crie os elementos dentro do card
+        const cardContent = `
+            <h3>${nome}</h3>
+            <p>${historia}</p>
+            <a href="${link}" class="help-button">Ajude aqui</a>
+        `;
+        ongCard.innerHTML = cardContent;
+
+        // Adicione o card ao contêiner de cards de ONGs
+        ongCardsContainer.appendChild(ongCard);
+
+        // Limpe o formulário
+        form.reset();
+    });
+});
