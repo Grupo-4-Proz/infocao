@@ -750,3 +750,9 @@ texto_ongs{
 #enviarOmobile:hover {
     background-color: #dcfa47c1;
 }
+#mobile_mural{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
