@@ -634,18 +634,19 @@ fieldset{
 }
 
 #historiaOng{
-    width: 500px; /* Largura de 500px */
+    width: 100%;
     height: 70px;
 }
 #nomeOng, #urlOng {
-    width: 500px;
+    width: 100%;
     height: 30px;
 }
 
 #modalDivulgueOngs .modal-content h2 {
     text-align: center;
+    padding-top: 10px;
     font-size: 30px;
-    margin-top: 20px; 
+    margin-top: 10px; 
 }
 
 #modalDivulgueOngs .modal-content p {
