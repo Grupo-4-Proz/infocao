@@ -674,7 +674,15 @@ fieldset{
 
 /* MOBILE modalDivulgueOngs */
 
-#mobile_ongs, #mobile_divulgue_ongs  {
+#mobile_adocao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    padding: 0 10px;
+}
+#mobile_ongs, #mobile_divulgue_ongs, #mobile_origem, #mobile_pesq_alimentacao, #mobile_adocao {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -749,4 +757,27 @@ texto_ongs{
 
 #enviarOmobile:hover {
     background-color: #dcfa47c1;
+}
+
+#mobile_racao_form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+#form_mobile_adocao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+#mobile_racao_form label,
+#mobile_racao_form h3 {
+    margin-bottom: 10px;
 }
