@@ -7622,7 +7622,7 @@
     <div class="modal" id="modal_pesq_alimentacao">
         <div class="modal-content">
             <h2 class="modal_titulo">Teste</h2>
-            <form id="racao_form" action=""method="post">
+            <form id="racao_form">
               <fieldset id="alimentacao">
                   <legend>Tipo de alimentação</legend>
                   <h3>Quais tipos de alimentação você oferece ao seu pet?</h3>
@@ -7652,6 +7652,10 @@
         </div>
     </div>
     <!-- Modal "Divulgue Ongs" -->
+
+
+<!-- Modal "Ongs" -->
+
 <div id="modalDivulgueOngs" class="modal">
   <div class="modal-content">
     <div>
@@ -7659,9 +7663,10 @@
       <p>Preencha este formulário e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
     </div>
       <div id="formularioContainer">
-          <form id="ongForm" onsubmit="submitForm(event);">
+          <form id="ongForm" method="get" onsubmit="submitForm(event);">
               <label for="nomeOng"><strong>Nome da ONG:</strong></label>
               <input type="text" id="nomeOng" required><br><br>
+
               <label for="historiaOng"><strong>História da ONG:</strong></label>
               <textarea id="historiaOng" maxlength="200" required></textarea>
               <div id="caracteresRestantes">200 caracteres restantes</div>
@@ -7669,9 +7674,8 @@
               <input type="file" id="imagemOng" accept="image/*" required>
               <label for="urlOng"><strong>URL da ONG:</strong></label>
               <input type="url" id="urlOng" required><br><br>
+              <button type="submit" onclick="criarPostagem()">Enviar formulário" 
               <div id="botoesContainer">
-                <button type="submit" id="enviarForm">Enviar</button>
-                <button type="reset" id="reset">Limpar Campos</button>
             </div>
           </form>
       </div>
@@ -7887,7 +7891,6 @@
             </fieldset>
         </article>
   </div>
-git
     <div class="mobile expandido" id="mobile_divulgue_ongs">
           <span>Divulgue sua ong e faça sua doação</span>
           <article class="texto_mobile">

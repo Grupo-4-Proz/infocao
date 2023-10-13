@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="form.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="modalDivulgueOngs" class="modal">
+        <div class="modal-content">
+          <div>
+            <h2>Faça sua voz ser ouvida, sua causa ganhar visibilidade e seus esforços alcançarem corações.</h2>
+            <p>Preencha este formulário e junte-se a nós para espalhar amor, compaixão e fazer um impacto duradouro.</p>
+          </div>
+            <div id="formularioContainer">
+                <form id="ongForm" onsubmit="submitForm(event);">
+                    <label for="nomeOng"><strong>Nome da ONG:</strong></label>
+                    <input type="text" id="nomeOng" required><br><br>
+
+                    <label for="historiaOng"><strong>História da ONG:</strong></label>
+                    <textarea id="historiaOng" maxlength="200" required></textarea>
+                    <div id="caracteresRestantes">200 caracteres restantes</div>
+                    <label for="imagemOng"><strong>Imagem da ONG:</strong></label>
+                    <input type="file" id="imagemOng" accept="image/*" required>
+                    <label for="urlOng"><strong>URL da ONG:</strong></label>
+                    <input type="url" id="urlOng" required><br><br>
+                    <input type="button" value="Criar Postagem" onclick="criarPostagem()">
+                    <div id="botoesContainer">
+                      <button type="reset" id="reset">Limpar Campos</button>
+                  </div>
+                </form>
+            </div>
+            
+        </div>
+      </div>
+      
+      <!-- Modal "Ongs" -->
+      <div id="modalOngs" class="modal">
+      <div class="modal-content">
+       <h2 class="modal_titulo">Transforme vidas, adote amor e doe esperança: juntos pela causa animal, construindo um mundo de carinho e compaixão.</h2>
+        <p>Somos a ponte para o amor e a compaixão: um site dedicado a inspirar a adoção e a doação para as ONGs de animais. Para fazer a diferença, clique nos links de cada ONG e junte-se a nós nessa jornada de cuidado e solidariedade.</p>
+       <div id="ongCards">
+      
+       </div>
+      </div>
+      </div>
+</body>
+</html>

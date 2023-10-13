@@ -209,10 +209,10 @@ function limparFormulario() {
     atualizarContador();
 }
 
-// Adicione um ouvinte de evento ao botão "Limpar Formulário"
-document.getElementById("reset").addEventListener("click", function() {
-    limparFormulario();
-});
+// // Adicione um ouvinte de evento ao botão "Limpar Formulário"
+// document.getElementById("reset").addEventListener("click", function() {
+//     limparFormulario();
+// });
 
 
 //// JS CLAUDINEI INICIO
@@ -273,115 +273,57 @@ function validarFormulario() {
     }
 
     return true;
-}
+};
 
 //// JS CLAUDINEI FIM
 
+let arrayPostagens = [];
 
-// Função para enviar o formulário e criar um cartão de ONG
-function submitForm(event) {
-    event.preventDefault(); // Impede a recarga da página
-
+function criarPostagem(){
     const nomeOng = document.getElementById("nomeOng").value;
     const historiaOng = document.getElementById("historiaOng").value;
-    const imagemOng = document.getElementById("imagemOng").files[0]; // Altere para pegar o arquivo de imagem
+    const imagemOng = document.getElementById("imagemOng").value;
     const urlOng = document.getElementById("urlOng").value;
 
-    if (nomeOng === "" || historiaOng === "" || !imagemOng || urlOng === "") {
-        alert("Por favor, preencha todos os campos do formulário.");
-        return;
-    }
+    if (nomeOng && historiaOng && imagemOng && urlOng) {
+        const novaPostagem = {
+        nomeOng: nomeOng,
+        historiaOng: historiaOng,
+        imagemOng: imagemOng,
+        urlOng: urlOng,
+        };
 
-    const cardDiv = document.createElement("div");
-    cardDiv.className = "ong-card";
+        // Adicione a nova postagem ao seu array
+        arrayPostagens.push(novaPostagem);
 
-    const cardImage = document.createElement("img");
-    cardImage.src = URL.createObjectURL(imagemOng); // Use URL.createObjectURL para exibir a imagem
-    cardImage.alt = nomeOng;
-    cardImage.style.width = "100%";
-    cardImage.style.height = "100%";
+        // Chame a função para exibir todas as postagens (se necessário)
+        exibirPostagens();
 
-    const cardTitle = document.createElement("h3");
-    cardTitle.innerText = nomeOng;
-
-    const cardHistory = document.createElement("p");
-    cardHistory.innerText = historiaOng;
-
-    const cardButton = document.createElement("a");
-    cardButton.href = urlOng;
-    cardButton.className = "help-button";
-    cardButton.innerText = "Ajude aqui";
-
-    cardDiv.appendChild(cardImage);
-    cardDiv.appendChild(cardTitle);
-    cardDiv.appendChild(cardHistory);
-    cardDiv.appendChild(cardButton);
-
-    document.getElementById("ongCards").appendChild(cardDiv);
-
-    // Limpa os campos do formulário
+    //Limpe o formulário
+    
     document.getElementById("nomeOng").value = "";
-    document.getElementById("historiaOng").value = "";
-    document.getElementById("imagemOng").value = "";
-    document.getElementById("urlOng").value = "";
+    document.getElementById("historiaOng").value = ""; 
+    document.getElementById("imagemOng").value = ""; 
+    document.getElementById("urlOng").value = ""; 
+    // Limpa o campo de arquivo
+} else {
+    alert("Por favor, preencha todos os campos.");
+}
 }
 
+function exibirPostagens() {
+let ongCards = document.getElementById("ongCards");
+  ongCards.innerHTML = ""; // Limpa o conteúdo existente
 
-// Adicione um ouvinte de evento ao campo de upload de imagem
-document.getElementById("imagemOng").addEventListener("change", function () {
-    const fileInput = this;
-    const cardImage = document.getElementById("cardImage"); // Adicione um ID à tag de imagem onde você deseja exibir a imagem
+for (let i = 0; i < arrayPostagens.length; i++) {
+    let article = document.createElement("article");
+    article.innerHTML = `
+    <h3>${arrayPostagens[i].nomeOng}</h3>
+    <p class="subtitulo">${arrayPostagens[i].historiaOng}</p>
+    <div class="data">${arrayPostagens[i].imagemOng}</div>
+    <p>${arrayPostagens[i].urlOng}</p>`;
 
-    // Verifique se um arquivo foi selecionado
-    if (fileInput.files.length > 0) {
-        const selectedFile = fileInput.files[0];
-
-        // Verifique se o arquivo é uma imagem
-        if (selectedFile.type.match(/^image\//)) {
-            const reader = new FileReader();
-
-            reader.onload = function (e) {
-                // Define o atributo src da tag de imagem com a imagem carregada
-                cardImage.src = e.target.result;
-            };
-
-            // Leia o conteúdo da imagem
-            reader.readAsDataURL(selectedFile);
-        } else {
-            alert("Por favor, selecione um arquivo de imagem.");
-        }
+    article.id = `post-${i + 1}`;
+    ongCards.appendChild(article);
     }
-});
-
-// MOBILE ONGS 
-
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('mobile_ongForm');
-    const ongCardsContainer = document.getElementById('ongCards');
-
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const nome = form.querySelector('#nome').value;
-        const historia = form.querySelector('#historia').value;
-        const link = form.querySelector('#link').value;
-
-        // Crie um elemento card de ONG
-        const ongCard = document.createElement('div');
-        ongCard.classList.add('ong-card');
-
-        // Crie os elementos dentro do card
-        const cardContent = `
-            <h3>${nome}</h3>
-            <p>${historia}</p>
-            <a href="${link}" class="help-button">Ajude aqui</a>
-        `;
-        ongCard.innerHTML = cardContent;
-
-        // Adicione o card ao contêiner de cards de ONGs
-        ongCardsContainer.appendChild(ongCard);
-
-        // Limpe o formulário
-        form.reset();
-    });
-});
+}

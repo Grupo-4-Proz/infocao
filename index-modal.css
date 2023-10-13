@@ -164,6 +164,10 @@ body .balao_item .balao_btn:active {
     cursor: pointer;
 }
 
+#ongCards article{
+    
+    background-color: #474747;
+}
 #modal_origem, #modal_adotante,#modal_nao_adotante, #racao_form, #modalOngs, #modal_mural, #modalDivulgueOngs{
     width: 50vw;
     height: 90vh;
