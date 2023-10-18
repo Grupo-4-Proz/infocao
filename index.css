@@ -754,7 +754,7 @@ texto_ongs{
     height: 20px;
 }
 
-#formularioOngMobile label , input, textarea {
+#formularioOngMobile  input, textarea {
     margin-bottom: 10px;
     margin-top: 5px;
 }
@@ -769,21 +769,31 @@ texto_ongs{
     margin-bottom: 20px;
 }
 
-#enviarOmobile {
-    display: inline-block; 
-    margin-right: 10px; 
+#container_botões_mobile {
+    display: flex;
+    justify-content: space-between; /* Para alinhar os botões um ao lado do outro com espaço entre eles */
+    align-items: center; /* Para alinhar verticalmente no centro */
+    margin-right: 10px;
+}
+
+#container_botões_mobile button {
+    display: inline-block;
     padding: 5px 15px;
     background-color: #7d84b2;
     color: #f9f9ed;
-    border: none; 
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 15px;
+    margin-right: 10px;
+    transition: background-color 0.3s; 
 }
 
-#enviarOmobile:hover {
-    background-color: #dcfa47c1;
+#container_botões_mobile button:hover {
+    background-color: rgba(255, 255, 255, 0.086); 
 }
+
+
 
 #mobile_racao_form {
     display: flex;

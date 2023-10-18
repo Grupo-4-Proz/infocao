@@ -410,21 +410,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
-
 // MOBILE ONGS 
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('mobile_ongForm');
     const ongCardsContainer = document.getElementById('ongCards');
+    const historiaInput = form.querySelector('#historiaOmobile');
+    const contadorCaracteres = form.querySelector('#contador-caracteres-mobile');
+
+    historiaInput.addEventListener('input', function () {
+        const caracteresDigitados = historiaInput.value.length;
+        const caracteresRestantes = 300 - caracteresDigitados;
+
+        contadorCaracteres.textContent = caracteresRestantes + " caracteres restantes";
+    });
 
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const nome = form.querySelector('#nome').value;
-        const historia = form.querySelector('#historia').value;
-        const link = form.querySelector('#link').value;
+        const nome = form.querySelector('#nomeOmobile').value;
+        const historia = form.querySelector('#historiaOmobile').value;
+        const link = form.querySelector('#linkOmobile').value;
 
         // Crie um elemento card de ONG
         const ongCard = document.createElement('div');
@@ -443,5 +449,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Limpe o formulário
         form.reset();
+        contadorCaracteres.textContent = "300 caracteres restantes"; // Redefina o contador
     });
 });

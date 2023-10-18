@@ -7584,7 +7584,6 @@
             </g>
           </g>
         </g>
-      </g>
       </svg>
     </div>
 
@@ -7687,6 +7686,7 @@
       <p>Somos a ponte para o amor e a compaixão: um site dedicado a inspirar a adoção e a doação para as ONGs de animais. Para fazer a diferença, clique nos links de cada ONG e junte-se a nós nessa jornada de cuidado e solidariedade.</p>
     <div id="ongCards" class="ong-card-container">
   
+    </div>
     </div>
 
 <!-- Modal "Adotante" -->
@@ -7895,15 +7895,21 @@
             </div>
             <div id="formularioOngMobile">
               <form id="mobile_ongForm">
-                <label for="nome">Nome da ONG:</label>
+                <label for="nomeOmobile">Nome da ONG:</label>
                 <input type="text" id="nomeOmobile" name="nome" required>
-                <label for="historia">História da ONG:</label>
-                <textarea id="historiaOmobile" name="historia" required></textarea>
-                <label for="link">Link da ONG:</label>
+                <label for="historiaOmobile">História da ONG:</label>
+                <textarea id="historiaOmobile" name="historia" required maxlength="300"></textarea>
+                <span id="contador-caracteres-mobile" class="contador-menor">300 caracteres restantes</span>
+                <label for="linkOmobile">Link da ONG:</label>
                 <input type="url" id="linkOmobile" name="link" required>
-                <label for="imagem">Imagem da ONG:</label>
+                <label for="imagemOmobile">Imagem da ONG:</label>
                 <input type="file" id="imagemOmobile" name="imagem">
-                <input type="submit" id="enviarOmobile" value="Enviar">
+                <div id="container_botões_mobile">
+                  <button type="reset" id="limpar-campos-mobile" class="botao-estilizado">Limpar Campos</button>
+                  <button type="submit" id="enviarOmobile" class="botao-estilizado">Enviar</button>
+              </div>
+              
+                
             </form>
             </div>
                 <div id="mobile_ongs">
