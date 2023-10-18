@@ -493,92 +493,106 @@ fieldset{
     #racao_form{
         display: none;}
 }
+
+
 /* Início de estilização Modal Ongs e Divulgue Ongs*/
 
-/* Estilos do botão "Ajude aqui" Card */
-.help-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #7d84b2;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
+/* Estilos para os cartões */
+.ong-card-container {
+    display: flex;
+    justify-content: center; /* Alinhe os cartões horizontalmente com espaço ao redor */
+    flex-wrap: wrap; /* Quebre para a próxima linha se não couberem todos em uma linha */
+    margin: 0 auto; /* Centralize o contêiner na página */
+  }
 
-.help-button:hover {
-    background-color: #8e9dcc;
-}
-
-/* Estilos do card */
 .ong-card {
-    width: 150px;
-    height: 150px;
-    background-color: #8e9dcc;
-    border: 1px solid #ccc;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     border-radius: 10px;
-    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column; /* Alinhe o conteúdo verticalmente */
+    justify-content: space-between; /* Alinhe o conteúdo verticalmente */
+    text-align: center; /* Centralize o texto horizontalmente */
     position: relative;
-    cursor: pointer;
-}
-
-.ong-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* Estilos para ocultar as informações da ONG por padrão */
-.ong-card .ong-info {
-    display: none;
-    position: absolute;
+    z-index: 1;
+    overflow: hidden; /* Oculte o overflow para esconder o texto */
+  }
+  
+  /* Imagem no cartão */
+  .ong-card img {
+    width: 100%; /* Defina a largura como "auto" */
+    height: 100%; /* Defina a altura como 100% */
+    object-fit: contain;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    z-index: 0;
+    position: absolute;
+  }
+  
+  /* Conteúdo (título, história e botão) no cartão */
+  .ong-card .content {
+    flex-grow: 1; /* Faça o conteúdo crescer para preencher o espaço restante */
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.8); /* Fundo para o texto */
+    opacity: 0; /* Inicialmente, o texto está oculto */
+    transition: opacity 0.2s; /* Adicione uma transição suave para a opacidade */
+  }
+  
+  /* Estilos para o título */
+  .ong-card h3 {
+    color: #fdf8f8;
+    font-size: 18px;
+    margin: 10px; /* Aumente a margem para alinhar com o início do card */
+    padding-bottom: 5px;
+    padding-top: 10px;
+  }
+  
+  /* Estilos para a história */
+  .ong-card p {
+    color: #fff;
+    font-size: 14px;
+    margin: 0 10px; /* Aumente a margem para alinhar com o início do card */
+    text-align: justify;
+    padding-bottom: 10px;
+  }
+  
+ /* Estilos para o botão "Ajude aqui" com a cor #7d84b2 e sem sublinhado */
+.ong-card .help-button {
     text-align: center;
-    padding: 10px;
-}
-
-/* Quando o mouse estiver sobre o card, mostre as informações */
-.ong-card:hover .ong-info {
-    display: flex;
-}
-
-.ong-card .ong-info h3 {
-    color: #fff;
-    margin: 10px;
-}
-
-.ong-card .ong-info p {
-    color: #fff;
-    margin: 10px 0;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    max-height: 70px;
-    overflow-y: scroll;
-}
-
-.ong-card .ong-info .help-button {
-    display: block;
-    background-color: #7d84b2;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 10px;
-}
-
-.ong-card .ong-info .help-button:hover {
-    background-color: #8e9dcc;
-}
+    background-color: #7d84b2; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px 10px; /* Tamanho do preenchimento */
+    font-size: 15px; /* Tamanho da fonte */
+    border: none; /* Remover a borda do botão */
+    border-radius: 5px; /* Adicionar cantos arredondados */
+    cursor: pointer; /* Mudar o cursor ao passar o mouse */
+    text-decoration: none; /* Remover o sublinhado do texto */
+    transition: background-color 0.2s, color 0.2s; /* Adicionar transições suaves */
+  }
+  
+  /* Estilizar o botão no hover */
+  .ong-card .help-button:hover {
+    background-color: #5b608f; /* Alterar a cor de fundo no hover */
+    color: #fff; /* Alterar a cor do texto no hover */
+  }  
+  
+  /* Quando o cartão está em hover, o estilo muda */
+  .ong-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgb(0, 0, 0);
+  }
+  
+  /* Mostrar o texto quando passar o mouse */
+  .ong-card:hover .content {
+    opacity: 1;
+    z-index: 2;
+  }
 
 /* modalDivulgueOngs */
 #modalDivulgueOngs .modal-content {
@@ -672,7 +686,9 @@ fieldset{
     background-color: #dcfa47c1; /* Cor de fundo do botão quando o mouse passa por cima */
 }
 
-/* MOBILE modalDivulgueOngs */
+
+
+/* MOBILE modal */
 
 #mobile_adocao {
     display: flex;
