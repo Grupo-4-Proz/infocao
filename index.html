@@ -7937,48 +7937,51 @@
                   Com carinho, Equipe Infocão</p>
               <h2>Compartilhe a história do seu peludo.</h2>
               <div id="formulario_adoção" style="border: 2px solid #7d84b2; border-radius: 5px; padding: 15px;">
-                  <form class="formulario-adoção" id="form_mobile_adocao" action="#" method="post" enctype="multipart/form-data">
-                      <label for="nome">Nome:</label>
-                      <input type="text" id="nome" name="nome" required><br><br>
-                      <label for="estado">Estado:</label>
-                      <select id="estado" name="estado" required>
-                          <option value="" disabled selected>Selecione o estado</option>
-                          <option value="AC">Acre</option>
-                          <option value="AL">Alagoas</option>
-                          <option value="AP">Amapá</option>
-                          <option value="AM">Amazonas</option>
-                          <option value="BA">Bahia</option>
-                          <option value="CE">Ceará</option>
-                          <option value="DF">Distrito Federal</option>
-                          <option value="ES">Espírito Santo</option>
-                          <option value="GO">Goiás</option>
-                          <option value="MA">Maranhão</option>
-                          <option value="MT">Mato Grosso</option>
-                          <option value="MS">Mato Grosso do Sul</option>
-                          <option value="MG">Minas Gerais</option>
-                          <option value="PA">Pará</option>
-                          <option value="PB">Paraíba</option>
-                          <option value="PR">Paraná</option>
-                          <option value="PE">Pernambuco</option>
-                          <option value="PI">Piauí</option>
-                          <option value="RJ">Rio de Janeiro</option>
-                          <option value="RN">Rio Grande do Norte</option>
-                          <option value="RS">Rio Grande do Sul</option>
-                          <option value="RO">Rondônia</option>
-                          <option value="RR">Roraima</option>
-                          <option value="SC">Santa Catarina</option>
-                          <option value="SP">São Paulo</option>
-                          <option value="SE">Sergipe</option>
-                          <option value="TO">Tocantins</option>
-                      </select>
-                      <label for="cidade">Cidade:</label>
-                      <input type="text" id="cidade" name="cidade" required><br><br>
-                      <label for="foto">Foto do seu peludo:</label>
-                      <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
-                      <label for="historia">Conte sua história (até 200 caracteres):</label> <br>
-                      <textarea id="historia" name="historia" maxlength="200" required></textarea><br><br>
-                      <button type="submit">Enviar</button>
-                  </form>
+                <form action="#" method="post" enctype="multipart/form-data" onsubmit="return validarFormulario();">
+                  <label for="nome">Nome:</label>
+                  <input type="text" id="nome" name="nome" required placeholder="Digite seu nome"><br><br>
+                  <label for="estado">Estado:</label>
+      <select id="estado" name="estado" required>
+          <option value="" disabled selected>Selecione seu estado</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
+                  </select><br><br>
+                  <label for="cidade">Cidade:</label>
+                  <input type="text" id="cidade" name="cidade" required placeholder="Digite sua cidade"><br><br>
+                  <label for="foto">Foto do seu peludo:</label>
+                  <input type="file" id="foto" name="foto" accept="image/*" required onchange="validarImagem()"><br><br>
+                  <img id="miniatura" src="" alt="Miniatura da foto" style="max-width: 100px; max-height: 200px; display: none;">
+                  <label for="historiaAdocao">Conte sua história: <small>(até 400 caracteres)</small></label> <br>
+                  <textarea id="historiaAdocao" name="historia" maxlength="400" required></textarea><br>
+                  <span id="contador-caracteres-adocao" class="contador-menor">400 caracteres restantes</span><br><br>
+                  <button type="submit">Enviar</button>
+                  <button type="reset" id="limpar-campos">Limpar Campos</button>
+              </form>
               </div>
           </div>
       </article>
