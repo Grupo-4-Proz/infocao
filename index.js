@@ -164,17 +164,19 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function () {
     const mobileElements = document.querySelectorAll('.mobile');
     mobileElements.forEach(element => {
-        element.addEventListener('click', () => {
-            const textoMobile = element.querySelector('.texto_mobile');
-            textoMobile.classList.toggle('ativo');
-
-            // Adicione um console.log para depuração
-            console.log('Elemento clicado:', element);
-            console.log('Classe .ativo:', textoMobile.classList.contains('ativo'));
-        });
+      const span = element.querySelector('span');
+      span.addEventListener('click', (event) => {
+        event.stopPropagation(); // Impede que o evento de clique no span se propague para o elemento pai.
+        const textoMobile = element.querySelector('.texto_mobile');
+        textoMobile.classList.toggle('ativo');
+  
+        // Adicione um console.log para depuração
+        console.log('Elemento clicado:', element);
+        console.log('Classe .ativo:', textoMobile.classList.contains('ativo'));
+      });
     });
-});
-
+  });
+  
 //// JS CLAUDINEI INICIO
 
 
