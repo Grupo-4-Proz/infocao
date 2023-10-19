@@ -437,3 +437,37 @@ document.addEventListener("DOMContentLoaded", function () {
         // Resto do seu código aqui
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtenha a referência ao contêiner de cartões
+    const ongCardsContainer = document.getElementById('ongCards');
+  
+    // Função para adicionar um cartão
+    function addCard(nome, historia, link, imagemSrc) {
+      const ongCard = document.createElement('div');
+      ongCard.classList.add('ong-card');
+  
+      const cardContent = `
+        <img src="${imagemSrc}" alt="${nome}">
+        <div class="content">
+          <h3>${nome}</h3>
+          <p>${historia}</p>
+          <a href="${link}" class="help-button" target="_blank">Ajude aqui</a>
+          <!-- Adicionado target="_blank" para abrir em nova guia -->
+        </div>
+      `;
+  
+      ongCard.innerHTML = cardContent;
+      ongCardsContainer.appendChild(ongCard);
+    }
+  
+    // Adicione cartões manualmente
+    addCard('Amigo não se Compra', 'A gente acredita que todo animal de rua merece um lar. Por isso, nosso trabalho é conectar os animais que estão em abrigos com pessoas que estejam procurando por um doguinho ou gatinho pra chamar de seu.', 'https://www.amigonaosecompra.com.br/paginas/sobre-o-amigo', '/Public/img/ONGs/amigo_nao_se_compra.png');
+    addCard('Amor Animal de Marilia', 'Cuidar de animais era um sonho de criança da Jaqueline, a fundadora da ONG Amor Animal de Marilia. Ela começou a recolher animais abandonados nas ruas e doar para pessoas responsáveis, que pudessem cuidar desses animais.', 'https://www.amoranimalmarilia.com.br/', '/Public/img/ONGs/amor_animal.jpg');
+    addCard('ONG 3', 'História da ONG 3', 'https://link-da-ong3.com', '/Public/img/ONGs/animalar.png');
+    addCard('ONG 4', 'História da ONG 4', 'https://link-da-ong4.com', '/Public/img/ONGs/focinho_amigo.jpg');
+    addCard('ONG 5', 'História da ONG 5', 'https://link-da-ong5.com', '/Public/img/ONGs/liga-das-patinha.png');
+    addCard('ONG 6', 'História da ONG 6', 'https://link-da-ong6.com', '/Public/img/ONGs/sos_unhas_e_garras.jpg');
+  });
+  
