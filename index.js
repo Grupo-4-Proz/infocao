@@ -3,9 +3,12 @@ window.addEventListener('mousemove', (event) => {
     const mouseY = event.clientY;
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
+    const cornerThreshold = 0.1; // Defina o valor apropriado para cornerThreshold (por exemplo, 0.1 para 10% das bordas)
+
+    const header = document.querySelector('#header'); // Use o seletor correto para o elemento header
 
     if (
-        (mouseX <= screenWidth * cornerThreshold || mouseX >= screenWidth * (1 - cornerThreshold))
+        mouseX <= screenWidth * cornerThreshold || mouseX >= screenWidth * (1 - cornerThreshold)
     ) {
         header.style.top = '0';
     } else {
@@ -164,18 +167,20 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function () {
     const mobileElements = document.querySelectorAll('.mobile');
     mobileElements.forEach(element => {
-      const span = element.querySelector('span');
-      span.addEventListener('click', (event) => {
-        event.stopPropagation(); // Impede que o evento de clique no span se propague para o elemento pai.
-        const textoMobile = element.querySelector('.texto_mobile');
-        textoMobile.classList.toggle('ativo');
-  
-        // Adicione um console.log para depuração
-        console.log('Elemento clicado:', element);
-        console.log('Classe .ativo:', textoMobile.classList.contains('ativo'));
-      });
+        const span = element.querySelector('span');
+        if (span) { // Verifica se o elemento span existe
+            span.addEventListener('click', (event) => {
+                event.stopPropagation(); // Impede que o evento de clique no span se propague para o elemento pai.
+                const textoMobile = element.querySelector('.texto_mobile');
+                textoMobile.classList.toggle('ativo');
+
+                // Adicione um console.log para depuração
+                console.log('Elemento clicado:', element);
+                console.log('Classe .ativo:', textoMobile.classList.contains('ativo'));
+            });
+        }
     });
-  });
+});
   
 //// JS CLAUDINEI INICIO
 
@@ -414,11 +419,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // MOBILE ONGS 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById('mobile_ongForm');
-    const ongCardsContainer = document.getElementById('ongCards');
-    const historiaInput = form.querySelector('#historiaOmobile');
-    const contadorCaracteres = form.querySelector('#contador-caracteres-mobile');
+    const historiaInput = document.getElementById('historiaOmobile');
+    const contadorCaracteres = document.getElementById('contador-caracteres-mobile');
 
     historiaInput.addEventListener('input', function () {
         const caracteresDigitados = historiaInput.value.length;
@@ -428,29 +432,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     form.addEventListener('submit', function (e) {
-        e.preventDefault();
+        e.preventDefault(); // Isso ainda previne o envio do formulário
 
-        const nome = form.querySelector('#nomeOmobile').value;
-        const historia = form.querySelector('#historiaOmobile').value;
-        const link = form.querySelector('#linkOmobile').value;
-
-        // Crie um elemento card de ONG
-        const ongCard = document.createElement('div');
-        ongCard.classList.add('ong-card');
-
-        // Crie os elementos dentro do card
-        const cardContent = `
-            <h3>${nome}</h3>
-            <p>${historia}</p>
-            <a href="${link}" class="help-button">Ajude aqui</a>
-        `;
-        ongCard.innerHTML = cardContent;
-
-        // Adicione o card ao contêiner de cards de ONGs
-        ongCardsContainer.appendChild(ongCard);
-
-        // Limpe o formulário
-        form.reset();
-        contadorCaracteres.textContent = "300 caracteres restantes"; // Redefina o contador
+        // Resto do seu código aqui
     });
 });
