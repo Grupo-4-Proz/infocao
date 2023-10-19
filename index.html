@@ -7925,65 +7925,112 @@
     <div class="mobile expandido" id="mobile_adocao">
       <span>Adoção</span>
       <article class="texto_mobile">
-          <div id="mobile_adocao_adotante">
-              <span class="close-button" id="mobileClose">&times;</span>
-              <h2 class="mobile_titulo">Obrigado por escolher a compaixão e por fazer a diferença na vida de um ser tão especial."</h2>
-              <p>Queremos expressar nossa mais profunda gratidão por ter aberto seu coração e seu lar para um peludo tão especial. Sua decisão de adotar um cão não apenas transformou a vida do animal que agora tem um lar amoroso, mas também tocou nossos corações com esperança e alegria.</p>
-              <img src="./src/img/Adoção/Obrigado.png" alt="Cachorro fofo" style="max-width: 500px; max-height: 500px;">
-              <p>Querido(a) Adotante,
-                  Com um coração generoso, você deu um lar a um peludo necessitado. <br> 
-                  Sua escolha enche nossos corações de gratidão. Obrigado por dar amor, <br>
-                  abrigo e uma nova vida. Vocês são a razão pela qual a esperança brilha mais intensamente. <br>                           
-                  Com carinho, Equipe Infocão</p>
-              <h2>Compartilhe a história do seu peludo.</h2>
-              <div id="formulario_adoção" style="border: 2px solid #7d84b2; border-radius: 5px; padding: 15px;">
-                  <form class="formulario-adoção" id="form_mobile_adocao" action="#" method="post" enctype="multipart/form-data">
-                      <label for="nome">Nome:</label>
-                      <input type="text" id="nome" name="nome" required><br><br>
-                      <label for="estado">Estado:</label>
-                      <select id="estado" name="estado" required>
-                          <option value="" disabled selected>Selecione o estado</option>
-                          <option value="AC">Acre</option>
-                          <option value="AL">Alagoas</option>
-                          <option value="AP">Amapá</option>
-                          <option value="AM">Amazonas</option>
-                          <option value="BA">Bahia</option>
-                          <option value="CE">Ceará</option>
-                          <option value="DF">Distrito Federal</option>
-                          <option value="ES">Espírito Santo</option>
-                          <option value="GO">Goiás</option>
-                          <option value="MA">Maranhão</option>
-                          <option value="MT">Mato Grosso</option>
-                          <option value="MS">Mato Grosso do Sul</option>
-                          <option value="MG">Minas Gerais</option>
-                          <option value="PA">Pará</option>
-                          <option value="PB">Paraíba</option>
-                          <option value="PR">Paraná</option>
-                          <option value="PE">Pernambuco</option>
-                          <option value="PI">Piauí</option>
-                          <option value="RJ">Rio de Janeiro</option>
-                          <option value="RN">Rio Grande do Norte</option>
-                          <option value="RS">Rio Grande do Sul</option>
-                          <option value="RO">Rondônia</option>
-                          <option value="RR">Roraima</option>
-                          <option value="SC">Santa Catarina</option>
-                          <option value="SP">São Paulo</option>
-                          <option value="SE">Sergipe</option>
-                          <option value="TO">Tocantins</option>
-                      </select>
-                      <label for="cidade">Cidade:</label>
-                      <input type="text" id="cidade" name="cidade" required><br><br>
-                      <label for="foto">Foto do seu peludo:</label>
-                      <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
-                      <label for="historia">Conte sua história (até 200 caracteres):</label> <br>
-                      <textarea id="historia" name="historia" maxlength="200" required></textarea><br><br>
-                      <button type="submit">Enviar</button>
-                  </form>
-              </div>
-          </div>
+        <div id="mobile_adocao_adotante">
+        <span class="close-button" id="mobileClose">&times;</span>
+        <h2 class="mobile_titulo">Obrigado por escolher a compaixão e por fazer a diferença na vida de um ser tão especial."</h2>
+        <p>Queremos expressar nossa mais profunda gratidão por ter aberto seu coração e seu lar para um peludo tão especial. Sua decisão de adotar um cão não apenas transformou a vida do animal que agora tem um lar amoroso, mas também tocou nossos corações com esperança e alegria.</p>
+                <img src="./src/img/Adoção/Obrigado.png" alt="Cachorro fofo" style="max-width: 500px; max-height: 500px;">
+        <p>Querido(a) Adotante,
+                    Com um coração generoso, você deu um lar a um peludo necessitado. <br> 
+                    Sua escolha enche nossos corações de gratidão. Obrigado por dar amor, <br>
+                    abrigo e uma nova vida. Vocês são a razão pela qual a esperança brilha mais intensamente. <br>                           
+                    Com carinho, Equipe Infocão</p>
+        <h2>Compartilhe a história do seu peludo.</h2>
+        <div id="formulario_adoção" >
+          <form class="formulario-adoção" id="form_mobile_adocao" action="#" method="post" enctype="multipart/form-data">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required><br><br>
+          <label for="estado">Estado:</label>
+          <select id="estado" name="estado" required>
+            <option value="" disabled selected>Selecione o estado</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required><br><br>
+                <label for="foto">Foto do seu peludo:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
+                <label for="historia">Conte sua história (até 200 caracteres):</label> <br>
+                <textarea id="historia" name="historia" maxlength="200" required></textarea><br><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        
+      <div class="mobile" id="mobile_adocao_nao_adotante">
+      <h2 class="mobile_titulo">Adote um Cão e ganhe um Amigo.</h2>
+      <img src="./src/img/Adoção/Adote.png" alt="Cachorro fofo" style="max-width: 500px; max-height: 500px;">
+      <p>
+                  A adoção de um cão não apenas enche sua vida com alegria,mas também dá a um amigo de quatro patas uma segunda chance. 
+                  Cada cão tem uma história única e está ansioso para encontrar um lar amoroso. 
+                  Ao adotar, você está fazendo a diferença na vida de um animal e ganhando um companheiro 
+                  leal para todas as aventuras da vida.
+                  Não perca a oportunidade de mudar duas vidas: a sua e a do seu novo amigo peludo. 
+                  Certamente! A adoção de cães é uma escolha admirável que traz inúmeros benefícios não apenas para os animais,
+                  mas também para as pessoas que decidem abrir seus lares e corações para eles. 
+                  Aqui estão algumas razões pelas quais a adoção de um cão é uma decisão incrível: </p>
+                  <h1>Benefícios da Adoção de Cães</h1>
+                  <ul>
+                      <li>
+                          <strong>Salve uma Vida:</strong> Ao adotar um cão de um abrigo ou organização de resgate, você está
+                          oferecendo a chance de uma vida melhor para um animal que pode ter passado por dificuldades. Sua decisão
+                          literalmente pode salvar uma vida e proporcionar uma segunda chance.
+                      </li>
+                      <li>
+                          <strong>Amor Incondicional:</strong> Cães são conhecidos por sua lealdade e amor incondicional. Eles formam
+                          laços profundos com seus donos e estão sempre prontos para oferecer carinho, companheirismo e alegria.
+                      </li>
+                      <li>
+                          <strong>Variedade de Opções:</strong> Abrigos e resgates têm cães de todas as idades, tamanhos e raças. Você
+                          pode encontrar um cão que se adapte ao seu estilo de vida e preferências, seja um companheiro ativo para
+                          aventuras ao ar livre ou um amigo mais tranquilo para desfrutar de momentos relaxantes.
+                      </li>
+                      <li>
+                          <strong>Custo Benefício:</strong> Muitos cães adotados já vêm vacinados, castrados e microchipados, o que
+                          pode resultar em economias significativas em comparação com a compra de um cão de raça.
+                      </li>
+                      <li>
+                          <strong>Enriquecimento Pessoal:</strong> A adoção de um cão não apenas traz alegria imediata à sua vida, mas
+                          também pode ser uma experiência enriquecedora. Cuidar de um animal requer responsabilidade, compromisso e
+                          empatia, o que pode contribuir para o crescimento pessoal.
+                      </li>
+                      <li>
+                          <strong>Promova Mudanças:</strong> Ao adotar um cão, você apoia a missão de abrigos e resgates, contribuindo
+                          para reduzir o número de animais abandonados e sensibilizando a comunidade sobre a importância da adoção
+                          responsável.
+                      </li>
+                      <li>
+                          <strong>Construa Memórias:</strong> A jornada de criar um cão adotado está cheia de momentos memoráveis. Desde
+                          as primeiras interações até as aventuras compartilhadas, você construirá lembranças duradouras e preciosas.
+                      </li>
+                  </ul>     
+                </div>   
       </article>
-  </div>
-  
+    </div>
     
     <div class="mobile expandido" id="mobile_mural">
       <span>Depoimentos de Adoção</span>
@@ -8008,6 +8055,8 @@
           <figcaption class= "nome_pet">Leopoldo e Sheilinha</figcaption>
           <p>"Adotar nossos filhos foi a melhor decisão que já tomamos. Eles trouxeram tanta alegria e amor para nossas vidas. Estamos muito felizes por tê-los como parte da nossa família."</p>
         </div>
+
+            
       </article>
     </div>
 

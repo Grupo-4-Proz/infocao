@@ -809,7 +809,6 @@ input[type="file"] {
 
 
 
-/* CSS para o formulário de adoção */
 #formularios-ads {
     border: 2px solid #7d84b2;
     border-radius: 5px;
@@ -817,6 +816,12 @@ input[type="file"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#formulario_adoção {
+    border: 2px solid #7d84b2;
+    border-radius: 5px;
+    padding: 15px;
 }
 
 #mobile_adocao {
@@ -835,13 +840,15 @@ input[type="file"] {
 
 #mobile_adocao input[type="text"],
 #mobile_adocao input[type="url"],
-#mobile_adocao textarea {
+#mobile_adocao textarea,
+#mobile_adocao input[type="file"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #7d84b2;
     color: #0e0e0d;
     border-radius: 5px;
     margin-bottom: 10px;
+    box-sizing: border-box; /* Adiciona box-sizing para incluir preenchimento e borda na largura e altura */
 }
 
 #mobile_adocao select {
@@ -849,14 +856,6 @@ input[type="file"] {
     padding: 10px;
     border: 1px solid #7d84b2;
     color: #0e0e0d;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-#mobile_adocao input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
 }
