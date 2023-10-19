@@ -430,10 +430,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
         contadorCaracteres.textContent = caracteresRestantes + " caracteres restantes";
     });
-
-    form.addEventListener('submit', function (e) {
-        e.preventDefault(); // Isso ainda previne o envio do formulário
-
-        // Resto do seu código aqui
-    });
 });
