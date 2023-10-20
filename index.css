@@ -506,9 +506,9 @@ fieldset{
   }
 
 .ong-card {
-    width: 250px;
+    width: 240px;
     height: 250px;
-    margin: 10px;
+    margin: 5px;
     margin-bottom: 10px;
     margin-top: 10px;
     border-radius: 10px;
@@ -547,16 +547,16 @@ fieldset{
   /* Estilos para o título */
   .ong-card h3 {
     color: #fdf8f8;
-    font-size: 18px;
-    margin: 10px; /* Aumente a margem para alinhar com o início do card */
+    font-size: 16px;
+    margin: 5px; /* Aumente a margem para alinhar com o início do card */
     padding-bottom: 5px;
-    padding-top: 10px;
+    padding-top: 5px;
   }
   
   /* Estilos para a história */
   .ong-card p {
     color: #fff;
-    font-size: 14px;
+    font-size: 13px;
     margin: 0 10px; /* Aumente a margem para alinhar com o início do card */
     text-align: justify;
     padding-bottom: 10px;
@@ -567,14 +567,14 @@ fieldset{
     text-align: center;
     background-color: #7d84b2; /* Cor de fundo do botão */
     color: #fff; /* Cor do texto do botão */
-    padding: 10px 10px; /* Tamanho do preenchimento */
-    font-size: 15px; /* Tamanho da fonte */
+    padding: 8px 8px; /* Tamanho do preenchimento */
+    font-size: 13px; /* Tamanho da fonte */
     border: none; /* Remover a borda do botão */
     border-radius: 5px; /* Adicionar cantos arredondados */
     cursor: pointer; /* Mudar o cursor ao passar o mouse */
     text-decoration: none; /* Remover o sublinhado do texto */
     transition: background-color 0.2s, color 0.2s; /* Adicionar transições suaves */
-  }
+}
   
   /* Estilizar o botão no hover */
   .ong-card .help-button:hover {
