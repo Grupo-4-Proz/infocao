@@ -167,7 +167,7 @@ body .balao_item .balao_btn:active {
 #modal_origem, #modal_adotante,#modal_nao_adotante, #racao_form, #modalOngs, #modal_mural, #modalDivulgueOngs{
     width: 50vw;
     height: 90vh;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     position: fixed; /* Torna o formulário fixo na tela */
     top: 50%; /* Centraliza verticalmente */
@@ -383,7 +383,7 @@ body .balao_item .balao_btn:active {
 
 input[type="text"], input[type="number"] {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #f9f9ed;
     border-radius: 4px;
     box-sizing: border-box;
@@ -594,6 +594,11 @@ fieldset{
     z-index: 2;
   }
 
+  .form-titulo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /* modalDivulgueOngs */
 #modalDivulgueOngs .modal-content {
     display: flex;
@@ -605,7 +610,6 @@ fieldset{
     background-attachment: fixed;
     background-position: center; /* Centraliza a imagem */
     text-shadow: 2px 2px 3px rgba(255, 249, 249, 0.772);
-    padding: 10px 0;
     width: 50vw;
     height: 90vh;
     position: fixed;
@@ -615,75 +619,66 @@ fieldset{
     overflow-y: auto;
     background-color: #f9f9ed;
 }
-
 #formularioContainer {
-    width: 100%; /* Ocupa toda a largura disponível */
-    max-width: 500px; /* Define a largura máxima do conteúdo do formulário */
-    resize: none;
-}
-
-#ongForm label, input, textarea {
+    max-width: 80%;
+    width: 100%;
+    margin: 0 auto;
+    color: #0e0e0d;
+    border-radius: 5px;
     margin-bottom: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 #caracteresRestantes {
-    margin-bottom: 10px;
-    margin-top: -10px;
     font-size: 14px;
     color: #333333b5;
-
 }
 
-#nomeOng, #historiaOng, #imagemOng, #urlOng {
-    width: 100%; /* Ocupa toda a largura do container */
-    resize: none;
+#imagemOng {
+    width: 100%;
 }
 
-#nomeOng, #historiaOng, #urlOng{
-    border:2px solid #333333a4;
-    outline: none;
+#nomeOng, #historiaOng, #urlOng {
+    border: 2px solid #333333a4;
     border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
-#historiaOng{
-    width: 100%;
+#historiaOng {
     height: 70px;
-}
-#nomeOng, #urlOng {
-    width: 100%;
-    height: 30px;
 }
 
 #modalDivulgueOngs .modal-content h2 {
     text-align: center;
-    padding-top: 10px;
+    padding-top: 5px;
     font-size: 30px;
-    margin-top: 10px; 
 }
 
 #modalDivulgueOngs .modal-content p {
     font-size: 20px;
-    font-weight: bold; /* Texto em negrito */
+    font-weight: bold;
     text-align: center;
-    margin-top: 15px; /* Margem superior de 20px */
-    margin-bottom: 40px;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 #enviarForm, #reset {
-    display: inline-block; /* Coloca os botões em linha */
-    margin-right: 10px; /* Adicione margem à direita para criar espaço entre os botões */
-    padding: 5px 15px; /* Adicione preenchimento interno aos botões */
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 15px;
     background-color: #7d84b2;
     color: #f9f9ed;
-    border: none; /* Remova a borda do botão */
-    border-radius: 5px; /* Adicione cantos arredondados */
-    cursor: pointer; /* Mude o cursor para indicar que é um botão clicável */
-    font-size: 15px; /* Tamanho da fonte */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
 }
 
 #enviarForm:hover, #reset:hover {
-    background-color: #dcfa47c1; /* Cor de fundo do botão quando o mouse passa por cima */
+    background-color: #dcfa47c1;
 }
 
 
