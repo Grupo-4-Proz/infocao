@@ -870,3 +870,17 @@ input[type="file"] {
     height: 80px;
 }
 
+#mobile_adocao.mobile {
+    text-align: center;
+    padding: 0 5%; /* Adicione preenchimento nas laterais */
+    display: flex;
+    flex-direction: column;
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+  }
+  
+  #mobile_adocao.mobile img {
+    width: 100%; /* Largura igual à largura do modal */
+    height: auto; /* Altura automática para manter a proporção */
+    max-width: 100%; /* Largura máxima igual à largura do modal */
+  }
+  

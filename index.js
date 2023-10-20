@@ -420,7 +420,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // MOBILE ONGS 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById('mobile_ongForm');
     const historiaInput = document.getElementById('historiaOmobile');
     const contadorCaracteres = document.getElementById('contador-caracteres-mobile');
 
