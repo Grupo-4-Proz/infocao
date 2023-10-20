@@ -7949,7 +7949,7 @@
         <div id="formulario_adoção" >
           <form class="formulario-adoção" id="form_mobile_adocao" action="#" method="post" enctype="multipart/form-data">
           <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome" required><br><br>
+          <input type="text" id="nome" name="nome" required placeholder="Digite seu nome"><br><br>
           <label for="estado">Estado:</label>
           <select id="estado" name="estado" required>
             <option value="" disabled selected>Selecione o estado</option>
@@ -7981,13 +7981,15 @@
             <option value="SE">Sergipe</option>
             <option value="TO">Tocantins</option>
           </select>
-                <label for="cidade">Cidade:</label>
-                <input type="text" id="cidade" name="cidade" required><br><br>
-                <label for="foto">Foto do seu peludo:</label>
-                <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
-                <label for="historia">Conte sua história (até 400 caracteres):</label> <br>
-                <textarea id="historia" name="historia" maxlength="400" required></textarea><br><br>
-                <button type="submit">Enviar</button>
+          <label for="cidade">Cidade:</label>
+          <input type="text" id="cidade" name="cidade" required placeholder="Digite sua cidade"><br><br>
+          <label for="foto">Foto do seu peludo:</label>
+          <input type="file" id="foto" name="foto" accept="image/*" required onchange="validarImagem()"><br><br>
+          <img id="miniatura" src="" alt="Miniatura da foto" style="max-width: 100px; max-height: 200px; display: none;">
+          <label for="historiaAdocao">Conte sua história: </label> <br>
+          <textarea id="historiaAdocao" name="historia" maxlength="400" required></textarea><br>
+          <button type="submit">Enviar</button>
+          <button type="reset" id="limpar-campos">Limpar Campos</button>
             </form>
         </div>
         
