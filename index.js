@@ -416,22 +416,6 @@ document.addEventListener("DOMContentLoaded", function () {
     limparLocalStorage(); // Chame a função para limpar o localStorage quando a página é carregada
 });
 
-
-// MOBILE ONGS 
-
-document.addEventListener("DOMContentLoaded", function () {
-    const historiaInput = document.getElementById('historiaOmobile');
-    const contadorCaracteres = document.getElementById('contador-caracteres-mobile');
-
-    historiaInput.addEventListener('input', function () {
-        const caracteresDigitados = historiaInput.value.length;
-        const caracteresRestantes = 300 - caracteresDigitados;
-
-        contadorCaracteres.textContent = caracteresRestantes + " caracteres restantes";
-    });
-});
-
-
 document.addEventListener('DOMContentLoaded', function () {
     // Obtenha a referência ao contêiner de cartões
     const ongCardsContainer = document.getElementById('ongCards');
@@ -463,4 +447,22 @@ document.addEventListener('DOMContentLoaded', function () {
     addCard('Liga das Patinhas', 'Liga Das Patinhas é um projeto independente que visa ajudar animais em situação de rua ou animais de pessoas carentes, que foi criado em 2015. Há 7 anos nosso projeto vem resgatando, acolhendo e ajudando os animais necessitados de Uberlândia. Ajude esse projeto. Precisamos muito do seu apoio.', 'https://www.ligadaspatinhas.com.br/', 'Public/img/ONGs/liga-das-patinha.png');
     addCard('SOS Unhas e Garras', 'Criada em 2011, através da vontade de 4 amigas em resgatar animais em risco, oferecendo a estes animais todos os tratamentos e cuidados necessários, e finalmente reabilitando-os para que encontrem um lar definitivo.  Nosso objetivo, visa o bem estar de cada animalzinho resgatado.', 'https://www.facebook.com/sosunhasegarras/', 'Public/img/ONGs/sos_unhas_e_garras.jpg');
   });
+
+
+// MOBILE ONGS 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const historiaInput = document.getElementById('historiaOmobile');
+    const contadorCaracteres = document.getElementById('contador-caracteres-mobile');
+
+    historiaInput.addEventListener('input', function () {
+        const caracteresDigitados = historiaInput.value.length;
+        const caracteresRestantes = 300 - caracteresDigitados;
+
+        contadorCaracteres.textContent = caracteresRestantes + " caracteres restantes";
+    });
+});
+
+
+
   
