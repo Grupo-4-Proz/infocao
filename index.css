@@ -759,6 +759,8 @@ fieldset{
     padding: 0 10px;
     padding-left: 20px; /* Adiciona 20px de padding à esquerda */
     padding-right: 20px; /* Adiciona 20px de padding à direita */
+    justify-content: center;
+    align-items: center;
 }
 
 #formularioOngMobile {
