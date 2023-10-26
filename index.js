@@ -86,7 +86,6 @@ const balaoElements = {
 
 
 };
-console.log(balaoElements);
 
 // Adiciona eventos para cada elemento mapeado e seu respectivo balão
 for (let key in balaoElements) {
@@ -416,42 +415,29 @@ document.addEventListener("DOMContentLoaded", function () {
     limparLocalStorage(); // Chame a função para limpar o localStorage quando a página é carregada
 });
 
+//MOBILE ONGS
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtenha a referência ao contêiner de cartões
     const ongCardsContainer = document.getElementById('ongCards');
-  
-    // Função para adicionar um cartão
-    function addCard(nome, historia, link, imagemSrc) {
-      const ongCard = document.createElement('div');
-      ongCard.classList.add('ong-card');
-  
-      const cardContent = `
-        <img src="${imagemSrc}" alt="${nome}">
-        <div class="content">
-          <h3>${nome}</h3>
-          <p>${historia}</p>
-          <a href="${link}" class="help-button" target="_blank">Ajude aqui</a>
-          <!-- Adicionado target="_blank" para abrir em nova guia -->
-        </div>
-      `;
-  
-      ongCard.innerHTML = cardContent;
-      ongCardsContainer.appendChild(ongCard);
+    const mobileOngCardsContainer = document.getElementById('cards-mobile');
+
+    function addCard(container, nome, historia, link, imagemSrc) {
+        const ongCard = document.createElement('div');
+        ongCard.classList.add('ong-card');
+
+        const cardContent = `
+            <img src="${imagemSrc}" alt="${nome}">
+            <div class="content">
+                <h3>${nome}</h3>
+                <p>${historia}</p>
+                <a href="${link}" class="help-button" target="_blank">Ajude aqui</a>
+            </div>
+        `;
+
+        ongCard.innerHTML = cardContent;
+        container.appendChild(ongCard);
     }
-  
-    // Adicione cartões manualmente
-    addCard('Amigo não se Compra', 'A gente acredita que todo animal de rua merece um lar. Por isso, nosso trabalho é conectar os animais que estão em abrigos com pessoas que estejam procurando por um doguinho ou gatinho pra chamar de seu.', 'https://www.amigonaosecompra.com.br/paginas/sobre-o-amigo', 'Public/img/ONGs/amigo_nao_se_compra.png');
-    addCard('Amor Animal de Marilia', 'Cuidar de animais era um sonho de criança da Jaqueline, a fundadora da ONG Amor Animal de Marilia. Ela começou a recolher animais abandonados nas ruas e doar para pessoas responsáveis, que pudessem cuidar desses animais.', 'https://www.amoranimalmarilia.com.br/', 'Public/img/ONGs/amor_animal.jpg');
-    addCard('Animalar', 'Animalar Sociedade Protetora dos Animais de Faxinal/PR ajuda animais abandonados desde 2009 fazendo atendimentos veterinários, cirurgias, recuperando e auxiliando animais que foram cruelmente abandonados a encontrar um novo lar que os acolha com responsabilidade e amor, que todos merecem!', 'https://www.instagram.com/onganimalar/?hl=en', 'Public/img/ONGs/animalar.png');
-    addCard('SOS Focinho', ' ONG SOS Focinho, organização independente, não governamental e sem fins lucrativos. A entidade atua desde 2009 no acolhimento, cuidado e promoção da adoção responsável de animais abandonados, zela por aproximadamente 340 cães e gatos que vivem no Canil Municipal de Medianeira.', 'https://www.instagram.com/ongsosfocinho/', 'Public/img/ONGs/focinho_amigo.jpg');
-    addCard('Liga das Patinhas', 'Liga Das Patinhas é um projeto independente que visa ajudar animais em situação de rua ou animais de pessoas carentes, que foi criado em 2015. Há 7 anos nosso projeto vem resgatando, acolhendo e ajudando os animais necessitados de Uberlândia. Ajude esse projeto. Precisamos muito do seu apoio.', 'https://www.ligadaspatinhas.com.br/', 'Public/img/ONGs/liga-das-patinha.png');
-    addCard('SOS Unhas e Garras', 'Criada em 2011, através da vontade de 4 amigas em resgatar animais em risco, oferecendo a estes animais todos os tratamentos e cuidados necessários, e finalmente reabilitando-os para que encontrem um lar definitivo.  Nosso objetivo, visa o bem estar de cada animalzinho resgatado.', 'https://www.facebook.com/sosunhasegarras/', 'Public/img/ONGs/sos_unhas_e_garras.jpg');
-  });
 
-
-// MOBILE ONGS 
-
-document.addEventListener("DOMContentLoaded", function () {
     const historiaInput = document.getElementById('historiaOmobile');
     const contadorCaracteres = document.getElementById('contador-caracteres-mobile');
 
@@ -459,10 +445,48 @@ document.addEventListener("DOMContentLoaded", function () {
         const caracteresDigitados = historiaInput.value.length;
         const caracteresRestantes = 300 - caracteresDigitados;
 
-        contadorCaracteres.textContent = caracteresRestantes + " caracteres restantes";
+        contadorCaracteres.textContent = caracteresRestantes + ' caracteres restantes';
     });
+
+    const limparCamposBtn = document.getElementById('limpar-campos-mobile');
+
+    if (limparCamposBtn) {
+        limparCamposBtn.addEventListener('click', function () {
+            historiaInput.value = '';
+            contadorCaracteres.textContent = '300 caracteres restantes';
+        });
+    }
+
+    function addMobileCard(container, nome, historia, link, imagemSrc) {
+        const ongCard = document.createElement('div');
+        ongCard.classList.add('ong-card');
+
+        const cardContent = `
+            <img src="${imagemSrc}" alt="${nome}">
+            <div class="content">
+                <h3>${nome}</h3>
+                <p>${historia}</p>
+                <a href="${link}" class="help-button" target="_blank">Ajude aqui</a>
+            </div>
+        `;
+
+        ongCard.innerHTML = cardContent;
+        container.appendChild(ongCard);
+    }
+
+    addCard(ongCardsContainer, 'Amigo não se Compra', 'A gente acredita que todo animal de rua merece um lar. Por isso, nosso trabalho é conectar os animais que estão em abrigos com pessoas que estejam procurando por um doguinho ou gatinho pra chamar de seu.', 'https://www.amigonaosecompra.com.br/paginas/sobre-o-amigo', 'Public/img/ONGs/amigo_nao_se_compra.png');
+    addCard(ongCardsContainer, 'Amor Animal de Marilia', 'Cuidar de animais era um sonho de criança da Jaqueline, a fundadora da ONG Amor Animal de Marilia. Ela começou a recolher animais abandonados nas ruas e doar para pessoas responsáveis, que pudessem cuidar desses animais.', 'https://www.amoranimalmarilia.com.br/', 'Public/img/ONGs/amor_animal.jpg');
+    addCard(ongCardsContainer, 'Animalar', 'Animalar Sociedade Protetora dos Animais de Faxinal/PR ajuda animais abandonados desde 2009 fazendo atendimentos veterinários, cirurgias, recuperando e auxiliando animais que foram cruelmente abandonados a encontrar um novo lar que os acolha com responsabilidade e amor, que todos merecem!', 'https://www.instagram.com/onganimalar/?hl=en', 'Public/img/ONGs/animalar.png');
+    addCard(ongCardsContainer, 'SOS Focinho', ' ONG SOS Focinho, organização independente, não governamental e sem fins lucrativos. A entidade atua desde 2009 no acolhimento, cuidado e promoção da adoção responsável de animais abandonados, zela por aproximadamente 340 cães e gatos que vivem no Canil Municipal de Medianeira.', 'https://www.instagram.com/ongsosfocinho/', 'Public/img/ONGs/focinho_amigo.jpg');
+    addCard(ongCardsContainer, 'Liga das Patinhas', 'Liga Das Patinhas é um projeto independente que visa ajudar animais em situação de rua ou animais de pessoas carentes, que foi criado em 2015. Há 7 anos nosso projeto vem resgatando, acolhendo e ajudando os animais necessitados de Uberlândia. Ajude esse projeto. Precisamos muito do seu apoio.', 'https://www.ligadaspatinhas.com.br/', 'Public/img/ONGs/liga-das-patinha.png');
+    addCard(ongCardsContainer, 'SOS Unhas e Garras', 'Criada em 2011, através da vontade de 4 amigas em resgatar animais em risco, oferecendo a estes animais todos os tratamentos e cuidados necessários, e finalmente reabilitando-os para que encontrem um lar definitivo. Nosso objetivo, visa o bem estar de cada animalzinho resgatado.', 'https://www.facebook.com/sosunhasegarras/', 'Public/img/ONGs/sos_unhas_e_garras.jpg');
+
+    addMobileCard(mobileOngCardsContainer, 'Amigo não se Compra', 'A gente acredita que todo animal de rua merece um lar. Por isso, nosso trabalho é conectar os animais que estão em abrigos com pessoas que estejam procurando por um doguinho ou gatinho pra chamar de seu.', 'https://www.amigonaosecompra.com.br/paginas/sobre-o-amigo', 'Public/img/ONGs/amigo_nao_se_compra.png');
+    addMobileCard(mobileOngCardsContainer, 'Amor Animal de Marilia', 'Cuidar de animais era um sonho de criança da Jaqueline, a fundadora da ONG Amor Animal de Marilia. Ela começou a recolher animais abandonados nas ruas e doar para pessoas responsáveis, que pudessem cuidar desses animais.', 'https://www.amoranimalmarilia.com.br/', 'Public/img/ONGs/amor_animal.jpg');
+    addMobileCard(mobileOngCardsContainer, 'Animalar', 'Animalar Sociedade Protetora dos Animais de Faxinal/PR ajuda animais abandonados desde 2009 fazendo atendimentos veterinários, cirurgias, recuperando e auxiliando animais que foram cruelmente abandonados a encontrar um novo lar que os acolha com responsabilidade e amor, que todos merecem!', 'https://www.instagram.com/onganimalar/?hl=en', 'Public/img/ONGs/animalar.png');
+    addMobileCard(mobileOngCardsContainer, 'SOS Focinho', ' ONG SOS Focinho, organização independente, não governamental e sem fins lucrativos. A entidade atua desde 2009 no acolhimento, cuidado e promoção da adoção responsável de animais abandonados, zela por aproximadamente 340 cães e gatos que vivem no Canil Municipal de Medianeira.', 'https://www.instagram.com/ongsosfocinho/', 'Public/img/ONGs/focinho_amigo.jpg');
+    addMobileCard(mobileOngCardsContainer, 'Liga das Patinhas', 'Liga Das Patinhas é um projeto independente que visa ajudar animais em situação de rua ou animais de pessoas carentes, que foi criado em 2015. Há 7 anos nosso projeto vem resgatando, acolhendo e ajudando os animais necessitados de Uberlândia. Ajude esse projeto. Precisamos muito do seu apoio.', 'https://www.ligadaspatinhas.com.br/', 'Public/img/ONGs/liga-das-patinha.png');
+    addMobileCard(mobileOngCardsContainer, 'SOS Unhas e Garras', 'Criada em 2011, através da vontade de 4 amigas em resgatar animais em risco, oferecendo a estes animais todos os tratamentos e cuidados necessários, e finalmente reabilitando-os para que encontrem um lar definitivo. Nosso objetivo, visa o bem estar de cada animalzinho resgatado.', 'https://www.facebook.com/sosunhasegarras/', 'Public/img/ONGs/sos_unhas_e_garras.jpg');
 });
 
 
-
-  

@@ -174,7 +174,7 @@ body .balao_item .balao_btn:active {
     left: 50%; /* Centraliza horizontalmente */
     transform: translate(-50%, -50%); /* Ajusta a posição para o centro */
     overflow-y: auto; /* Adiciona scroll quando necessário */
-    background-color:#f9f9ed; /* Adiciona um fundo branco */
+    background-color:#f9f9e6; /* Adiciona um fundo branco */
 }
 
 
@@ -239,39 +239,6 @@ body .balao_item .balao_btn:active {
 }
 
 /* CSS CLAUDINEI FIM */
-
-.foto_mural_depoimento{
-    max-width: 50%;
-    max-height: 60vh;
-    padding: 5% 20% 0 20%;
-    border-radius: 30%; 
- }
- 
-.depoimento_mural p{
-    padding: 5%;
- } 
-
-.depoimento_mural{
-    border-radius: 20px;
-    max-height: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    border: 4px solid #dbfa47;
-    margin: 10px;
-    justify-content: center;  
-    overflow: scroll;
- } 
-
- .nome_pet{
-    padding: 0 20% 0 20%;
-    color:#7d84b2;
-    font-weight: bold;
-    font-size: large;
- }
-
- #modal_mural h2{
-    padding: 0 0 0 30%;;
- }
 
 #balao_adotante{
     width: 15vw;
@@ -692,6 +659,90 @@ fieldset{
 }
 
 
+/* MODAL  MURAL DEPOIMENTOS */
+
+.depoimento-mural-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+    justify-content: center;
+    background-image: url('src/img/Depoimentos/Framepegadas-white.png'); /* Substitua pelo caminho da sua imagem de fundo */
+
+}
+
+.depoimento-mural {
+    flex-basis: calc(33.33% - 20px); /* Defina a largura desejada com uma margem entre os cards */
+    margin: 0 10px;
+    box-sizing: border-box; /* Inclui margens na largura do card */
+}
+
+.depoimento-card {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s;
+    width: 250px; /* Largura desejada do card */
+    height: 250px; /* Altura desejada do card */
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.209); /* Adiciona sombra ao card */
+}
+
+.card-image {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.card-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-text {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.2s;
+}
+
+.depoimento-card:hover {
+    transform: translateY(-10px);
+}
+
+.depoimento-card:hover .card-text {
+    transform: translateY(0);
+}
+
+.nome_pet {
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+#modal_mural h2 {
+    background-image: url('src/img/Depoimentos/Framepegadas-white.png'); /* Substitua pelo caminho da sua imagem de fundo */
+    background-size: 200px; /* Ajusta o tamanho da imagem para cobrir todo o elemento */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    color: #000000; /* Define a cor do texto para que seja legível na imagem de fundo */
+    padding: 20px; /* Adiciona um espaçamento interno ao redor do texto */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    background-position: center; /* Centraliza a imagem de fundo */
+}
+
 
 /* MOBILE modal */
 
@@ -708,6 +759,8 @@ fieldset{
     padding: 0 10px;
     padding-left: 20px; /* Adiciona 20px de padding à esquerda */
     padding-right: 20px; /* Adiciona 20px de padding à direita */
+    justify-content: center;
+    align-items: center;
 }
 
 #formularioOngMobile {
