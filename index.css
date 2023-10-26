@@ -410,7 +410,7 @@ fieldset{
     border-color: #dbfa47;
 }
 
-#cachorro_colo, #carinho_chao, #atendente_adocao,#cachorro_colo, #carinho_chao, #atendente_adocao, #gaiola_3, #vet, #groomer, #dog_gym, #menina_cachorro, #recep_infocao, #brincando_bolinha, #recepcao, #roupinhas, #racao, #corgi, #passeador, #espera{
+#cachorro_colo, #atendente_adocao, #gaiola_3, #vet, #recep_infocao, #recepcao, #roupinhas, #racao, #espera{
     filter:grayscale(100%);
 }
 
