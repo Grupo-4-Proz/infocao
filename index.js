@@ -149,7 +149,7 @@ modalMural.init("#cachorro_colo");
 
 document.addEventListener("DOMContentLoaded", function() {
     const idList = [
-        "cachorro_colo", "carinho_chao", "atendente_adocao", "gaiola_3", "vet", "groomer", "dog_gym", "menina_cachorro", "recep_infocao", "brincando_bolinha", "recepcao", "roupinhas", "racao", "corgi", "passeador", "espera", /* Adicione todos os IDs aqui */
+        "cachorro_colo", "carinho_chao", "gaiola_3", "vet", "recep_infocao", "brincando_bolinha", "recepcao", "roupinhas", "racao", "espera"
     ];
 
     idList.forEach(id => {

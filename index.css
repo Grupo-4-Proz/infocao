@@ -377,7 +377,7 @@ fieldset{
     border-color: #dbfa47;
 }
 
-#cachorro_colo, #atendente_adocao, #gaiola_3, #vet, #recep_infocao, #recepcao, #roupinhas, #racao, #espera{
+#cachorro_colo, #gaiola_3, #vet, #recep_infocao, #recepcao, #roupinhas, #racao, #espera{
     filter:grayscale(100%);
 }
 
